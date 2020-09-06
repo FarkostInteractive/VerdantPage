@@ -52,6 +52,7 @@ p {
     position:absolute;
     margin: 0;
     padding: 0;
+    pointer-events: none;
 }
 
 #logo {
@@ -81,6 +82,7 @@ p {
     opacity: 100%;
 
     position: absolute;
+    pointer-events: none;
     transform: translate(-50%,0);
 }
 
