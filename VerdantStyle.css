@@ -1,8 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    overflow-y: scroll;
+ 
     background-attachment: fixed;
     background-color: #0b0f0a;
 }
@@ -97,9 +96,9 @@ p {
 .vidbg-container {
     filter: blur(0px);
     background-attachment: fixed;
-    width: 110%;
-    height: 110%;
-    transform: translate(-100, -100);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
 }
 
 .mainContent {
