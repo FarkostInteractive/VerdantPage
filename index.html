@@ -20,10 +20,27 @@
 
       <div class="cardStock mainContent">
         <div id="titlecardImage"></div>
-        <p>
+        <div>
           <br><br><br><br><br>
+          <form
+          action="https://formspree.io/xyynrwgl"
+          method="POST"
+          >
+            <label>
+              Your email:
+              <input type="text" name="_replyto">
+            </label>
+            <label>
+              Your message:
+              <textarea name="message"></textarea>
+            </label>
+
+            <!-- your other form fields go here -->
+
+            <button type="submit">Send</button>
+          </form>
           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        </p>
+        </div>
       </div>
     </div>
 
@@ -31,7 +48,7 @@
     </script>
     <script type="text/javascript">
       var instance = new vidbg('.vidbg-box', {
-          mp4: 'VerdantPerformance.mp4', // URL or relative path to MP4 video
+          mp4: 'VerdantShort.mp4', // URL or relative path to MP4 video
           webm: null,//'path/to/video.webm', // URL or relative path to webm video
           poster: 'VerdantOpen.jpg',//'path/to/fallback.jpg', // URL or relative path to fallback image
           overlay: true, // Boolean to display the overlay or not
