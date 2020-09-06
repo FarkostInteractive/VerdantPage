@@ -43,8 +43,8 @@
       window.onscroll = function() {myFunction()};
 
       function myFunction() {
-        var blurring = (document.body.scrollTop/50)*10;
-        blurring = Math.min(10, blurring);
+        var blurring = ((document.body.scrollTop-100)/100)*10;
+        blurring = Math.max(0, Math.min(10, blurring));
         document.getElementsByClassName("vidbg-container")[0].style.filter = "blur(" + blurring + "px)"
         //document.getElementById("blurredBackground").style.opacity = (document.body.scrollTop)/50;
       }

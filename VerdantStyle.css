@@ -97,7 +97,9 @@ p {
 
 .vidbg-container {
     filter: blur(0px);
-    background-attachment: fixed;
+    position: fixed;
+    left: 0;
+    top: 0;
     overflow: hidden;
     width: 100%;
     height: 100%;
