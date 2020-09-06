@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-attachment: fixed;
+    background-color: #1a3315;
+}
+h1 {
+    text-align: center; 
+    font-size: 6em;
+}
+p {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 2em;
+}
+#titlecard {
+    width: 60%; 
+    height: 60%; 
+    max-width: 700pt;
+    max-height: 550pt;
+    margin-left: auto;
+    margin-right: auto;
+
+    outline-style: solid;
+    outline-width: 2.5pt;
+    outline-color: #0b0f0a;
+    outline-offset: -10pt;
+
+    opacity: 1;
+    background-color: white;
+    box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.8), 0 0px 15px 0 rgba(0, 0, 0, 0.8);
+
+    overflow: hidden;
+    position: relative;
+}
+
+#titlecardImage {
+    background-color: white; 
+    background-image: url('bgpattern.jpg');
+    background-size: cover;
+    background-blend-mode: darken;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    position:absolute;
+    margin: 0;
+    padding: 0;
+}
+
+#logo {
+    width: 250pt; 
+    height: 250pt;
+    margin: auto; 
+    background-image: url('WreathLogo2x.png');
+    background-size: contain;
+    background-color: transparent;
+    background-blend-mode: normal;
+    opacity: 100%;
+
+    transform-origin: 50% 50%;
+    margin-top: 50pt;
+}
+
+#logoText {
+    width: 450pt; 
+    height: 80pt;
+    left: 50%;
+    top: 125pt;
+
+    background-image: url('VerdantText3x.png');
+    background-size: contain;
+    background-color: transparent;
+    background-blend-mode: normal;
+    opacity: 100%;
+
+    position: absolute;
+    transform: translate(-50%,0);
+}
+
+#background {
+    position: relative;
+    height: 100%; 
+    width: 100%; 
+    margin: 0;
+    padding: 0;
+    padding-top: 70pt;
+}
+
+.vidbg-container {
+    filter: blur(0px);
+    background-attachment: fixed;
+    width: 110%;
+    height: 110%;
+    transform: translate(-100, -100);
+}

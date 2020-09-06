@@ -1,25 +1,19 @@
 <html>
   <meta charset="UTF-8">
   <head>
-    <style>
-      h1 {
-        text-align: center; 
-        font-size: 6em;
-      }
-      p {
-        text-align: center;
-        font-family: sans-serif;
-        font-size: 2em;
-      }
-    </style>
     <link href="vidbg.css" rel="stylesheet" type="text/css">
+    <link href="VerdantStyle.css" rel="stylesheet" type="text/css">
   </head>
   
-  <body class="vidbg-box" style="height: 100%; width: 100%; margin: 0;">
-  
-    <h1>🌱</h1>
-    <p>Coming Soon</p>
-
+  <body>
+    <div id="background" class="vidbg-box">
+      <div id="titlecard">
+        <div id="titlecardImage">
+        </div>
+        <div id="logo"></div>
+        <div id="logoText"></div>
+      </div>
+    </div>
 
     <script src="vidbg.js">
     </script>
@@ -28,13 +22,22 @@
           mp4: 'VerdantPerformance.mp4', // URL or relative path to MP4 video
           webm: null,//'path/to/video.webm', // URL or relative path to webm video
           poster: 'VerdantOpen.PNG',//'path/to/fallback.jpg', // URL or relative path to fallback image
-          overlay: false, // Boolean to display the overlay or not
+          overlay: true, // Boolean to display the overlay or not
           overlayColor: '#000', // The overlay color as a HEX
-          overlayAlpha: 0.3 // The overlay alpha. Think of this as the last integer in RGBA()
+          overlayAlpha: 0.0 // The overlay alpha. Think of this as the last integer in RGBA()
         }, {
           // Attributes
         });
-        console.log("Print");
+        
+      var window = document.body;
+      window.onscroll = function() {myFunction()};
+
+      function myFunction() {
+        var blurring = (document.body.scrollTop/50)*10;
+        blurring = Math.min(10, blurring);
+        document.getElementsByClassName("vidbg-container")[0].style.filter = "blur(" + blurring + "px)"
+        //document.getElementById("blurredBackground").style.opacity = (document.body.scrollTop)/50;
+      }
     </script>
   </body>
 </html>
