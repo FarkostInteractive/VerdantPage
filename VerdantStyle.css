@@ -8,14 +8,16 @@ body {
     outline-width: 2.5pt;
     outline-color: #B8B5AA;
     outline-offset: -10pt;
-
     opacity: 1;
     background-color: white;
     box-shadow: 0 0px 20px 0 rgba(18, 20, 20, 0.5), 0 0px 20px 0 rgba(18, 20, 20, 0.5);
+    
+    z-index: -1;
+    position: relative;
+    overflow: hidden;
 }
 
 #titlecard {
-    
     width: 90%;
     max-width: 600pt;
     height: 400pt;
@@ -25,10 +27,9 @@ body {
     margin-top: 50pt;
     position: relative;
     overflow: hidden;
-    z-index: -1;
 }
 
-#titlecard::after {
+.cardStock::after {
     content: "";
     background-color: white; 
     background: url('bgpattern.jpg');
@@ -96,7 +97,7 @@ body {
 }
 
 #subLogo {
-    max-width: 60%;
+    max-width: 70%;
     height: 40pt;
     margin: auto;
     margin-top: -20pt;
@@ -123,5 +124,8 @@ body {
 }
 
 .mainContent {
-    margin: 50pt;
+    margin: auto;
+    margin-top: 100pt;
+    width: 90%;
+    max-width: 800pt;
 }
