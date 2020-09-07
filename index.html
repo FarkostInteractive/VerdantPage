@@ -5,19 +5,23 @@
     <link href="VerdantStyle.css" rel="stylesheet" type="text/css">
   </head>
   
-  <body>
-    <div id="background" class="vidbg-box">
-      <div id="titlecard" class="cardStock">
-        <div id="titlecardImage">
-        </div>
-        
-        <div id="logoText"></div>  
-        <div id="logo"></div>   
-        <div id="logoSubtitle">
-          <a href="http://www.verdant.zone/Documentation/">Documentation</a>
-        </div>
-      </div>
+  <body class="vidbg-box">
 
+      <div id="titlecard" class="cardStock">
+          <div id="logo">
+            <img id="logoText" src='VerdantText3x.png'></img>
+            <img id="wreathLogo" src='WreathLogo2x.png'></img>
+          </div>
+        
+          <div id="subLogo" class="centeredChildren">
+            <button class="verdantButton" type="button">Apply for Testing</button> 
+            <button class="verdantButton" onclick="window.open('http://www.verdant.zone/Documentation/', '_blank')" type="button">Documentation</button> 
+            <!-- <a href="http://www.verdant.zone/Documentation/">Documentation</a> -->
+          </div>
+        </div>  
+
+
+      <!--
       <div class="cardStock mainContent">
         <div id="titlecardImage"></div>
         <div>
@@ -35,14 +39,13 @@
               <textarea name="message"></textarea>
             </label>
 
-            <!-- your other form fields go here -->
-
             <button type="submit">Send</button>
           </form>
           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </div>
       </div>
     </div>
+    -->
 
     <script src="vidbg.js">
     </script>
