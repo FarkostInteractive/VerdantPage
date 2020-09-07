@@ -1,6 +1,9 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: rgb(44, 58, 19);
+    overflow-x: hidden;
+    position: relative;
 }
 
 .cardStock {
@@ -11,7 +14,7 @@ body {
     opacity: 1;
     background-color: white;
     box-shadow: 0 0px 20px 0 rgba(18, 20, 20, 0.5), 0 0px 20px 0 rgba(18, 20, 20, 0.5);
-    
+
     z-index: -1;
     position: relative;
     overflow: hidden;
@@ -68,7 +71,7 @@ body {
 
 #wreathLogo {
     width: auto; 
-    max-width: 80%;
+    max-width: 95%;
     max-height: 80%;
     height: auto;
     z-index: 1;
@@ -113,7 +116,6 @@ body {
 }
 
 .vidbg-container {
-    filter: blur(0px);
     position: fixed;
     left: 0;
     top: 0;
@@ -128,4 +130,30 @@ body {
     margin-top: 100pt;
     width: 90%;
     max-width: 800pt;
+}
+
+.contactOverlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+    display: none;
+}
+
+.contactForm {
+    width: 95%;
+    max-width: 300pt;
+    height: 400pt;
+    margin: auto;
+    margin-top: 60pt;
+    padding: 10pt;
+
+    background-color: white;
+    
+    text-align: center;
 }

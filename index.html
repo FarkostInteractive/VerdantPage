@@ -10,12 +10,12 @@
 
       <div id="titlecard" class="cardStock">
           <div id="logo">
-            <img id="logoText" src='VerdantText3x.png'></img>
+            <img id="logoText" src='VerdantTextVector.svg'></img>
             <img id="wreathLogo" src='WreathLogo2x.png'></img>
           </div>
         
           <div id="subLogo" class="centeredChildren">
-            <button class="verdantButton" type="button">Apply for Testing</button> 
+            <button class="verdantButton" type="button" onclick="document.querySelector('.contactOverlay').style.display = 'block'">Apply for Testing</button> 
             <button class="verdantButton" onclick="window.open('http://www.verdant.zone/Documentation/', '_blank')" type="button">Documentation</button> 
             <!-- <a href="http://www.verdant.zone/Documentation/">Documentation</a> -->
           </div>
@@ -27,23 +27,33 @@
         <div id="titlecardImage"></div>
         <div>
           <br><br><br><br><br>
-          <form
-          action="https://formspree.io/xyynrwgl"
-          method="POST"
-          >
-            <label>
-              Your email:
-              <input type="text" name="_replyto">
-            </label>
-            <label>
-              Your message:
-              <textarea name="message"></textarea>
-            </label>
-
-            <button type="submit">Send</button>
-          </form>
+      
           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </div>
+      </div>
+    </div>
+
+    <div class="contactOverlay" onclick="this.style.display = 'none'">
+      <div class="contactForm cardStock">
+        <form
+        action="https://formspree.io/xyynrwgl"
+        target="_blank"
+        method="POST"
+        >
+          <label>
+            Your email:
+            <input type="text" name="_replyto">
+          </label>
+          <br>
+
+          <label>
+            Your message:
+            <textarea name="message"></textarea>
+          </label>
+          <br>
+
+          <button type="submit">Send</button>
+        </form>
       </div>
     </div>
     

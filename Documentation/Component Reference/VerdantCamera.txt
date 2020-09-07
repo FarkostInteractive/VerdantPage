@@ -1,0 +1,15 @@
+# VerdantCamera
+
+The central component of Verdant responsible for rendering vegetation in the world. Each camera that needs to see vegetation should have one of these. Different cameras can have different settings and function independently. 
+
+The camera generates a simplified representation of the world and uses it to place vegetation procedurally. This takes the form of several [Fields]. 
+
+When rendering Verdant in the scene view the scene camera will base its settings of one of the VerdantCameras in the scene. If there is a main camera it will always use that one, otherwise the first found will be used. 
+
+## Parameters
+
+
+
+
+
+## Scripting Reference

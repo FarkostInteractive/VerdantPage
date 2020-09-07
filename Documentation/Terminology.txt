@@ -1,0 +1,38 @@
+Affector/Modifier - Component that influences fields
+
+Current Synonyms: Affector
+
+Field - The representation of properties that describe instances
+
+Current Synonyms: Map
+
+	Force/Displacement/Deflection/Perturbation - 
+		* Press - Set the rotation directly
+		* Push - Add a per frame force to the velocity, which influences rotation
+	
+	Tint - The color tint of instances
+	
+	Scale - The uniform scale of instances
+	
+	Type - 
+	
+Tile - A square subset of instances that can be culled. Has a three dimensional bounding box
+	
+Instance - An individual instance of a type, handled by the GPU
+
+Verdant Object - An object that is drawn to the height field. Can be either a mask or a surface.
+
+Map - A texture that adds detail to a Verdant Object
+
+Type/Info/Class/Species - 
+
+GameObject Counterpart - A gameobject that is made to be exactly like an instance on the GPU
+
+Wind - A per-camera force that animates instances separately from the force field
+
+Wind Zone - A box within which the wind has certain properties 
+
+Scopes:
+	Global - Something that affects all of Verdant
+	Camera - Something that affects all the instances of a field
+	Field - Something that affects a

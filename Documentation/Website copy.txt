@@ -1,0 +1,22 @@
+# Website Copy
+
+## Verdant! Here it is! Buy it!
+
+## What is Verdant and how does it work?
+* Infinite vegetation
+* Easy iteration
+* Flexible and scalable
+
+## What does Verdant let you do?
+* Fine grained, customizable interactions
+* Beautiful customizable light model
+* Detailed LODing
+* GameObject Mirroring
+* Extensible shaders and interaction systems
+
+## Additional Materials
+* Store link
+* Documentation
+* Gallery
+* Support links
+* Social media links
