@@ -8,79 +8,80 @@
   
   <body class="vidbg-box">
 
-      <div id="titlecard" class="cardStock">
-          <div id="logo">
-            <img id="logoText" src='VerdantTextVector.svg'></img>
-            <img id="wreathLogo" src='WreathLogo2x.png'></img>
-          </div>
-        
-          <div id="subLogo" class="centeredChildren">
-            <button class="verdantButton" type="button" onclick="document.querySelector('.contactOverlay').style.display = 'block'">Apply for Testing</button> 
-            <button class="verdantButton" onclick="window.open('http://www.verdant.zone/Documentation/', '_blank')" type="button">Documentation</button> 
-            <!-- <a href="http://www.verdant.zone/Documentation/">Documentation</a> -->
-          </div>
-        </div>  
-
-
-      
-      <div class="cardStock mainContent">
-        <div id="titlecardImage"></div>
-        <div>
-          <br><br><br><br><br>
-      
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div id="titlecard" class="cardStock">
+        <div id="logo">
+          <img id="logoText" src='VerdantTextVector.svg'></img>
+          <img id="wreathLogo" src='WreathLogo2x.png'></img>
         </div>
+      
+        <div id="subLogo" class="centeredChildren">
+          <img class="verdantButton" src='TestingButton.svg' type="button" onclick="document.querySelector('.contactOverlay').classList.toggle('hidden'); document.querySelector('.contactOverlay').classList.toggle('shown')"></button> 
+          <img class="verdantButton" src="DocumentationButton.svg" onclick="window.open('http://www.verdant.zone/Documentation/', '_blank')" type="button"></button> 
+          <!-- <a href="http://www.verdant.zone/Documentation/">Documentation</a> -->
+        </div>
+      </div>  
+
+
+    <!--
+    <div class="cardStock mainContent">
+      <div id="titlecardImage"></div>
+      <div>
+        <br><br><br><br><br>
+    
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       </div>
     </div>
+  </div>
+  -->
 
-    <div class="contactOverlay" onclick="this.style.display = 'none'">
-      <div class="contactForm cardStock">
-        <form
-        action="https://formspree.io/xyynrwgl"
-        target="_blank"
-        method="POST"
-        >
-          <label>
-            Your email:
-            <input type="text" name="_replyto">
-          </label>
-          <br>
+  <div class="contactOverlay hidden" onclick="this.classList.toggle('hidden'); this.classList.toggle('shown')">
+    <div class="contactForm cardStock">
+      <form
+      action="https://formspree.io/xyynrwgl"
+      target="_blank"
+      method="POST"
+      >
+        <label>
+          Your email:
+          <input type="text" name="_replyto">
+        </label>
+        <br>
 
-          <label>
-            Your message:
-            <textarea name="message"></textarea>
-          </label>
-          <br>
+        <label>
+          Your message:
+          <textarea name="message"></textarea>
+        </label>
+        <br>
 
-          <button type="submit">Send</button>
-        </form>
-      </div>
+        <button type="submit">Send</button>
+      </form>
     </div>
+  </div>
     
 
-    <script src="vidbg.js">
-    </script>
-    <script type="text/javascript">
-      var instance = new vidbg('.vidbg-box', {
-          mp4: 'VerdantShort.mp4', // URL or relative path to MP4 video
-          webm: null,//'path/to/video.webm', // URL or relative path to webm video
-          poster: 'VerdantOpen.jpg',//'path/to/fallback.jpg', // URL or relative path to fallback image
-          overlay: true, // Boolean to display the overlay or not
-          overlayColor: '#000', // The overlay color as a HEX
-          overlayAlpha: 0.0 // The overlay alpha. Think of this as the last integer in RGBA()
-        }, {
-          // Attributes
-        });
-        
-      var window = document.body;
-      window.onscroll = function() {myFunction()};
+  <script src="vidbg.js">
+  </script>
+  <script type="text/javascript">
+    var instance = new vidbg('.vidbg-box', {
+        mp4: 'VerdantShort.mp4', // URL or relative path to MP4 video
+        webm: null,//'path/to/video.webm', // URL or relative path to webm video
+        poster: 'VerdantOpen.jpg',//'path/to/fallback.jpg', // URL or relative path to fallback image
+        overlay: true, // Boolean to display the overlay or not
+        overlayColor: '#000', // The overlay color as a HEX
+        overlayAlpha: 0.0 // The overlay alpha. Think of this as the last integer in RGBA()
+      }, {
+        // Attributes
+      });
+      
+    var window = document.body;
+    window.onscroll = function() {myFunction()};
 
-      function myFunction() {
-        var blurring = ((document.body.scrollTop-100)/100)*10;
-        blurring = Math.max(0, Math.min(10, blurring));
-        document.getElementsByClassName("vidbg-container")[0].style.filter = "blur(" + blurring + "px)"
-        //document.getElementById("blurredBackground").style.opacity = (document.body.scrollTop)/50;
-      }
-    </script>
+    function myFunction() {
+      var blurring = ((document.body.scrollTop-100)/100)*10;
+      blurring = Math.max(0, Math.min(10, blurring));
+      document.getElementsByClassName("vidbg-container")[0].style.filter = "blur(" + blurring + "px)"
+      //document.getElementById("blurredBackground").style.opacity = (document.body.scrollTop)/50;
+    }
+  </script>
   </body>
 </html>

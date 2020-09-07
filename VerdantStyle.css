@@ -97,22 +97,33 @@ body {
 .centeredChildren {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 #subLogo {
-    max-width: 70%;
-    height: 40pt;
+    max-width: 90%;
+    height: 80pt;
     margin: auto;
-    margin-top: -20pt;
+    margin-top: -25pt;
 }
 
 .verdantButton {
     background-color: transparent; 
     border-style: none;
+    flex-basis: 40%;
 
-    outline-style: solid;
-    outline-width: 2.5pt;
-    outline-color: #B8B5AA;
+    max-width: 210pt;
+    min-width: 170pt;
+    margin: 0 5 15 5;
+
+    transition: transform 0.1s;
+    transform: scale(1.0);
+}
+
+.verdantButton:hover {
+    transition: transform 0.1s;
+    transform: scale(1.03);
 }
 
 .vidbg-container {
@@ -130,6 +141,18 @@ body {
     margin-top: 100pt;
     width: 90%;
     max-width: 800pt;
+    text-align: center;
+}
+
+.shown {
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.hidden {
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
 }
 
 .contactOverlay {
@@ -142,7 +165,6 @@ body {
     margin: 0;
     padding: 0;
     z-index: 3;
-    display: none;
 }
 
 .contactForm {
