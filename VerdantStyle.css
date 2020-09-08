@@ -119,12 +119,12 @@ body {
     min-width: 170pt;
     margin: 0 5 10 5;
 
-    transition: transform 0.1s;
+    transition: transform;
     transform: scale(1.0);
 }
 
 .verdantButton:hover {
-    transition: transform 0.1s;
+    transition: transform;
     transform: scale(1.03);
 }
 
