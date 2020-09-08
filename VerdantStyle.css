@@ -107,7 +107,7 @@ body {
     max-width: 90%;
     height: 80pt;
     margin: auto;
-    margin-top: -25pt;
+    margin-top: -27pt;
 }
 
 .verdantButton {
@@ -117,7 +117,7 @@ body {
 
     max-width: 210pt;
     min-width: 170pt;
-    margin: 0 5 15 5;
+    margin: 0 5 10 5;
 
     transition: transform 0.1s;
     transform: scale(1.0);
