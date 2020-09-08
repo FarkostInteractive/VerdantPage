@@ -119,11 +119,17 @@ body {
     min-width: 170pt;
     margin: 0 5 10 5;
 
+    -webkit-transition: transform 0.1s ease-in-out;
+    -moz-transition: transform 0.1s ease-in-out;
+    -o-transition: transform 0.1s ease-in-out;
     transition: transform 0.1s ease-in-out;
     transform: scale(1.0);
 }
 
 .verdantButton:hover {
+    -webkit-transition: transform 0.1s ease-in-out;
+    -moz-transition: transform 0.1s ease-in-out;
+    -o-transition: transform 0.1s ease-in-out;
     transition: transform 0.1s ease-in-out;
     transform: scale(1.03);
 }
@@ -148,12 +154,18 @@ body {
 
 .shown {
     opacity: 1;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
     transition: opacity 0.3s;
     pointer-events: all;
 }
 
 .hidden {
     opacity: 0;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
     transition: opacity 0.3s;
     pointer-events: none;
 }
