@@ -119,19 +119,21 @@ body {
     min-width: 170pt;
     margin: 0 5 10 5;
 
-    -webkit-transition: transform 0.1s ease-in-out;
+    -webkit-transition: -webkit-transform 0.1s ease-in-out;
     -moz-transition: transform 0.1s ease-in-out;
     -o-transition: transform 0.1s ease-in-out;
     transition: transform 0.1s ease-in-out;
     transform: scale(1.0);
+    -webkit-transform: scale(1.0);
 }
 
 .verdantButton:hover {
-    -webkit-transition: transform 0.1s ease-in-out;
+    -webkit-transition: -webkit-transform 0.1s ease-in-out;
     -moz-transition: transform 0.1s ease-in-out;
     -o-transition: transform 0.1s ease-in-out;
     transition: transform 0.1s ease-in-out;
     transform: scale(1.03);
+    -webkit-transform: scale(1.03);
 }
 
 .vidbg-container {
