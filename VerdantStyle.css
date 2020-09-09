@@ -16,9 +16,9 @@ body {
     background-color: white;
 
     background-color: white; 
-    background: url('bgpatternBaked.jpg');
+    background: url('bgLaceBaked.jpg');
     background-repeat: repeat;
-    background-size: 512px;
+    background-size: 256px;
 
     box-shadow: 0 0px 20px 0 rgba(18, 20, 20, 0.5), 0 0px 20px 0 rgba(18, 20, 20, 0.5);
 
