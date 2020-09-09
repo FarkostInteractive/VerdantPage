@@ -28,7 +28,7 @@
         </div>
       </div>  
 
-
+      <!--
     <div class="cardStock mainContent">
       <div id="titlecardImage"></div>
       <div>
@@ -38,6 +38,7 @@
       </div>
     </div>
   </div>
+-->
 
   <div class="contactOverlay hidden">
     <div class="overlayShade" onclick="document.querySelector('.contactOverlay').classList.toggle('hidden'); document.querySelector('.contactOverlay').classList.toggle('shown')"></div>
@@ -75,7 +76,7 @@
   </script>
   <script type="text/javascript">
     var instance = new vidbg('.vidbg-box', {
-        mp4: 'VerdantShort.mp4', // URL or relative path to MP4 video
+        mp4: 'VerdantBg.mp4', // URL or relative path to MP4 video
         webm: null,//'path/to/video.webm', // URL or relative path to webm video
         poster: 'VerdantOpen.jpg',//'path/to/fallback.jpg', // URL or relative path to fallback image
         overlay: true, // Boolean to display the overlay or not
@@ -86,12 +87,12 @@
       });
       
     var window = document.body;
-    window.onscroll = function() {myFunction()};
+    window.onscroll = function() {onScroll()};
 
-    function myFunction() {
-      var blurring = ((document.body.scrollTop-100)/100)*10;
-      blurring = Math.max(0, Math.min(10, blurring));
-      document.getElementsByClassName("vidbg-container")[0].style.filter = "blur(" + blurring + "px)"
+    function onScroll() {
+      //var blurring = ((document.body.scrollTop-100)/100)*10;
+      //blurring = Math.max(0, Math.min(10, blurring));
+      //document.getElementsByClassName("vidbg-container")[0].style.filter = "blur(" + blurring + "px)"
       //document.getElementById("blurredBackground").style.opacity = (document.body.scrollTop)/50;
     }
   </script>
