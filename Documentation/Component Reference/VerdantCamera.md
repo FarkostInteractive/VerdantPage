@@ -1,3 +1,10 @@
+---
+layout: default
+title: "VerdantCamera"
+parent: "Component Reference"
+---
+
+
 # VerdantCamera
 
 The central component of Verdant responsible for rendering vegetation in the world. Each camera that needs to see vegetation should have one of these. Different cameras can have different settings and function independently. 

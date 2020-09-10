@@ -2,7 +2,6 @@
 layout: default
 title: "VerdantWindVolume"
 parent: "Component Reference"
-grand_parent: "Documentation"
 ---
 
 

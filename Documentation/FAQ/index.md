@@ -1,5 +1,5 @@
 ---
 layout: default
 title: "FAQ"
-parent: "Documentation"
+nav_order: "3"
 ---

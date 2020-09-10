@@ -3,7 +3,6 @@ layout: default
 title: "Fields"
 nav_order: "0"
 parent: "Central Concepts"
-grand_parent: "Documentation"
 ---
 
 # Fields

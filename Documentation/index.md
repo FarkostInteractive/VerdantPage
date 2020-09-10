@@ -1,11 +1,10 @@
 ---
 layout: default
-title: "Documentation"
+title: "Home"
 nav_order: "0"
-has_children: true
 ---
 
-# Index
+# Home
 
 Welcome! 
 

@@ -2,7 +2,6 @@
 layout: default
 title: "VerdantObject"
 parent: "Component Reference"
-grand_parent: "Documentation"
 ---
 
 

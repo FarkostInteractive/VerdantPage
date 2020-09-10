@@ -1,9 +1,8 @@
 ---
 layout: default
 title: "Central Concepts"
-nav_order: "0"
+nav_order: "1"
 has_children: true
-parent: "Documentation"
 ---
 
 You might want to think of it similarly to working with particle systems: Most of the time you are not interested in the individual particles. Rather, you are working to shape the effect as a whole by manipulating its parameters.

@@ -2,7 +2,6 @@
 layout: default
 title: "Getting Started"
 parent: "User Guide"
-grand_parent: "Documentation"
 nav_order: "0"
 ---
 

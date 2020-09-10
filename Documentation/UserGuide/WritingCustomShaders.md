@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Writing Custom Shaders"
+parent: "User Guide"
+nav_order: "5"
+---
+
 # Writing Custom Shaders
 
 The default Verdant shader is optimized for flexibility and to blend in with the Unity Standard Shader. But there are plenty of cases where you might want to optimize for something else. The default shader is a surface shader, which makes it very comprehensive but slightly inefficient. By building your own shader you can strip out all the cruft and focus on the features you need. It also lets you change the light model if that is something your art style demands. Verdant is built to be easy to extend, and this page will take you through the process of getting everything set up. 

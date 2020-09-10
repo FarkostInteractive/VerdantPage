@@ -2,7 +2,6 @@
 layout: default
 title: "VerdantType"
 parent: "Component Reference"
-grand_parent: "Documentation"
 ---
 
 
