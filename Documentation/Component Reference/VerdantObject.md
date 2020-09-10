@@ -6,3 +6,5 @@ parent: "Component Reference"
 
 
 # VerdantObject
+
+An object
