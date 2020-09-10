@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Quirks And Limitations"
+parent: "FAQ"
+grand_parent: "Documentation"
+---
+
+
 ## Quirks and Limitations
 
 ## Tips and Tricks for working around limitations

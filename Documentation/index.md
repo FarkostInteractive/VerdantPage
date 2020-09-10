@@ -1,14 +1,29 @@
 ---
 layout: default
 title: "Documentation"
-nav_order: "2"
+nav_order: "0"
 has_children: true
 ---
 
- **Lorem ipsum** dolor sit amet, consectetur adipiscing elit. Fusce pellentesque auctor velit vitae fringilla. Phasellus non ipsum quis ante feugiat accumsan in eleifend neque. Ut molestie dolor sit amet erat tempor vestibulum. Morbi sit amet metus tempor, varius dui in, mollis purus. Vestibulum at est arcu. Nam et turpis eu nulla feugiat mattis. Donec eget nisl dolor. Praesent aliquam diam sapien, convallis semper est finibus in. In pharetra libero dui, volutpat ultricies quam blandit at. Curabitur hendrerit pretium dui, non iaculis sem bibendum at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec bibendum nunc non laoreet venenatis. Nulla vel dui scelerisque, porta augue a, rutrum felis. Donec consequat eros eget congue molestie. Curabitur varius, nibh ac mattis vehicula, quam sem auctor enim, ut aliquet justo risus in tortor.
+# Index
 
-* Etiam pharetra ac eros nec egestas. In elementum congue arcu. Maecenas ac purus quis risus bibendum auctor. Nunc id efficitur ante, id vulputate nisl. Nunc scelerisque nec lacus in fermentum. Nullam vitae risus ipsum. Cras eget volutpat justo.
+Welcome! 
 
-Ut venenatis imperdiet metus, sit amet euismod diam placerat in. Nulla scelerisque arcu non nibh vestibulum, eget blandit lorem consectetur. Mauris vel nulla urna. Donec ultrices augue justo, eu ornare felis porttitor consectetur. Mauris sollicitudin ligula in nisl pellentesque porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam interdum semper dui, vestibulum tincidunt enim fringilla ac. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis ultricies elit odio, posuere finibus quam tincidunt sed. Vivamus ac lobortis diam. Donec eget ornare nunc.
+The Verdant Documentation is split into four parts. There’s the user guide, which will offer you everything you need to get started and build beautiful, performant scenes. The Getting Started page will help you set up your first scene with some basic vegetation. Every subsequent page delves deeper into the various systems and how they relate to each other. 
+The guide also contains some more general advice for how to best use Verdant, maximize performance and get your scene looking as pretty as possible. 
 
-Mauris hendrerit imperdiet metus, sit amet volutpat turpis finibus vitae. Aliquam at ex turpis. Suspendisse ut tortor ut lorem eleifend dictum vitae vitae ligula. Nulla et faucibus purus. Morbi sed nulla metus. Aenean mattis arcu nec eleifend pretium. Pellentesque purus tortor, hendrerit eu consequat vel, congue ac quam. Aenean in enim eleifend, accumsan ante sed, euismod lorem. Integer ac venenatis odio. Donec ultrices elementum accumsan. Donec eu orci vel sem tempor ullamcorper. Nam egestas, tortor non mattis venenatis, ipsum ex fringilla quam, id rhoncus turpis leo at magna. Aliquam vehicula eu leo at molestie. Etiam elementum orci sit amet orci scelerisque sollicitudin. Proin volutpat luctus dolor a convallis. 
+[User Guide Table]
+
+If you want to delve below the surface, Central Concepts goes into detail about how Verdant works. The User Guide often links to these pages, and I highly recommend giving them a quick read whenever it does so. Many of the design elements of Verdant will make more sense if you understand the systems they interface with. Central Concepts is meant to be understandable regardless of your technical background and offer a high level survey, not to overwhelm you with technical jargon. 
+
+[Central Concepts Table]
+
+The Component Reference explains every available Verdant Component in detail. This is where to look for information about specific parameters, what makes one component different from another, and so forth. It is also where you’ll find the scripting reference for each component. 
+
+[Component Reference]
+
+Finally there is the FAQ, which is always growing and changing. I try to include everything I can think of here, but as with any complex system there are many dark corners of Verdant which even I have yet to explore. If you have unanswered questions you can use the contact form to notify me and I will get back to you as soon as possible! 
+
+There is also the Unity Forums Thread, which is likewise always growing. While I try to incorporate as much as I can into the FAQ, if you can’t find answers here it’s very worth looking through the thread anyway. It’s also a good way to get in touch with both me and other experienced users.
+
+[FAQ table]
