@@ -1,3 +1,5 @@
 name: Verdant Documentation
 markdown: kramdown
 remote_theme: pmarsceill/just-the-docs 
+
+logo: "FullLogo.png"

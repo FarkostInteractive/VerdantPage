@@ -257,6 +257,21 @@ body {
 
 textarea.contactField {
     height: 150pt;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #7c7c7c;
+    padding: 3pt;
+}
+
+input.contactField {
+    height: 20pt;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #7c7c7c;
+    padding: 2pt;
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }
 
 .contactButton {
