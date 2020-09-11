@@ -2,7 +2,7 @@
 layout: default
 title: "Creating a Verdant Type"
 parent: "User Guide"
-nav_order: "0"
+nav_order: "3"
 ---
 
 # Creating a Verdant Type
