@@ -184,19 +184,11 @@ body {
 
 .shown {
     opacity: 1;
-    -webkit-transition: opacity 0.3s;
-    -moz-transition: opacity 0.3s;
-    -o-transition: opacity 0.3s;
-    transition: opacity 0.3s;
     pointer-events: all;
 }
 
 .hidden {
     opacity: 0;
-    -webkit-transition: opacity 0.3s;
-    -moz-transition: opacity 0.3s;
-    -o-transition: opacity 0.3s;
-    transition: opacity 0.3s;
     pointer-events: none;
 }
 
