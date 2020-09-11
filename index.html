@@ -9,39 +9,92 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <link href="vidbg.css" rel="stylesheet" type="text/css">
     <link href="VerdantStyle.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        var inOverlay = false;
+
+      // Call the event handler on #text
+      $(".verdantButton").hover(function(){
+        $("#focusedBg").addClass("hidden");
+        $("#focusedBg").removeClass("shown");
+      },        
+        function(){
+          if(!inOverlay)
+          {
+            $("#focusedBg").addClass("shown");
+            $("#focusedBg").removeClass("hidden");
+          }
+        });
+
+        $("#testingButton").click(function(){
+          inOverlay = true;
+          $('.contactOverlay').toggleClass('hidden'); 
+          $('.contactOverlay').toggleClass('shown');
+
+          $("#focusedBg").addClass("hidden");
+          $("#focusedBg").removeClass("shown");
+        });
+
+        $(".overlayShade").click(function(){
+          $('.contactOverlay').toggleClass('hidden'); 
+          $('.contactOverlay').toggleClass('shown');
+
+          $("#focusedBg").addClass("shown");
+          $("#focusedBg").removeClass("hidden");
+          inOverlay = false;
+        });
+    });
+    </script>
   </head>
   
-  <body class="vidbg-box">
+  <body>
 
     <div id="titlecard" class="cardStock">
-        <div id="logo" class="undraggable">
-          <img id="logoText" src='VerdantTextVector.svg'></img>
-          <img id="wreathLogo" src='WreathLogo2x.png'></img>
-        </div>
-      
-        <div id="subLogo" class="centeredChildren">
-          <img class="verdantButton undraggable" src='Testing.svg' type="button" onclick="document.querySelector('.contactOverlay').classList.toggle('hidden'); document.querySelector('.contactOverlay').classList.toggle('shown')"></button> 
-          <img class="verdantButton undraggable" src="Documentation.svg" onclick="window.open('http://www.verdant.zone/Documentation/', '_blank')" type="button"></button> 
-          <!-- <a href="http://www.verdant.zone/Documentation/">Documentation</a> -->
-        </div>
-      </div>  
+      <div id="logo" class="undraggable">
+        <img id="logoText" src='VerdantTextVector.svg'></img>
+        <img id="wreathLogo" src='WreathLogo2x.png'></img>
+      </div>
+    
+      <div id="subLogo" class="centeredChildren">
+        <img id="testingButton" class="verdantButton undraggable" src='Testing.svg' type="button"></img> 
+        <img id="docsButton" class="verdantButton undraggable" src="Documentation.svg" onclick="window.open('http://www.verdant.zone/Documentation/', '_blank')" type="button"></img> 
+        <!-- <a href="http://www.verdant.zone/Documentation/">Documentation</a> -->
+      </div>
+    </div>  
 
-      <!--
+    <!--
+
     <div class="cardStock mainContent">
       <div id="titlecardImage"></div>
       <div>
         <br><br><br><br><br>
-    
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        
+        <br><br><br><br><br>
+        <br><br><br><br><br>
+        <br><br><br><br><br>
+        <br><br><br><br><br>
+        <br><br><br><br><br>
+        <br><br><br><br><br>
+        <br><br><br><br><br>
+        <br><br><br><br><br>
+        <br><br><br><br><br>
       </div>
     </div>
   </div>
--->
+  -->
+
+  <div id="unfocusedBg" class="vidbg-container">
+    <iframe src="https://player.vimeo.com/video/456884780?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  </div>
+
+  <div id="focusedBg" class="vidbg-container shown">
+    <iframe src="https://player.vimeo.com/video/456892665?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  </div>
 
   <div class="contactOverlay hidden">
-    <div class="overlayShade" onclick="document.querySelector('.contactOverlay').classList.toggle('hidden'); document.querySelector('.contactOverlay').classList.toggle('shown')"></div>
+    <div class="overlayShade"></div>
     <div class="contactForm cardStock" onclick="">
       <div class="contactFormArea">
         <form
@@ -70,30 +123,16 @@
       </div>
     </div>
   </div>
-    
 
-  <script src="vidbg.js">
-  </script>
   <script type="text/javascript">
-    var instance = new vidbg('.vidbg-box', {
-        mp4: 'VerdantBg2.mp4', // URL or relative path to MP4 video
-        webm: null,//'path/to/video.webm', // URL or relative path to webm video
-        poster: 'VerdantOpen.jpg',//'path/to/fallback.jpg', // URL or relative path to fallback image
-        overlay: true, // Boolean to display the overlay or not
-        overlayColor: '#000', // The overlay color as a HEX
-        overlayAlpha: 0.0 // The overlay alpha. Think of this as the last integer in RGBA()
-      }, {
-        // Attributes
-      });
-      
     var window = document.body;
     window.onscroll = function() {onScroll()};
 
     function onScroll() {
-      //var blurring = ((document.body.scrollTop-100)/100)*10;
-      //blurring = Math.max(0, Math.min(10, blurring));
+      var blurring = ((document.body.scrollTop-100)/100);
+      blurring = Math.max(0, Math.min(1, blurring));
       //document.getElementsByClassName("vidbg-container")[0].style.filter = "blur(" + blurring + "px)"
-      //document.getElementById("blurredBackground").style.opacity = (document.body.scrollTop)/50;
+      document.getElementById("focusedBg").style.opacity = 1-blurring;
     }
   </script>
   </body>

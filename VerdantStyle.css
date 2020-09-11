@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(44, 58, 19);
+    background-color: white;
     overflow-x: hidden;
     position: relative;
     pointer-events:all;
@@ -39,25 +39,6 @@ body {
     overflow: hidden;
     z-index: 1;
 }
-/*
-.cardStock::after {
-    content: "";
-    background-color: white; 
-    background: url('bgpattern.jpg');
-    background-repeat: repeat;
-    background-size: 512px;
-    background-blend-mode: darken;
-    pointer-events: none;
-    opacity: 0.08;
-    z-index: -1;
-
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    position: absolute;
-}
-*/
 
 #logo {
     height: 80%;
@@ -92,8 +73,6 @@ body {
 
     position: absolute;
     pointer-events: none;
-
-    color: red;
 }
 
 #logoText {
@@ -164,15 +143,34 @@ body {
             transform: scale(1.03);
 }
 
+#focusedBg {
+
+}
+
+#unfocusedBg {
+    opacity: 1.0;
+}
+
 .vidbg-container {
     position: fixed;
     left: 0;
     top: 0;
     overflow: hidden;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     z-index: 0;
 }
+
+.vidbg-container iframe {
+    width: 100vw;
+    height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+    min-height: 100vh;
+    min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
 
 .mainContent {
     margin: auto;
@@ -249,6 +247,21 @@ body {
 
 textarea.contactField {
     height: 150pt;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #7c7c7c;
+    padding: 3pt;
+}
+
+input.contactField {
+    height: 20pt;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #7c7c7c;
+    padding: 2pt;
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }
 
 .contactButton {
