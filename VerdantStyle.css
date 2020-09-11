@@ -144,11 +144,16 @@ body {
 }
 
 #focusedBg {
-
+    background-image: url("verdantBgFocused.jpg");
+    background-size: cover;
+    background-position-x: center;
 }
 
 #unfocusedBg {
     opacity: 1.0;
+    background-image: url("verdantBgFocused.jpg");
+    background-size: cover;
+    background-position-x: center;
 }
 
 .vidbg-container {
