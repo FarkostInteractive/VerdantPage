@@ -10,22 +10,61 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <link href="VerdantStyle.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        var inOverlay = false;
+
+      // Call the event handler on #text
+      $(".verdantButton").hover(function(){
+        $("#focusedBg").addClass("hidden");
+        $("#focusedBg").removeClass("shown");
+      },        
+        function(){
+          if(!inOverlay)
+          {
+            $("#focusedBg").addClass("shown");
+            $("#focusedBg").removeClass("hidden");
+          }
+        });
+
+        $("#testingButton").click(function(){
+          inOverlay = true;
+          $('.contactOverlay').toggleClass('hidden'); 
+          $('.contactOverlay').toggleClass('shown');
+
+          $("#focusedBg").addClass("hidden");
+          $("#focusedBg").removeClass("shown");
+        });
+
+        $(".overlayShade").click(function(){
+          $('.contactOverlay').toggleClass('hidden'); 
+          $('.contactOverlay').toggleClass('shown');
+
+          $("#focusedBg").addClass("shown");
+          $("#focusedBg").removeClass("hidden");
+          inOverlay = false;
+        });
+    });
+    </script>
   </head>
   
   <body>
 
     <div id="titlecard" class="cardStock">
-        <div id="logo" class="undraggable">
-          <img id="logoText" src='VerdantTextVector.svg'></img>
-          <img id="wreathLogo" src='WreathLogo2x.png'></img>
-        </div>
-      
-        <div id="subLogo" class="centeredChildren">
-          <img class="verdantButton undraggable" src='Testing.svg' type="button" onclick="document.querySelector('.contactOverlay').classList.toggle('hidden'); document.querySelector('.contactOverlay').classList.toggle('shown')"></button> 
-          <img class="verdantButton undraggable" src="Documentation.svg" onclick="window.open('http://www.verdant.zone/Documentation/', '_blank')" type="button"></button> 
-          <!-- <a href="http://www.verdant.zone/Documentation/">Documentation</a> -->
-        </div>
-      </div>  
+      <div id="logo" class="undraggable">
+        <img id="logoText" src='VerdantTextVector.svg'></img>
+        <img id="wreathLogo" src='WreathLogo2x.png'></img>
+      </div>
+    
+      <div id="subLogo" class="centeredChildren">
+        <img id="testingButton" class="verdantButton undraggable" src='Testing.svg' type="button"></img> 
+        <img id="docsButton" class="verdantButton undraggable" src="Documentation.svg" onclick="window.open('http://www.verdant.zone/Documentation/', '_blank')" type="button"></img> 
+        <!-- <a href="http://www.verdant.zone/Documentation/">Documentation</a> -->
+      </div>
+    </div>  
+
+    <!--
 
     <div class="cardStock mainContent">
       <div id="titlecardImage"></div>
@@ -44,17 +83,18 @@
       </div>
     </div>
   </div>
+  -->
 
   <div id="unfocusedBg" class="vidbg-container">
     <iframe src="https://player.vimeo.com/video/456884780?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
   </div>
 
-  <div id="focusedBg" class="vidbg-container">
+  <div id="focusedBg" class="vidbg-container shown">
     <iframe src="https://player.vimeo.com/video/456892665?background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
   </div>
 
   <div class="contactOverlay hidden">
-    <div class="overlayShade" onclick="document.querySelector('.contactOverlay').classList.toggle('hidden'); document.querySelector('.contactOverlay').classList.toggle('shown')"></div>
+    <div class="overlayShade"></div>
     <div class="contactForm cardStock" onclick="">
       <div class="contactFormArea">
         <form
