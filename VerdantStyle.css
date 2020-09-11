@@ -39,25 +39,6 @@ body {
     overflow: hidden;
     z-index: 1;
 }
-/*
-.cardStock::after {
-    content: "";
-    background-color: white; 
-    background: url('bgpattern.jpg');
-    background-repeat: repeat;
-    background-size: 512px;
-    background-blend-mode: darken;
-    pointer-events: none;
-    opacity: 0.08;
-    z-index: -1;
-
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    position: absolute;
-}
-*/
 
 #logo {
     height: 80%;
@@ -92,8 +73,6 @@ body {
 
     position: absolute;
     pointer-events: none;
-
-    color: red;
 }
 
 #logoText {
@@ -162,6 +141,14 @@ body {
     -webkit-transform: scale(1.03);
         -ms-transform: scale(1.03);
             transform: scale(1.03);
+}
+
+#focusedBg {
+    opacity: 1.0;
+}
+
+#unfocusedBg {
+    opacity: 1.0;
 }
 
 .vidbg-container {
