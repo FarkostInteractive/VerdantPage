@@ -151,7 +151,7 @@ body {
 
 #unfocusedBg {
     opacity: 1.0;
-    background-image: url("verdantBgFocused.jpg");
+    background-image: url("verdantBg.jpg");
     background-size: cover;
     background-position-x: center;
 }
