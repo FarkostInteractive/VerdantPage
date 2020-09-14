@@ -11,7 +11,7 @@ Welcome!
 The Verdant Documentation is split into four parts. There’s the user guide, which will offer you everything you need to get started and build beautiful, performant scenes. The Getting Started page will help you set up your first scene with some basic vegetation. Every subsequent page delves deeper into the various systems and how they relate to each other. 
 The guide also contains some more general advice for how to best use Verdant, maximize performance and get your scene looking as pretty as possible. 
 
-[User Guide Table]
+[User Guide](UserGuide/index)
 
 If you want to delve below the surface, Central Concepts goes into detail about how Verdant works. The User Guide often links to these pages, and I highly recommend giving them a quick read whenever it does so. Many of the design elements of Verdant will make more sense if you understand the systems they interface with. Central Concepts is meant to be understandable regardless of your technical background and offer a high level survey, not to overwhelm you with technical jargon. 
 
