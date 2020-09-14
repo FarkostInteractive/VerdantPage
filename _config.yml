@@ -3,3 +3,6 @@ markdown: kramdown
 remote_theme: pmarsceill/just-the-docs 
 
 logo: "VerdantTextVector.svg"
+aux_links:
+  "Roadmap":
+    - "https://www.notion.so/farkostinteractive/cd1717fc4ff743cb88d6c74e65c65120?v=adb1c8c835a143efafe1e73c307e8469"
