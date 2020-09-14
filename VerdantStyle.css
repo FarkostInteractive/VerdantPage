@@ -144,11 +144,16 @@ body {
 }
 
 #focusedBg {
-
+    background-image: url("verdantBgFocused.jpg");
+    background-size: cover;
+    background-position-x: center;
 }
 
 #unfocusedBg {
     opacity: 1.0;
+    background-image: url("verdantBg.jpg");
+    background-size: cover;
+    background-position-x: center;
 }
 
 .vidbg-container {
@@ -182,11 +187,19 @@ body {
 
 .shown {
     opacity: 1;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s;
     pointer-events: all;
 }
 
 .hidden {
     opacity: 0;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s;
     pointer-events: none;
 }
 
