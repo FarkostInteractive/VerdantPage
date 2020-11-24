@@ -9,11 +9,13 @@ parent: "Beta Guide"
 I'm so happy you're interested in testing Verdant! This page will take you through the process of getting everything set up.
 
 ## Setup
-To use Verdant, you first need to have Unity installed. Any version from 2019.3 onward should work. If you already have a compatible version, use that! Otherwise, install the latest 2019 version or any 2020 version you'd like. A spread of different versions is good, it helps us cover more debugging ground. You can find them here: https://unity3d.com/get-unity/download.
+To use Verdant, you first need to have Unity installed. Any version from 2019.3 onward should work. If you already have a compatible version, use that! Otherwise, install the latest 2019 version or any 2020 version you'd like. A spread of different versions is good, it helps us cover more ground when debugging. You can find them here: https://unity3d.com/get-unity/download.
 
-Once you have a Unity version downloaded, start a new project (or open an existing one if you have something specific you want to use Verdant for). When the project has loaded, go to Windows > Package Manager. There's a plus symbol in the uppper left corner. Click that and select Load Package From Disk. Navigate to the folder where you extracted Verdant and find the file packagemanifest inside. Select it and wait for everything to import.
+Once you have a Unity version downloaded, start a new project (or open an existing one if you have something specific you want to use Verdant for). When the project has loaded, go to Window > Package Manager. There's a plus symbol in the uppper left corner. Click that and select Load Package From Disk. Navigate to the folder where you extracted Verdant and find the file packagemanifest inside. Select it and wait for everything to import.
 
-Finally open Windows > Console. If there are no errors in red you are ready to start using Verdant!
+![Image showing the top left plus button used to add a package from disk](Media/AddPackageButton.PNG "Adding a package")
+
+Finally open Window > General > Console. If there are no errors in red you are ready to start using Verdant!
 
 
 ## First steps
