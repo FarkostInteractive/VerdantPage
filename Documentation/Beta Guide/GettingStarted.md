@@ -22,7 +22,7 @@ Once you have a Unity version downloaded, start a new project (or open an existi
 
 ![Image showing the top left plus button used to add a package from disk](Media/AddPackageButton.PNG "Adding a package")
 
-Finally open Window > General > Console. If there are no errors in red you are ready to start using Verdant!
+Now open Window > General > Console. If there are no errors in red you are ready to start using Verdant!
 
 ### First steps
 We'll start with a very simple scene just to make sure everything's working. Create a cube and scale it up in X and Z. This will be our ground. 
