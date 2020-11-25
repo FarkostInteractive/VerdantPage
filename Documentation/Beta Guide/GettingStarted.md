@@ -5,9 +5,9 @@ nav_order: "0"
 parent: "Beta Guide"
 ---
 
-# Welcome!
-I'm so happy you're interested in testing Verdant! This page will take you through the process of getting everything set up.
+### Welcome!
 {: .no_toc }
+I'm so happy you're interested in testing Verdant! This page will take you through the process of getting everything set up.
 
 ## Table of contents
 {: .no_toc .text-delta }
