@@ -20,32 +20,44 @@ Finally open Window > General > Console. If there are no errors in red you are r
 ### First steps
 We'll start with a very simple scene just to make sure everything's working. Create a cube and scale it up in X and Z. This will be our ground. 
 
-![Image showing a box that has been scaled up to (30,1,30) to act as a floor](Media/FlooringBox.PNG "Ground box")
+![A box that has been scaled up to (30,1,30) to act as a floor](Media/FlooringBox.PNG "Ground box")
 
 Then, add the component VerdantCamera on the camera. You can leave all the settings on default.
 
-![Image showing the user interacting with component interface to add a VerdantCamera](Media/AddingCamera.PNG "VerdantCamera add")
+![The user interacting with component interface to add a VerdantCamera](Media/AddingCamera.PNG "VerdantCamera add")
 
 On the ground object, add the component VerdantObject. In the Types list, set the length to 1 and select the type VerdantNormalUpGrass. This will make it so the specified Verdant type appears all over the object.
 
-![Image showing a VerdantObject configured with the simple VerdantNormalUpGrass type](Media/AddVerdantObject.PNG "VerdantObject parameters")
+![A VerdantObject configured with the simple VerdantNormalUpGrass type](Media/AddVerdantObject.PNG "VerdantObject parameters")
 
 Finally, go to Verdant > Render in Editor. Your cube should be covered in grass.
 
-![Image showing the previously added box covered in short green grass](Media/GroundWithGrass.PNG "Ground with vegetation")
+![The previously added box covered in short green grass](Media/GroundWithGrass.PNG "Ground with vegetation")
 
 ## The Verdant Workflow
 You might have noticed that Verdant has a slightly different workflow from most vegetation systems. The primary interaction in Verdant is defining zones, rather than painting instances onto surfaces. You add VerdantObject to any objects you want vegetation on. The coverage can then be controlled by either using another Verdant Object as a mask or by applying a scale texture. You can also paint the scale and type texture directly. 
 
-The setting "Mode" on VerdantObject decides whether an object should be a surface onto which vegetation should be placed or if it should be treated as a mask. In the image above, the box has a VerdantTerrain but no types. The triangle above is a mask VerdantObject which has VerdantNormalUpGrass set as type. This makes it so a triangular zone of grass gets projected down onto the terrain. Any scale texture on the mask object also gets factured in.
+![The ground mesh has a triangular area filled with grass on it. Hovering over it is a transparent mesh in the same triangular shape](Media/VerdantObjectMask.PNG "Ground with vegetation masked by a triangular mesh")
+
+The setting "Mode" on VerdantObject decides whether an object should be a surface onto which vegetation should be placed or if it should be treated as a mask. In the image above, the box has a VerdantObject but no types. The triangle above is a mask VerdantObject which has VerdantNormalUpGrass set as type. This makes it so a triangular zone of grass gets projected down onto the terrain. Any scale texture on the mask object also gets factured in.
+
+![The ground mesh has a rectangular zone of grass with a perlin noise pattern. Hovering over it is a plane with a greyscale texture in a matching pattern](Media/VerdantMapTextureMask.PNG "Ground with vegetation masked by a map shape and a texture mask")
 
 If you just want to apply a scale texture to your scene the best way is to use the Map mode on the VerdantShapeDescriptor. This will draw the object as an XZ aligned plane with the scale texture mapped onto it. 
 
-## Wind
+Verdant can also be used on terrains with the special VerdantTerrain component. You can mostly use it exactly like you would a normal VerdantObject, but it also plugs into the texture layers of the terrain. You'll have to set the index of each type to the layer onto which they should be placed.
 
+## Wind
+To add wind to your scene, create a new GameObject and add the component VerdantWindVolume to it. While your camera is inside the volume it will apply its parameters to all the visible vegetation in the scene.
+
+As you enter the volume it will interpolate all the settings for the duration set in Transition Time. Wind is measured on the Beaufort Scale, which is a twelve point scale that comes with helpful labels describing each step in familiar terms. You control the general strength using the Beaufort slider. Gustiness determines how much the wind should use the wind noise, which will create clear shapes like gusts traveling along the ground. You can set the wind noise to any repeating greyscale texture you like, though Verdant provides the texture ChoppyWindNoise for you. The size of the volume is controlled by its Extents.
+
+Wind volumes can be nestled and overlap. The wind will be applied as you move into each volume and restored as you move out. If the camera starts inside a nestled volume it will use it if it's fully contained by the higher volumes. If they only partially overlap the result is undefined, so try to spawn the camera in a non-overlapping area.
 
 ## Adding New Types
-To add a Verdant Type of your own, go to the project view and click the plus icon in the top left corner. Go to the category Verdant at the very top and select Verdant Type. This will create a new Verdant Type Asset.
+To add a Verdant Type of your own, go to the Project Window and click the plus icon in the top left corner. Go to the category Verdant at the very top and select Verdant Type. This will create a new Verdant Type Asset.
+
+![The inspector for VerdantNormalUpGrass configured in a multitude of ways](Media/VerdantTypeInspector.PNG "The inspector for a Verdant Type")
 
 ### Type Parameters
 There are a ton of things you can change on a Verdant Type. The inspector is split from top to bottom into five parts:
