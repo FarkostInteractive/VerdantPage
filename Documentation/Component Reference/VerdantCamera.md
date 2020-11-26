@@ -15,7 +15,7 @@ When rendering Verdant in the scene view the scene camera will base its settings
 
 ## Parameters
 
-| Name           | Description               |
+|                |                           |
 |:---------------|:--------------------------|
 | Render Distance | Lorem ipsum dolor sit amet |
 | Coverage Modifier | Lorem ipsum dolor sit amet |
@@ -23,13 +23,6 @@ When rendering Verdant in the scene view the scene camera will base its settings
 | Smoothing Level | Lorem ipsum dolor sit amet |
 | Override Layer | Lorem ipsum dolor sit amet |
 | Layer | Lorem ipsum dolor sit amet |
-
-| head1        | head two          |
-|:-------------|:------------------|
-| ok           | good swedish fishsfsdfsdf | 
-| out of stock | good and plenty   |
-| ok           | good `oreos`      |
-| ok           | good `zoute` drop |
 
 ### Precision Settings
 #### Coarse HeightField Resolution
