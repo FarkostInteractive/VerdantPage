@@ -15,7 +15,6 @@ When rendering Verdant in the scene view the scene camera will base its settings
 
 ## Parameters
 
-
 |:---------------|:--------------------------|
 | <Render Distance> | Lorem ipsum dolor sit amet |
 | <Coverage Modifier> | Lorem ipsum dolor sit amet |
@@ -25,6 +24,7 @@ When rendering Verdant in the scene view the scene camera will base its settings
 | <Layer> | Lorem ipsum dolor sit amet |
 
 ### Precision Settings
+
 |:---------------|:--------------------------|
 | <Coarse HeightField Resolution> | Lorem ipsum dolor sit amet |
 | <Detail HeightField Resolution> | Lorem ipsum dolor sit amet |
@@ -32,21 +32,25 @@ When rendering Verdant in the scene view the scene camera will base its settings
 | <Culling Tile Resolution> | Lorem ipsum dolor sit amet |
 
 ### Twin Objects
+
 |:---------------|:--------------------------|
 | <Twin Replacement Threshold> | Lorem ipsum dolor sit amet |
 | <Twin Position Retrieval Range> | Lorem ipsum dolor sit amet |
 
 ### Cloud Shadows
+
 |:---------------|:--------------------------|
 | <Cloud Shadows> | Lorem ipsum dolor sit amet |
 | <Cloud Shadow Size> | Lorem ipsum dolor sit amet |
 | <Cloud Shadow Strength> | Lorem ipsum dolor sit amet |
 
 ### Global Shader Data
+
 |:---------------|:--------------------------|
 | <Apply Cloud Shadows Globally> | Lorem ipsum dolor sit amet |
 | <Global Wind Mode> | Lorem ipsum dolor sit amet |
 
 ## Public Methods
+
 |:---------------|:--------------------------|
 | <SetParameters()> | Lorem ipsum dolor sit amet |
