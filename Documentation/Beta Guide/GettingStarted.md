@@ -24,7 +24,7 @@ Once you have a Unity version downloaded, start a new project (or open an existi
 
 Now open Window > General > Console. If there are no errors in red you are ready to start using Verdant!
 
-### First steps
+## First steps
 We'll start with a very simple scene just to make sure everything's working. Create a cube and scale it up in X and Z. This will be our ground. 
 
 ![A box that has been scaled up to (30,1,30) to act as a floor](Media/FlooringBox.PNG "Ground box")
@@ -112,6 +112,9 @@ If you want to learn more about affectors and fields it might be interesting to 
 Select the camera you want to inspect on the left. The table at the top shows real time information for how many instances are being rendered at any given moment. The numbers will change as you move the camera. 
 
 Below the table are a series of boxes that show illustrations of the data in each field. You can also visualize them directly in the scene by checking the box Draw In Scene. Hide Vegetation in the lower left corner can also be useful to mark if your vegetation is thick enough to obscure the visualization. 
+
+## Handling Problems
+If anything unexpected happens there are a few things you can try. First, go to the menu bar and select Verdant > Reload. All the editor cameras will reset, which can often solve unexpected visual glitches. Restarting Unity is also always good. Verdant is very quick to load, so don't hesitate. If nothing else helps, have a look at the console. If there is an error you might have discovered a bug! Try to reproduce it and take note of how it happened. The more inforamtion you can gather the better.
 
 ## Questions and Answers
 Q. Can I use this with any of the new Unity rendering pipelines?
