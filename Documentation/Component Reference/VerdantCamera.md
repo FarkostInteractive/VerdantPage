@@ -15,7 +15,7 @@ When rendering Verdant in the scene view the scene camera will base its settings
 
 ## Parameters
 
-|                |                           |
+
 |:---------------|:--------------------------|
 | Render Distance | Lorem ipsum dolor sit amet |
 | Coverage Modifier | Lorem ipsum dolor sit amet |
