@@ -14,12 +14,12 @@ The camera generates a simplified representation of the world and uses it to pla
 When rendering Verdant in the scene view the scene camera will base its settings of one of the VerdantCameras in the scene. If there is a main camera it will always use that one, otherwise the first found will be used. 
 
 ## Parameters
-#### Render Distance
-#### Coverage Modifier
-#### Placement Mode
-#### Smoothing Level
-#### Override Layer
-#### Layer
+| Render Distance | Lorem ipsum dolor sit amet |
+| Coverage Modifier | Lorem ipsum dolor sit amet |
+| Placement Mode | Lorem ipsum dolor sit amet |
+| Smoothing Level | Lorem ipsum dolor sit amet |
+| Override Layer | Lorem ipsum dolor sit amet |
+| Layer | Lorem ipsum dolor sit amet |
 
 ### Precision Settings
 #### Coarse HeightField Resolution
