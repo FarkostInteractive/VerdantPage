@@ -23,12 +23,12 @@ When rendering Verdant in the scene view the scene camera will base its settings
 | Override Layer | Lorem ipsum dolor sit amet |
 | Layer | Lorem ipsum dolor sit amet |
 
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
+| head1        | head two          |
+|:-------------|:------------------|
+| ok           | good swedish fish | 
+| out of stock | good and plenty   |
+| ok           | good `oreos`      |
+| ok           | good `zoute` drop |
 
 ### Precision Settings
 #### Coarse HeightField Resolution
