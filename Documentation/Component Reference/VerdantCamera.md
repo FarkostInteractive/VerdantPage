@@ -17,31 +17,36 @@ When rendering Verdant in the scene view the scene camera will base its settings
 
 
 |:---------------|:--------------------------|
-| Render Distance | Lorem ipsum dolor sit amet |
-| Coverage Modifier | Lorem ipsum dolor sit amet |
-| Placement Mode | Lorem ipsum dolor sit amet |
-| Smoothing Level | Lorem ipsum dolor sit amet |
-| Override Layer | Lorem ipsum dolor sit amet |
-| Layer | Lorem ipsum dolor sit amet |
+| <Render Distance> | Lorem ipsum dolor sit amet |
+| <Coverage Modifier> | Lorem ipsum dolor sit amet |
+| <Placement Mode> | Lorem ipsum dolor sit amet |
+| <Smoothing Level> | Lorem ipsum dolor sit amet |
+| <Override Layer> | Lorem ipsum dolor sit amet |
+| <Layer> | Lorem ipsum dolor sit amet |
 
 ### Precision Settings
-#### Coarse HeightField Resolution
-#### Detail HeightField Resolution
-#### Detail Field Ratio
-#### Culling Tile Resolution
+|:---------------|:--------------------------|
+| <Coarse HeightField Resolution> | Lorem ipsum dolor sit amet |
+| <Detail HeightField Resolution> | Lorem ipsum dolor sit amet |
+| <Detail Field Ratio> | Lorem ipsum dolor sit amet |
+| <Culling Tile Resolution> | Lorem ipsum dolor sit amet |
 
 ### Twin Objects
-#### Twin Replacement Threshold
-#### Twin Position Retrieval Range
+|:---------------|:--------------------------|
+| <Twin Replacement Threshold> | Lorem ipsum dolor sit amet |
+| <Twin Position Retrieval Range> | Lorem ipsum dolor sit amet |
 
 ### Cloud Shadows
-#### Cloud Shadows
-#### Cloud Shadow Size
-#### Cloud Shadow Strength
+|:---------------|:--------------------------|
+| <Cloud Shadows> | Lorem ipsum dolor sit amet |
+| <Cloud Shadow Size> | Lorem ipsum dolor sit amet |
+| <Cloud Shadow Strength> | Lorem ipsum dolor sit amet |
 
 ### Global Shader Data
-#### Apply Cloud Shadows Globally
-#### Global Wind Mode
+|:---------------|:--------------------------|
+| <Apply Cloud Shadows Globally> | Lorem ipsum dolor sit amet |
+| <Global Wind Mode> | Lorem ipsum dolor sit amet |
 
 ## Public Methods
-#### SetParameters()
+|:---------------|:--------------------------|
+| <SetParameters()> | Lorem ipsum dolor sit amet |
