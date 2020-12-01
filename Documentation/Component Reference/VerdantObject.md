@@ -5,7 +5,6 @@ parent: "Component Reference"
 nav_order: "1"
 ---
 
-
 # VerdantObject
 Determines where in the scene vegetation should be placed. This component is used with Mesh Renderer and/or Verdant Shape Descriptor. If you want to use Verdant with terrains you have to use the similar component VerdantTerrain instead. 
 

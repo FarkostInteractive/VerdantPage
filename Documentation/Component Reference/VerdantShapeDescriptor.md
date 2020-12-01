@@ -5,5 +5,4 @@ parent: "Component Reference"
 nav_order: "3"
 ---
 
-
 # VerdantShapeDescriptor

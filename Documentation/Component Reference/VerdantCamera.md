@@ -2,9 +2,8 @@
 layout: default
 title: "VerdantCamera"
 parent: "Component Reference"
-nav_order: "0"
+nav_order: "1"
 ---
-
 
 # VerdantCamera
 
