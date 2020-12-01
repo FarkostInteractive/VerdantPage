@@ -48,10 +48,15 @@ You can find the tools for texture mask painting either in the VerdantObject ins
 
 ## Public Methods
 
-This is a Ruby code fragment `x = Class.new`{:.language-ruby}
+~~~
+def what?
+  42
+end
+~~~
+{: .language-ruby}
 
 |:---------------|:--------------------------|
-| `void AddType(VerdantInstantiable type)`{:.c#} | Adds a type into the type list and refreshes the *scene*{: style="color: red"}. |
+| ~~~ void AddType(VerdantInstantiable type) ~~~{: .language-ruby} | Adds a type into the type list and refreshes the *scene*{: style="color: red"}. |
 | `void RemoveType(VerdantInstantiable type)` | Removes a type from the type list and refreshes the scene. |
 | `void RemoveTypeAt(int index)` | Removes the type at the specified index in the type list and refreshes the scene. |
 | `void ClearTypes(int index)` | Removes all types from the object and refreshes the scene. |
