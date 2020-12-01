@@ -48,8 +48,12 @@ You can find the tools for texture mask painting either in the VerdantObject ins
 
 ## Public Methods
 
+```c#
+void AddType(VerdantInstantiable type)
+```
+
 |:---------------|:--------------------------|
-| `void AddType(VerdantInstantiable type)`{:.c#}| Adds a type into the type list and refreshes the scene. |
+| `void AddType(VerdantInstantiable type)`{:.c#} | Adds a type into the type list and refreshes the scene. |
 | `void RemoveType(VerdantInstantiable type)` | Removes a type from the type list and refreshes the scene. |
 | `void RemoveTypeAt(int index)` | Removes the type at the specified index in the type list and refreshes the scene. |
 | `void ClearTypes(int index)` | Removes all types from the object and refreshes the scene. |
