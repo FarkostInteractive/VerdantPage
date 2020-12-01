@@ -6,21 +6,19 @@ parent: "Component Reference"
 
 
 # VerdantObject
-Places vegetation in the world.
+Determines where in the scene vegetation should be placed. This component is used with Mesh Renderer and/or Verdant Shape Descriptor. If you want to use Verdant with terrains you have to use the similar component VerdantTerrain instead. 
 
 VerdantObject has two modes: Surface and Mask. 
 Surface objects place vegetation onto themselves. Generally you will add a VerdantObject to a GameObject that has a Mesh Renderer to make Verdant aware of it.  
 
 Mask objects on the other hand influence the vegetation on Surface objects below them. A mask can multiply the scale of the surface below, add more types, or do a combination of both.
 
-For both modes you will also need to specify which types you want the VerdantObject to have. 
+For both modes you will also need to specify which types you want the VerdantObject to have. Both VerdantTypes and VerdantGroups are allowed. 
 
-Verdant Object requires a Verdant Shape Descriptor component. If you just want 
+You can control where vegetation grows in more detail by using a mask texture. You can either use a greyscale texture or paint a mask directly by using the built in paint tools. 
 
-You can control where vegetation grows in more detail by using a mask texture. You can either use a greyscale texture or paint this mask using the built in paint tools. 
-
-If you want to use Verdant with terrains you have to use the similar component VerdantTerrain instead. 
-
+## Painting a Texture Mask
+You can find the tools for texture mask painting either in the VerdantObject inspector or in the Scene View Tools shelf (can be enabled or disabled with the tool icon in the upper right corner). When you first use them you will be told to initialize the texture mask. Doing so will create a new data structure that is serialized along with the component. 
 
 ## Parameters
 
@@ -44,10 +42,12 @@ If you want to use Verdant with terrains you have to use the similar component V
 | `Max Scale` | The highest value of the Scale Mask. Interacts with the overall VerdantObject Scale by multiplication. For example, if Min Scale and Max Scale are 0.5 and 1.0 while Scale is 6.0, the actual scale will range between 3.0 and 6.0 |
 
 #### Paint Map
+
 |:---------------|:--------------------------|
 | `Resolution` | Changes the resolution of the painted texture mask. The contents of your current mask texture will be up or downscaled as needed. |
 
 ## Public Methods
+
 |:---------------|:--------------------------|
 | `void AddType(VerdantInstantiable type)` | Adds a type into the type list and refreshes the scene. |
 | `void RemoveType(VerdantInstantiable type)` | Removes a type from the type list and refreshes the scene. |
