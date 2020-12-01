@@ -2,6 +2,7 @@
 layout: default
 title: "VerdantObject"
 parent: "Component Reference"
+nav_order: "1"
 ---
 
 
