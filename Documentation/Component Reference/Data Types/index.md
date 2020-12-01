@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Fields"
+title: "Data Types"
 parent: "Component Reference"
-nav_order: "2"
+nav_order: "0"
 has_children: true
 ---
