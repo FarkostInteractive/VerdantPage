@@ -51,15 +51,13 @@ You can find the tools for texture mask painting either in the VerdantObject ins
 <table>
 <tr>
 <td>
-   <pre lang="csharp">
-   void AddType(VerdantInstantiable type)
-   </pre>
+   <pre lang="csharp"> void AddType(VerdantInstantiable type) </pre>
 </td> <td> Adds a type into the type list and refreshes the scene.</td>
 </tr>
 <tr>
 <td>
    <pre lang="csharp">
-   void RemoveType(VerdantInstantiable type)
+   void RemoveType(VerdantInstantiable type) 
    </pre>
 </td> <td> Removes a type from the type list and refreshes the scene. </td>
 </tr>
