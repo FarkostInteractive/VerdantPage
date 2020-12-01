@@ -1,3 +1,4 @@
+{::options syntax_highlighter_opts: {span: {disable: true}} /}
 ---
 layout: default
 title: "VerdantObject"
