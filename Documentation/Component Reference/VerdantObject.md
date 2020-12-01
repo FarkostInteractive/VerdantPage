@@ -18,7 +18,7 @@ For both modes you will also need to specify which types you want the VerdantObj
 You can control where vegetation grows in more detail by using a mask texture. You can either use a greyscale texture or paint a mask directly by using the built in paint tools. 
 
 ## Painting a Texture Mask
-You can find the tools for texture mask painting either in the VerdantObject inspector or in the Scene View Tools shelf (can be enabled or disabled with the tool icon in the upper right corner). When you first use them you will be told to initialize the texture mask. Doing so will create a new data structure that is serialized along with the component. 
+You can find the tools for texture mask painting either in the VerdantObject inspector or in the Scene View Tools shelf (can be enabled or disabled with the tool icon in the upper right corner). When you first use them you will be told to initialize the texture mask. Doing so will create a new data structure that is serialized along with the component. See the page Painting Texture Masks for details on how to use the paint tools.
 
 ## Parameters
 
