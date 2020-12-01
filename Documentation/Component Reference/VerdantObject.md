@@ -48,23 +48,10 @@ You can find the tools for texture mask painting either in the VerdantObject ins
 
 ## Public Methods
 
-<table>
-<tr>
-<td>
-   <pre lang="csharp"> void AddType(VerdantInstantiable type) </pre>
-</td> <td> Adds a type into the type list and refreshes the scene.</td>
-</tr>
-<tr>
-<td>
-   <pre lang="csharp">
-   void RemoveType(VerdantInstantiable type) 
-   </pre>
-</td> <td> Removes a type from the type list and refreshes the scene. </td>
-</tr>
-</table>
+`void AddType(VerdantInstantiable type)`{: .csharp}
 
 |:---------------|:--------------------------|
-| ``void AddType(VerdantInstantiable type)``{: .csharp} | Adds a type into the type list and refreshes the *scene*{: style="color: red"}. |
+| `void AddType(VerdantInstantiable type)`{: .csharp} | Adds a type into the type list and refreshes the scene. |
 | `void RemoveType(VerdantInstantiable type)` | Removes a type from the type list and refreshes the scene. |
 | `void RemoveTypeAt(int index)` | Removes the type at the specified index in the type list and refreshes the scene. |
 | `void ClearTypes(int index)` | Removes all types from the object and refreshes the scene. |
