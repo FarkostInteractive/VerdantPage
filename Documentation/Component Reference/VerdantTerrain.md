@@ -22,7 +22,7 @@ Because Verdant can't know when the terrain has changed you need to either updat
 ## Public Methods
 
 |:---------------|:--------------------------|
-| `void AddType(VerdantInstantiable type)`{: .csharp} | Adds a type into the type list and refreshes the scene. |
+| `void AddType(VerdantInstantiable type)` | Adds a type into the type list and refreshes the scene. |
 | `void RemoveType(VerdantInstantiable type)` | Removes a type from the type list and refreshes the scene. |
 | `void RemoveTypeAt(int index)` | Removes the type at the specified index in the type list and refreshes the scene. |
 | `void ClearTypes(int index)` | Removes all types from the terrain and refreshes the scene. |

@@ -5,3 +5,7 @@ parent: "Component Reference"
 nav_order: "4"
 has_children: true
 ---
+
+# Affectors
+
+Affectors in Verdant are components that 
