@@ -8,6 +8,8 @@ grand_parent: "Component Reference"
 # VerdantColorAffector
 Used to interactively color vegetation.
 
+For more information about affectors in general, see the [Affectors page](index.html). 
+
 ## Parameters
 
 |:---------------|:--------------------------|

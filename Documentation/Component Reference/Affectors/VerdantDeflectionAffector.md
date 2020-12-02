@@ -8,6 +8,8 @@ grand_parent: "Component Reference"
 # VerdantDeflectionAffector
 Used to bend vegetation around objects interactively. 
 
+For more information about affectors in general, see the [Affectors page](index.html). 
+
 ## Parameters
 
 |:---------------|:--------------------------|
@@ -18,7 +20,7 @@ Used to bend vegetation around objects interactively.
 
 |:---------------|:--------------------------|
 | `Use Texture` | Should this affector use a texture to determine the direction vegetation should deflect in? |
-| `Texture Type` | Decides how to interpret the data in the texture. Color Texture will use the R and G channels of a texture as the direction. Normal map will unpack the normals and use them. Straight Write will write the texture exactly as it is into the field. This can be used for special effects. Check the VerdantDeflectionField documentation for details on how to do this. |
+| `Texture Type` | Decides how to interpret the data in the texture. Color Texture will use the R and G channels of a texture as the direction. Normal map will unpack the normals and use them. Straight Write will write the texture exactly as it is into the field. This can be used for special effects. Check the [VerdantDeflectionField documentation](../Fields/VerdantDeflectionField.html) for details on how to do this. |
 | `Texture` | The texture to use for deflection. It will interpreted using the Texture Type parameter. |
 | `UV Mode` | Determines the space of the texture UV coordinates. It can be set to Mesh UV, Local XZ or World XZ. Mesh UV is the regular UVs of your mesh. Local XZ is the object space XZ axises. World XZ will make the texture repeat along the XZ axises in world space. |
 | `UV Translation` | Moves the deflection texture in X and Y. |
