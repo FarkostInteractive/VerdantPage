@@ -41,7 +41,3 @@ There’s no reason you couldn’t! If you don’t need translucency Verdant wil
 * The normal .a channel indicates if something is Verdant vegetation
 * If a pixel belongs to Verdant, the occlusion value (diffuse .a) controls translucency
 **********
-
-## What about HDRP and URP?
-
-Custom pipelines are a feature I really want to support at some point. It was floating around on my task list for almost a year, but during development I’ve frankly found them too difficult to work with. Verdant being a procedural system means it relies a lot on small utility shaders to perform background work. These can’t be made in the shader graph and thus would require separate maintenance and testing across two pipelines in addition to the default renderer. When you take into account how these systems are still changing with every new Unity version the task becomes impossible for a single person. If we ever see something like surface shaders for the pipelines or if the API stabilizes enough I’m very open to reconsidering, but right now it’s just not feasible. 
