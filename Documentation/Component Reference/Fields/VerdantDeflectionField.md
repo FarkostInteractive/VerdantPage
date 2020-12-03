@@ -9,15 +9,15 @@ grand_parent: "Component Reference"
 
 A component that makes it possible to interact with vegetation around the camera by pushing or pressing it. 
 
-Objects that want to interact with this field need to have [VerdantDeflectionAffector](../DataTypes/VerdantType.html) attached.
+Objects that want to interact with this field need to have [VerdantDeflectionAffector](../Affectors/VerdantDeflectionAffector.html) attached.
 
-For more information about fields in general, see the [Affectors page](index.html). 
+For more information about fields in general, see the [Fields page](index.html). 
 
 ## Parameters
-
+ 
 ### Field Parameters
 
-Changing any of the field parameters requires Verdant to replace the underlying render textures of the field. This can be very expensive and will almost certainly cause a frame rate hitch, so it should be avoided at runtime.
+Changing any of the field parameters requires Verdant to replace the underlying render textures of the field. This can be very expensive and will almost certainly cause a frame hitch, so it should be avoided at runtime.
 
 |:---------------|:--------------------------|
 | `Resolution` | The resolution of the underlying field render textures, which along with range determines the level of detail per square meter the field can handle. The [Debug Panel](../../UserGuide/DebugPanel.html) can be used to help visualize this. |
@@ -34,7 +34,7 @@ Verdant simulates vegetation as a spring using [Hooke's Law](https://en.wikipedi
 | `Springiness` | Controls the strength of the "spring", or how strongly vegetation will rebound when it is released. Higher springiness will make vegetation harder to push down and it will oscillate more quickly when released. |
 | `Timescale` | A simple multiplier for simulation time. If you're happy with the motion you have but want it slightly faster, this is the parameter to change. |
 
-Furthermore, [VerdantType]("../DataTypes/VerdantType.html") has a parameter called Deflection Angle that controls how many degrees deflection will bend that particular type. While all vegetation shares the same normalized simulation, it's possible to have one plant only bend ten degrees and another a full 90. This can have a huge impact on how the motion looks, so it's worth experimenting with that and not just the simulation parameters.
+Furthermore, [VerdantType](../Data Types/VerdantType.html) has a parameter called Deflection Angle that controls how many degrees deflection will bend that particular type. While all vegetation shares the same normalized simulation, it's possible to have one plant only bend ten degrees and another a full 90. This can have a huge impact on how the motion looks, so it's worth experimenting with that and not just the simulation parameters.
 
 
 ## Public Methods
