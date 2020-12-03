@@ -23,7 +23,7 @@ Changing any of the field parameters requires Verdant to replace the underlying 
 |:---------------|:--------------------------|
 | `Resolution` | The resolution of the underlying field render textures, which along with range determines the level of detail per square meter the field can handle. The [Debug Panel](../../UserGuide/DebugPanel.html) can be used to help visualize this. |
 | `Range` | Can be thought of as the render distance of fields. It determines how far the field should stretch around the camera. Outside of this range affectors will not be able to influence it. |
-| `Set Shader Values Globally` | When this is set, all the shader values that Verdant uses will be made available as global shader variables. You need to enable it if you are using a Verdant shader on a regular material or if you want to read from this field in a custom shader. For details, check the page [Writing Custom Shaders]("../../UserGuide/WritingCustomShaders.html") |
+| `Set Shader Values Globally` | When this is set, all the shader values used by Verdant will be made available as global shader variables. You need to enable it if you are using a Verdant shader on a regular material or if you want to read from this field in a custom shader. For details, check the page [Writing Custom Shaders]("../../UserGuide/WritingCustomShaders.html") |
 
 ### Simulation Parameters
 

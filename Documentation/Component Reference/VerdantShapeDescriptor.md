@@ -20,11 +20,12 @@ nav_order: "3"
 | `Submesh Index` | The submesh to use. |
 
 ## Public Properties
+
 |:---------------|:--------------------------|
 | `ChosenMesh` | Returns the mesh that is the shape of this descriptor and has been selected using Shape, Other Mesh and Primitive. |
 
 ## Public Methods
 
 |:---------------|:--------------------------|
-| `void SetDirty()` | Marks this descriptor and the component attached to it as dirty so they will be redrawn next frame. Must be called for changed parameters to take effect. |
+| `void SetDirty()` | Marks this descriptor and the components attached to it as dirty so they will be redrawn next frame. Must be called for changed parameters to take effect. |
 
