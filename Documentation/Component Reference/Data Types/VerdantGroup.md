@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "VerdantGroup"
-parent: "Fields"
+parent: "Data Types"
 grand_parent: "Component Reference"
 ---
 
