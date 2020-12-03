@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "VerdantDeflectionAffector"
+nav_order: "0"
 parent: "Affectors"
 grand_parent: "Component Reference"
 ---

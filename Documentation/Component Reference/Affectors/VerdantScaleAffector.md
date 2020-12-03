@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "VerdantScaleAffector"
+nav_order: "2"
 parent: "Affectors"
 grand_parent: "Component Reference"
 ---
