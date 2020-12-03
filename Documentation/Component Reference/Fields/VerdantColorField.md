@@ -3,6 +3,7 @@ layout: default
 title: "VerdantColorField"
 parent: "Fields"
 grand_parent: "Component Reference"
+nav_order: "1"
 ---
 
 # VerdantColorField
