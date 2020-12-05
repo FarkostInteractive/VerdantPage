@@ -55,7 +55,7 @@ When gizmos are enabled and the Precision Parameters foldout is open you will se
 
 ### Global Shader Data
  
-See [Writing Custom Shaders](../User Guide/Writing Custom Shaders.html) for more information about using Verdant data in your own shaders.
+See [Writing Custom Shaders](../UserGuide/WritingCustomShaders.html) for more information about using Verdant data in your own shaders.
 
 |:---------------|:--------------------------|
 | `Apply Cloud Shadows Globally` | Sets the cloud shader parameters to global shader variables. Should be set if you're using a Verdant shader on a regular material or if you want to use Verdant data in a shader of your own. |
