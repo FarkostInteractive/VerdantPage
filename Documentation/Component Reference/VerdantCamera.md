@@ -50,8 +50,8 @@ When gizmos are enabled and the Precision Parameters foldout is open you will se
 |:---------------|:--------------------------|
 | `Cloud Shadows` | A repeating greyscale texture that is projected onto vegetation as if it were shadows cast by clouds. If there is wind in the scene it will scroll in the wind direction at a speed relative to the wind speed. |
 | `Cloud Shadow Size` | Scales the shadow texture up or down. |
-| `Cloud Shadow Speed` | A multiplier on the wind speed that controls how quickly the cloud texture scrolls. |
-| `Cloud Shadow Strength` | Controls strongly the cloud shadows will be applied. |
+| `Cloud Shadow Speed` | A multiplier on the current wind speed set by a [VerdantWindVolume](VerdantWindVolume.html). Together they control how quickly the cloud texture scrolls. |
+| `Cloud Shadow Strength` | Controls how strongly the cloud shadows will be applied. |
 
 ### Global Shader Data
  
