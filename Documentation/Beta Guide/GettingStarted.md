@@ -22,6 +22,13 @@ Once you have a Unity version downloaded, start a new project (or open an existi
 
 ![Image showing the top left plus button used to add a package from disk](Media/AddPackageButton.PNG "Adding a package")
 
+## Rendering
+If you’re using deferred rendering, Verdant includes a special light model which adds translucency and opacity for vegetation. To set it up, go to Edit > Project Settings, then select Graphics and change the ’Deferred’ dropdown to ’Custom Shader’. Then select the shader Verdant-DeferredShading. While there are cases where the the default model will look fine, many important Verdant features will be unavailable and some vegetation will be lit strangely unless you use the Verdant Shader.
+
+![Image showing the Unity graphics settings with the Deferred popup open](Media/UnityGraphicsSettings.PNG "Setting the deferred shader")
+
+If you are not using deferred rendering, you should! Verdant performs best in deferred. You can set it up on the camera with the Rendering Path parameter.
+
 Now open Window > General > Console. If there are no errors in red you are ready to start using Verdant!
 
 ## First steps
