@@ -16,10 +16,18 @@ Represents a single type of Verdant vegetation that can be placed into the world
 
 ### Falloff
 
+The falloff diagram controls how the density changes as the distance from the camera increases. Falloff happens in ten "steps" each of which is the length of 1/10th of the Render Distance. It is read from left to right where left is closest to the camera and right is furthest. It's almost always possible to reduce the density dramatically on the second or third step if the camera is close to the ground.
+
 |:---------------|:--------------------------|
-| `Mode` | Lets you select one of three preset falloff modes or Custom, which can be adjusted manually. Which mode to use depends on how close the camera is to the ground. In most cases Sharp or Exponential will be best. Linear makes the amount of vegetation much higher but can work well for aerial views with a smaller render distance. In general, always try to get the density down as low as possible as quickly as possible.  |
+| `Mode` | Lets you select one of three preset falloff modes or Custom, which can be adjusted manually. Which mode to use depends on how close the camera is to the ground. In most cases Sharp or Exponential will be best. Linear makes the amount of vegetation much higher but can work well for aerial views with a smaller render distance. In general, always try to get the density down as low as possible as close to the camera as possible.  |
 
 ### LOD Parameters
+
+LOD Parameters are parameters that can be different for each LOD. LODs are edited using the segments under the Falloff graph. The plus button lets you add new LODs and right clicking on a segment lets you remove them. The width of the bar represents how many falloff steps the LOD stretches over and can be changed by dragging the handles. You can click on a bar to select it and show its parameters. 
+
+The parameters are optional on each LOD but the first, which is marked by the checkbox to their right. If the checkbox is not set the parameter will inherit the value of the prior LOD. This way you only need to set parameters that change for later LODs, which is often limited to parameters like the mesh, shadow mode and billboarding. Everything else will be brought over so you only need to set them once.
+
+The Mesh, Override Shader and Override Material do not have a parameter checkbox but are still optional. The previous LOD value will be used if they are left unset. 
 
 |:---------------|:--------------------------|
 | `LOD Fade` | Controls how much this LOD zone should fade into the next one. They will overlap slightly and render more instances than strictly necessary, but this enables them to swap them out per instance rather than in entire chunks and makes the transition between LODs much smoother. If it lets you use stricter LODs it can be very worth it to take the slight performance cost of the fade. |
@@ -30,6 +38,8 @@ Represents a single type of Verdant vegetation that can be placed into the world
 | `Allow Alpha` | Allows you to enable and disable alpha testing. This should always be disabled unless you absolutely need alpha as it has a bigger impact on performance than any other type parameter. Disabled parameters will be greyed out. |
 
 #### Surface Properties
+
+LOD properties that influence how the surface of the type looks. Most of these are similar to the parameters on the Unity standard shader. You can think of them as material properties.
 
 |:---------------|:--------------------------|
 | `Color` | A color that gets multiplied into the texture |
@@ -47,9 +57,11 @@ Represents a single type of Verdant vegetation that can be placed into the world
 
 #### Instance Properties
 
+LOD properties that influence the placement, animation and rendering of instances. These are more like parameters to the vertex shader if the Surface Properties are pixel shader paramters.
+
 |:---------------|:--------------------------|
-| `Billboarding` | Controls how strongly this type should rotate around the Y axis to face the camera. |
-| `Scale` | Sets how large this type should be in the world. A basis which can be modified by a number of other scales, like VerdantObject and scale affectors. |
+| `Billboarding` | Controls how strongly this type should rotate around the Y axis to face the camera. 0 disables billboarding and 1 sets it to always face the camera. |
+| `Scale` | Sets how large this type should be in the world. This is a basis which can be modified by a number of other scales, like VerdantObject and scale affectors. |
 | `Deflection Angle` | Controls how far in degrees this type will bend under the influence of a deflection affector.  |
 | `Color Field Influence` | Controls how strongly the color field influences the color of this type. |
 | `Scale Field Influence` | Controls how strongly the scale field influences the scale of this type. |
@@ -62,6 +74,8 @@ Represents a single type of Verdant vegetation that can be placed into the world
 | `Cast Shadows` | Controls if and how the type should cast shadows. Shadow casting is one of the most expensive features in Verdant because it causes all vegetation to be redrawn at least once for each shadowing light. If you can, try to only use it on your first LDO. |
 
 ### Type Parameters
+
+Finally, these parameters are consistent across all LODs and can only be set once per VerdantType.
 
 |:---------------|:--------------------------|
 | `Layer` | The layer of this type. If the [VerdantCamera](../VerdantCamera.html) specifies an override layer that will be used instead. |
