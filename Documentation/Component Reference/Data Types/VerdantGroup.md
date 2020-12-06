@@ -9,7 +9,7 @@ grand_parent: "Component Reference"
 
 Represents a number of VerdantTypes that have been tied together to act as a single type. VerdantGroups are very useful for combining variants of a single plant or bundling different types that always appear together. 
 
-A group can contain any number of VerdantTypes. This lets you get around the limitation of 31 active unique types per VerdantCamera as all the types in a group get treated counted as one type. *Be aware though that each type still adds some overhead*.
+A group can contain any number of VerdantTypes. This lets you get around the limitation of 31 active unique types per VerdantCamera as all the types in a group get treated counted as one type. *Be aware though that each type still adds some rendering overhead*.
 
 ## Parameters
 
