@@ -9,9 +9,9 @@ nav_order: "2"
 
 *******
 
-VerdantTerrain is the equivalent of VerdantObject for Unity Terrains. By adding it you make Verdant aware of the terrain as a surface for vegetation. Just like Surface VerdantObjects it can be masked by VerdantObjects in mask mode.
+VerdantTerrain is the equivalent of [VerdantObject](VerdantObject.html) for Unity Terrains. By adding it you make Verdant aware of the terrain as a surface for vegetation. Just like Surface [VerdantObjects](VerdantObject.html) it can be masked by [VerdantObjects](VerdantObject.html) in mask mode.
 
-Unlike VerdantObject there are no mask textures. Rather, each type added to a VerdantTerrain is associated with one of the painted layers of the Unity Terrain. This means that if you have a grass layer and a rock layer Verdant can automatically fill in the grass layer with one of your types. If you just want to cover the entire terrain or place vegetation independently of its layers you can use a VerdantObject in mask mode instead.
+Unlike [VerdantObject](VerdantObject.html) there are no mask textures. Rather, each type added to a VerdantTerrain is associated with one of the painted layers of the Unity Terrain. This means that if you have a grass layer and a rock layer Verdant can automatically fill in the grass layer with one of your types. If you just want to cover the entire terrain or place vegetation independently of its layers you can use a [VerdantObject](VerdantObject.html) in mask mode instead.
 
 As you're working on yout terrain Verdant won't be able to know that it has changed. You can refresh it manually by pressing the Update Terrain button or automatically by checking Update Automatically. This will make Verdant refresh every single frame and can have a significant performance on complex scenes, though only when the terrain is open in the inspector.
 
