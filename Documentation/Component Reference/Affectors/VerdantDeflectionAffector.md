@@ -7,7 +7,7 @@ grand_parent: "Component Reference"
 ---
 
 # VerdantDeflectionAffector
-Used to bend vegetation around objects interactively. 
+An affector that bends vegetation around objects interactively. Use it to make grass move around the feet of a character, flatten it under a box or add gusts of wind from the exhausts of a spaceship.
 
 Deflection has two different force modes: Push and Press. Push is a force that passes through vegetation, like blowing air or a person brushing against it. While a push can have different strengths and be strong enough to keep vegetation down it can never completely flatten it. That is what Press is for. Press will instantly flatten any vegetation under it and keep it down for a set duration, after which it will release and bounce back.
 

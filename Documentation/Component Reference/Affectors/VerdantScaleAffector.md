@@ -7,9 +7,14 @@ grand_parent: "Component Reference"
 ---
 
 # VerdantScaleAffector
-Used to scale vegetation interactively. 
+An affector that interactively changes the scale of vegetation. Use it to make plants grow when watered or be cut by the arc of a sword.  
+
+By default scale fields do not restore themselves, so affectors are only drawn when moved or when SetDirty() is called. They rescale vegetation permanently as long as they stay within range. If restoration is enabled on the field they are instead drawn every timestep. 
+
+As a result of only being drawn once the Add and Multiply blend modes do not automatically draw over themselves every frame. If that is an effect you want, eg. to make grass grow over time, consider manually calling SetDirty() or enabling restoration.
 
 For more information about affectors in general, see the [Affectors page](index.html). 
+
 
 ## Parameters
 

@@ -7,7 +7,11 @@ grand_parent: "Component Reference"
 ---
 
 # VerdantColorAffector
-Used to interactively color vegetation.
+An affector that interactively colors vegetation. Use it to add burn marks after an explosion, magically rejuvenate plants around the player or make comically large splashes of blood.
+
+By default color fields do not restore themselves, so affectors are only drawn when moved or when SetDirty() is called. They leave permanent marks as long as they stay within range. If restoration is enabled on the field they are instead drawn every timestep. 
+
+As a result of only being drawn once the Add and Multiply blend modes do not automatically draw over themselves every frame. If that is an effect you want consider manually calling SetDirty() or enabling restoration.
 
 For more information about affectors in general, see the [Affectors page](index.html). 
 
