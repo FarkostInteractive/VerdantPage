@@ -8,9 +8,11 @@ nav_order: "1"
 
 # VerdantColorField
 
-The color will be multiplied into the base color and texture specified in the VerdantType. It is white per default if no affector is active and no Base Texture is set.
+Enables interactions that color vegetation by using [VerdantColorAffectors](../Affectors/VerdantColorAffector.html) on GameObjects. The color of the field is multiplied into the base color and texture of each vegetation instance. 
 
-Objects that want to interact with this field need to have [VerdantColorAffector](../Affectors/VerdantColorAffector.html) attached.
+Color fields are white by default, but this can be changed by configuring a base texture. When set, the field will read from the base texture for each pixel and set its value before any affectors get drawn. As the field moves it will continue to seamlessly fill in new areas from the base texture. This can be a very useful way to add some subtle global variance to vegetation color.
+
+By default, color fields do not restore over time. Affectors will leave colored marks permanently as long as they remain in the range of the field. To enable restoration, use the parameters under Restore Over Time. If a base texture is set it will restore towards that, otherwise it will simply return to white.
 
 For more information about fields in general, see the [Fields page](index.html). 
 
@@ -23,12 +25,10 @@ Changing any of the field parameters requires Verdant to replace the underlying 
 |:---------------|:--------------------------|
 | `Resolution` | The resolution of the underlying field render textures, which along with Range determines the level of detail per square meter the field can handle. The [Debug Panel](../../UserGuide/DebugPanel.html) can be used to help visualize this. |
 | `Wrap Mode` | The wrap mode of the underlying render texture, which determines if and how the field should be used for vegetation outside its range. Choose clamp if you primarily use the field for interactions and choose repeat if you primarily use it to add a base texture. Clamp will limit the field to its range whereas repeat will repeat the contents of the field throughout the world.  |
-| `Range` | Can be thought of as the render distance of fields. It determines how far the field should stretch around the camera. Outside of this range affectors will have no effect. |
+| `Range` | The render distance of the field. It determines how far the field should stretch around the camera. Outside of this range affectors will have no effect. |
 | `Set Shader Values Globally` | When this is set, all the shader values used by Verdant will be made available as global shader variables. You need to enable it if you are using a Verdant shader on a regular material or if you want to read from this field in a custom shader. For details, check the page [Writing Custom Shaders]("../../UserGuide/WritingCustomShaders.html") |
 
 ### Base Texture Parameters
-
-Fields can be initialized with a base texture. This texture will be repeated throughout the field and can be an excellent way to add some variance to vegetation. Affectors will paint over it (or, blend, depending on their settings), but when they are cleared the field will always go back to its base texture.
 
 |:---------------|:--------------------------|
 | `Base Texture` | The texture to use. |
@@ -39,8 +39,6 @@ Fields can be initialized with a base texture. This texture will be repeated thr
 
 ### Restore Over Time
 
-By default anything painted to the field will stay there as long as it is in range. These parameters let you set it up to fade back to its initial state. 
- 
 |:---------------|:--------------------------|
 | `Restore Over Time` | If enabled this field will fade back to its base state over time. If a Base Texture is set it will restore to that, otherwise it will fade to white. |
 | `Restoration Rate` | The speed at which the field will be restored. |

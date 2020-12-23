@@ -7,7 +7,7 @@ grand_parent: "Component Reference"
 ---
 
 # VerdantScaleAffector
-An affector that interactively changes the scale of vegetation. Use it to make plants grow when watered or be cut by the arc of a sword.  
+An affector that interactively changes the scale of vegetation. Use it to make plants grow when watered or be cut by the arc of a sword. To use it you will need a [VerdantScaleField](../Fields/VerdantScaleField.html) component on your VerdantCameras.  
 
 By default scale fields do not restore themselves, so affectors are only drawn when moved or when SetDirty() is called. They rescale vegetation permanently as long as they stay within range. If restoration is enabled on the field they are instead drawn every timestep. 
 
