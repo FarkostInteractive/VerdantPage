@@ -9,7 +9,15 @@ nav_order: "2"
 
 *******
 
-Because Verdant can't know when the terrain has changed you need to either update it manually by pressing the Update Terrain button or automatically by checking Update Automatically. This will make Verdant refresh every single frame, which can be quite demanding depending on how complex your scene is.
+VerdantTerrain is the equivalent of VerdantObject for Unity Terrains. By adding it you make Verdant aware of the terrain as a surface for vegetation. Just like Surface VerdantObjects it can be masked by VerdantObjects in mask mode.
+
+Unlike VerdantObject there are no mask textures. Rather, each type added to a VerdantTerrain is associated with one of the painted layers of the Unity Terrain. This means that if you have a grass layer and a rock layer Verdant can automatically fill in the grass layer with one of your types. If you just want to cover the entire terrain or place vegetation independently of its layers you can use a VerdantObject in mask mode instead.
+
+As you're working on yout terrain Verdant won't be able to know that it has changed. You can refresh it manually by pressing the Update Terrain button or automatically by checking Update Automatically. This will make Verdant refresh every single frame and can have a significant performance on complex scenes, though only when the terrain is open in the inspector.
+
+When Verdant places instances onto the terrain it does so using its underlying heightmap. This can differ slightly from the mesh used to actually draw the terrain. If your vegetation is growing underground this is usually the reason, and you can solve it by increasing the resolution of your terrain.
+
+If you are switching to Vulkan in the editor Unity has a bug that makes the terrain heightmap briefly unreadable. The result is that Verdant won't be able to place anything onto it. To fix it, simply make a small edit to the terrain and undo it. Your vegetation should return instantly and the bug won't bother you until you switch again.
 
 ## Parameters
 
