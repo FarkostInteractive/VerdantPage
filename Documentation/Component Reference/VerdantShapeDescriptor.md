@@ -7,7 +7,17 @@ nav_order: "3"
 
 # VerdantShapeDescriptor
 
+Many components in Verdant have a presence in the game world of some sort. VerdantShapeDescriptor is the common component they use to define what shape they should have.
 
+There are four shape modes to choose between: 
+* This Mesh: Looks for a MeshFilter on this GameObject and uses its mesh.
+* Other Mesh: Lets you supply a mesh of your own. Useful for objects that don't need a MeshFilter, to specify a lower LOD or when the mesh hierarchy is more complicated than a single renderer.
+* Map: An XZ-aligned plane meant for projecting textures onto other surfaces. Use when the texture is more important than the shape.
+* Primitive: Opens a short list of premade meshes. Good for prototyping and for simple affectors.
+
+You can think of VerdantShapeDescriptor as the MeshFilter of Verdant. It's a simple component that supplies more complex systems with mesh data. It will be added automatically for components that require them, so there's little reason to do so on your own. The exception is when creating objects from script, in which case VerdantShapeDescriptor must be added before any components that require it. 
+
+A single shape descriptor can be shared by many different components. For example, you could have a shape that is both a [VerdantColorAffector](Affectors/VerdantColorAffector.html) and a [VerdantDeflectionAffedtor](Affectors/VerdantDeflectionAffector.html).
 
 ## Parameters
 

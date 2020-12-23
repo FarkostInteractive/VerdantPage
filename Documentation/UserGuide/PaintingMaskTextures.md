@@ -4,4 +4,4 @@ title: "Debug Panel"
 parent: "User Guide"
 ---
 
-# Painting Texture Masks
+# Painting Mask Textures

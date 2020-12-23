@@ -19,7 +19,7 @@ Both modes can also have a mask texture applied to them to further control place
 This component is meant to be used with Mesh Renderer and/or Verdant Shape Descriptor. If you want to use Verdant with terrains you have to use the similar VerdantTerrain component instead. There is currently no support for skinned mesh renderers.
 
 ## Painting a Mask Texture
-You can find the tools for mask texture painting either in the VerdantObject inspector under Paint Mask or in the Scene View Tools shelf (can be enabled or disabled with the tools icon in the upper right corner). When you first use them you will be asked to initialize the mask texture. Doing so will create a new data structure that is serialized along with the component. See the page [Painting Mask Textures](../UserGuide/PaintingTextureMasks.html) for details on how to use the paint tools.
+You can find the tools for mask texture painting either in the VerdantObject inspector under Paint Mask or in the Scene View Tools shelf (can be enabled or disabled with the tools icon in the upper right corner). When you first use them you will be asked to initialize the mask texture. Doing so will create a new data structure that is serialized along with the component. See the page [Painting Mask Textures](../UserGuide/PaintingMaskTextures.html) for details on how to use the paint tools.
 
 ## Parameters
 
