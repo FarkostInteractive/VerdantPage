@@ -21,3 +21,5 @@ There is a certain performance cost associated with all fields. It is highly dep
 Like most components in Verdant, field parameters are accessible from script as well as the inspector. As a rule they should not be changed at runtime or you will risk big framerate hitches as the field rebuilds, but they can be very useful for implementing things like graphics settings. It's a good idea to decrease range and resolution on lower settings if your game allows it.
 
 Fields can be viewed and visualized in the [Debug Panel](../../UserGuide/DebugPanel.html). This can be a helpful way to gain an understanding of your resolution and range or to understand how affectors are drawn into fields.
+
+Fields are also a broader technical concept in Verdant. You can find more information about them under [Central Concepts - Fields](../CentralConcepts/Fields).

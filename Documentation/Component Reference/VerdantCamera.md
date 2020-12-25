@@ -7,9 +7,13 @@ nav_order: "1"
 
 # VerdantCamera
 
-The central component of Verdant responsible for rendering vegetation in the world. A camera without one of these won't be able to see any Verdant vegetation. Different cameras can have different settings and function independently. 
+VerdantCamera is the most important component in Verdant and responsible for keeping track of everything else. It attaches to a Unity camera and renders vegetation to it by interpreting the surrounding scene and procedurally placing instances within the camera view frustum. As instances drawn by a camera are specific to it each camera in the scene needs to have its own VerdantCamera. Without it, vegetation cannot be seen. 
 
-When rendering Verdant in the scene view the scene camera will base its settings of one of the active VerdantCameras. If there is a main camera it will always use that one, otherwise the first found will be used. 
+Each VerdantCamera is only aware of the world within its Render Distance. You can think of the VerdantCamera as being a sort of treadmill. Surrounding it is a zone of vegetation that seems to be attached to the scene but actually only exists around it. As the camera moves in one direction it reveals more of the treadmill and the area behind it passes back underneath it. This means that no matter how large your world is, the only vegetation that exists is what is around the camera. It's not even that it's culling everything else, it literally does not exist until the camera comes to look at it. Consequentially the performance of Verdant is almost entirely dependant on the render distance and density of the vegetation therein. How much vegetation there is in the world in total is irrelevant.  
+
+VerdantCamera maintains several fields of its own in addition to any [affector fields](Fields/index.html) attached. These can be configured under Precision Parameters. See [Central Concepts - Fields](../CentralConcepts/Fields) for an explanation of fields as a general concept.
+
+When Verdant is enabled in the scene view the scene camera is essentially treated as having a VerdantCamera of its own. It will base its settings of one of the active VerdantCameras. If there is a main camera it will always use that, otherwise it chooses the first one found. 
 
 ## Parameters
 
@@ -27,7 +31,7 @@ Changing any parameters in this section will cause Verdant to create new field t
 
 These parameters control how precise Verdants' understanding of the world around it is. Most of the time there's no need to change them unless you have a very high or low Render Distance or are noticing artifacts in the world. If you do want to change them it's important to understand how they work.
 
-Verdant uses two heightfield, one for nearby and one for distant vegetation. For each the minimum amount of detail is the world space size of one pixel. Details smaller than that will either be ignored or drawn more coarsely. How much detail you need depends on your scene. A world that mostly consists of smooth landscapes does not need as high a resolution as one consisting of lots of small sharp objects at unexpected angles.
+Verdant uses two heightfields, one for nearby and one for distant vegetation. For each the minimum amount of detail is the world space size of one pixel. Details smaller than that will either be ignored or drawn more coarsely. How much detail you need depends on your scene. A world that mostly consists of smooth landscapes does not need as high a resolution as one consisting of lots of small sharp objects at unexpected angles.
 
 The threshold between the two fields is determined by Detail Field Ratio. If your render distance is 200 and the Detail Field Ratio is 0.4 the detail field is used for the first 80 units. For most types of games the detail field is the more important of the two, so start by increasing its resolution if you're having problems. 
 

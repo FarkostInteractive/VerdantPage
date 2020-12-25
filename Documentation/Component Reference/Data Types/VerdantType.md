@@ -7,7 +7,16 @@ grand_parent: "Component Reference"
 
 # VerdantType
 
-Represents a single type of Verdant vegetation that can be placed into the world. 
+VerdantTypes are templates for vegetation that can be placed into the world. You can think of them as a combination of a material and a prefab, as they contain both parameters for visuals and for how instances should be placed, animated, interacted with, and so on. At runtime VerdantCamera will use the data here to draw hundreds of thousands of instances procedurally.
+
+At minimum a VerdantType must specify its mesh. From there you can add textures, different LODs, and much more. The parameters and the sections they fall into are explained in detail below. Drawn types can also be influenced at runtime by components in the world, see [affectors](../Affectors/index.html).
+
+A VerdantType becomes active when a VerdantObject or VerdantTerrain using it comes into the range of a VerdantCamera. It will then add them into its roster and draw them onto suitable surfaces in the scene. There can be a total of 31 active types per camera at any given time, though it's possible to bypass this limitation by using [VerdantGroup](VerdantGroup.html). The total amount of types in the scene can be much higher as long as only 31 are active at once.
+
+## Performance
+VerdantType parameters can have a big impact on how your game performs. If one type dominates your scene it's very likely that setting it up the right way could shave several milliseconds off your frame time. The [Performance guide](../../UserGuide/Performance.html) contains a thorough explanation of types and how they interact with other systems, as well as guidance on how to optimize them for your specific needs. 
+
+One point in particular is worth reiterating here: Using Allow Alpha and Shading Level. You should always set them as low as you can. Disabling Allow Alpha especially can almost double your frame rate under some circumstances, as it allows the shader to perform early Z-testing and do much less work. You should also be careful to not use shadows unless you really need them.
 
 ## Parameters
 
@@ -23,7 +32,7 @@ The falloff diagram controls how the density changes as the distance from the ca
 
 ### LOD Parameters
 
-LOD Parameters are parameters that can be different for each LOD. LODs are edited using the segments under the Falloff graph. The plus button lets you add new LODs and right clicking on a segment lets you remove them. The width of the bar represents how many falloff steps the LOD stretches over and can be changed by dragging the handles. You can click on a bar to select it and show its parameters. 
+LOD Parameters are parameters that can be different for each LOD. LODs are edited using the segments under the Falloff graph. The plus button lets you add new LODs and right clicking on a segment lets you remove it. The width of the bar represents how many falloff steps the LOD stretches over and can be changed by dragging the handles. You can click on a bar to select it and show its parameters. 
 
 The parameters are optional on each LOD but the first, which is marked by the checkbox to their right. If the checkbox is not set the parameter will inherit the value of the prior LOD. This way you only need to set parameters that change for later LODs, which is often limited to parameters like the mesh, shadow mode and billboarding. Everything else will be brought over so you only need to set them once.
 
