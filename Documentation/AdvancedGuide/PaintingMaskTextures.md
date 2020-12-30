@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Debug Panel"
-parent: "User Guide"
+parent: "Advanced Guide"
 ---
 
 # Painting Mask Textures

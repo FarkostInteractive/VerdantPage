@@ -3,7 +3,7 @@ layout: default
 title: "Wind"
 parent: "User Guide"
 grand_parent: "Documentation"
-nav_order: "1"
+nav_order: "3"
 ---
 
 # Wind

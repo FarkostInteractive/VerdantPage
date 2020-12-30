@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Creating a Verdant Type"
+title: "Types and Groups"
 parent: "User Guide"
-nav_order: "3"
+nav_order: "2"
 ---
 
-# Creating a Verdant Type
+# Types and Groups
 
 If you have your own vegetation models you want to use, adding a new Verdant Type is easy. 
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Performance"
 parent: "User Guide"
+nav_order: "6"
 ---
 
 * If you can, I highly recommend using deferred lighting. In forward rendering Verdant will be rendered multiple times for each light, which can get very expensive.

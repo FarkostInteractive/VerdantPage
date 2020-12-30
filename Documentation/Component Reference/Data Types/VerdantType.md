@@ -89,4 +89,4 @@ Finally, these parameters are consistent across all LODs and can only be set onc
 |:---------------|:--------------------------|
 | `Layer` | The layer of this type. If the [VerdantCamera](../VerdantCamera.html) specifies an override layer that will be used instead. |
 | `Placement Randomness` | By default Verdant vegetation is placed in a tightly packed pattern optimized for coverage. This parameter lets you add a random offset to the base position, which can make sparse vegetation placement look more natural. |
-| `Twin Object` | Sets the Twin Object of the type, which is a prefab that will replace GPU instances as the camera approaches them. The prefab must have a component inheriting VerdantGameObjectTwin. [The Twin Object guide](../../UserGuide/UsingTwinObjects.html) takes you through the process of setting one up. |
+| `Twin Object` | Sets the Twin Object of the type, which is a prefab that will replace GPU instances as the camera approaches them. The prefab must have a component inheriting VerdantGameObjectTwin. [The Twin Object guide](../../AdvancedGuide/UsingTwinObjects.html) takes you through the process of setting one up. |

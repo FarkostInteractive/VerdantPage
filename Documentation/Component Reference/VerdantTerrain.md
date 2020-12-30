@@ -7,8 +7,6 @@ nav_order: "2"
 
 # VerdantTerrain
 
-*******
-
 VerdantTerrain is the equivalent of [VerdantObject](VerdantObject.html) for Unity Terrains. By adding it you make Verdant aware of the terrain as a surface for vegetation. Just like Surface [VerdantObjects](VerdantObject.html) it can be masked by [VerdantObjects](VerdantObject.html) in mask mode.
 
 Unlike [VerdantObject](VerdantObject.html) there are no mask textures. Rather, each type added to a VerdantTerrain is associated with one of the painted layers of the Unity Terrain. This means that if you have a grass layer and a rock layer Verdant can automatically fill in the grass layer with one of your types. If you just want to cover the entire terrain or place vegetation independently of its layers you can use a [VerdantObject](VerdantObject.html) in mask mode instead.

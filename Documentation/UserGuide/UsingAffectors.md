@@ -1,4 +1,11 @@
-Affectors
+---
+layout: default
+title: "Using Affectors"
+parent: "User Guide"
+nav_order: "4"
+---
+
+# Using Affectors
 
 To interact with vegetation you want to use an affector.
 
