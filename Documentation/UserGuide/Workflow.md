@@ -50,7 +50,7 @@ All the same parameters apply as on a regular scale mask, but there is one uniqu
 
 ### Painted masks
 
-If a normal scale mask isn't working for you Verdant includes tools for painting a mask yourself. These tools are more powerful in that they also allow you to paint different types directly into the mask. There is a full [Guide to painted masks]() in the advanced guide section. Just like scale masks painted masks can be used on VerdantObjects in both modes.
+If a normal scale mask isn't working for you Verdant includes tools for painting a mask yourself. These tools are more powerful in that they also allow you to paint different types directly into the mask. There is a full [Guide to painted masks](../AdvancedGuide/PaintingMaskTextures.html) in the advanced guide section. Just like scale masks painted masks can be used on VerdantObjects in both modes.
 
 ## Terrains
 

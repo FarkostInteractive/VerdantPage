@@ -1,5 +1,0 @@
-
-
-# Light Modes
-
-## Translucency

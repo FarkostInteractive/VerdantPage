@@ -8,7 +8,7 @@ nav_order: "2"
 
 # VerdantScaleField
 
-Enables interactions that scale vegetation by using [VerdantScaleAffectors](../Affectors/VerdantScaleAffector.html) on GameObjects. The scale of the field is multiplied into the scale from the [VerdantType](../Data Types/VerdantType.html) and from the [VerdantObject](../VerdantObject.html) of each vegetation instance. 
+Enables interactions that scale vegetation by using [VerdantScaleAffectors](../Affectors/VerdantScaleAffector.html) on GameObjects. The scale of the field is multiplied into the scale from the [VerdantType](../DataTypes/VerdantType.html) and from the [VerdantObject](../VerdantObject.html) of each vegetation instance. 
 
 Scale fields are set to one by default, but this can be changed by configuring a base texture. When set, the field will read from the base texture for each pixel and set its value before any affectors get drawn. As the field moves it will continue to seamlessly fill in new areas from the base texture. This can be a very useful way to add some subtle global variance to vegetation scale.
 
