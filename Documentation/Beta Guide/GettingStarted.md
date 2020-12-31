@@ -44,7 +44,7 @@ On the ground object, add the component VerdantObject. In the Types list, set th
 
 ![A VerdantObject configured with the simple VerdantNormalUpGrass type](Media/AddVerdantObject.PNG "VerdantObject parameters")
 
-Finally, go to Verdant > Render in Editor. Your cube should be covered in grass.
+Finally, in the menu bar go to Verdant > Render in Editor. Your cube should be covered in grass.
 
 ![The previously added box covered in short green grass](Media/GroundWithGrass.PNG "Ground with vegetation")
 

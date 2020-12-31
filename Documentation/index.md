@@ -25,4 +25,34 @@ Finally there is the FAQ, which is always growing and changing. I try to include
 
 There is also the Unity Forums Thread, which is likewise always growing. While I try to incorporate as much as I can into the FAQ, if you can’t find answers here it’s very worth looking through the thread anyway. It’s also a good way to get in touch with both me and other experienced users.
 
-[FAQ table]
+Here are a few suggestions for where to go next based on your needs:
+
+q. I’m having a problem with the setup
+a. The [FAQ] or [forum thread] might have answers, otherwise you can [contact me]
+
+q. How do I add my own types?
+a. 
+
+q. I want to make it prettier!
+a. Check out Beautifying your scene page
+
+q. What should my workflow look like? How do I best take advantage of the Verdant’s strengths?
+a. [Working with Verdant] describes just that
+
+q. How do I improve my performance? What should I keep in mind as I work?
+a. 
+
+q. I want my characters to interact with vegetation
+a. This is what affectors are for! Have a look at the [guide for affectors] and the [affector component pages]
+
+q. It’s not interactive enough!
+a. You might want to try using [Mirror GameObjects], which let you replace vegetation with GameObjects when they’re in a certain radius. I’m hoping to support extending the affector system in a future update!
+
+q. How do I write my own shader?
+a. [Writing Custom Shaders] shows you how to include Verdant features in your own shaders
+
+q. How does it all work?
+a. [Central Concepts] has the answers!
+
+q. Why can’t I place vegetation under other VerdantObjects?
+a. This is a limitation of the system, and one baked into its fundamentals. You can learn a bit about why in [Fields], but in short it happens because of the priorities Verdant makes. It’s something I’m very much hoping to solve in a future release, but 

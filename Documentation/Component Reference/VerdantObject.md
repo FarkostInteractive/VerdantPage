@@ -32,17 +32,17 @@ You can find the tools for mask texture painting either in the VerdantObject ins
 | `Type Only` | (Mask only) Makes it so this mask will not influence vegetation scale regardless of the scale value. The mask texture is only used as a mask, meaning it won't affect scale but will still determine wherere vegetation is placed. Useful when placing a type onto a surface in a particular shape without impacting the scale of existing vegetation.    |
 
 
-### Vegetation Mask
+### Masking Texture
 
 |:---------------|:--------------------------|
 | `UV Mode` | Determines the space of the mask texture UV coordinates. It can be set to Mesh UV, Local XZ or World XZ. Mesh UV is the regular UVs of your mesh. Local XZ lies on the local XZ axises of the object, meaning they will rotate with the object. World XZ lies on the global XZ axises but is normalized around the center of the object, making it similar to local XZ while ignoring object rotation. |
 | `UV Translation` | Moves the mask texture in X and Y. |
 | `UV Scale` | Scales the mask texture up or down in X and Y. |
-| `Scale Mask` | A greyscale texture that controls the scale and placement of vegetation. White is mapped to Min Scale and black is mapped to Max Scale. |
+| `Scale Mask` | A greyscale masking texture that controls the scale and placement of vegetation. White is mapped to Min Scale and black is mapped to Max Scale. |
 | `Min Scale` | The lowest value of the Scale Mask. Interacts with the overall VerdantObject Scale by multiplication. For example, if Min Scale and Max Scale are 0.5 and 1.0 while Scale is 6.0, the actual scale will range between 3.0 and 6.0 |
 | `Max Scale` | The highest value of the Scale Mask. Interacts with the overall VerdantObject Scale by multiplication. For example, if Min Scale and Max Scale are 0.5 and 1.0 while Scale is 6.0, the actual scale will range between 3.0 and 6.0 |
 
-#### Paint Mask
+#### Painted Mask
 
 |:---------------|:--------------------------|
 | `Resolution` | Changes the resolution of the painted texture mask. The contents of your current mask texture will be up or downscaled as needed. |
