@@ -6,9 +6,13 @@ nav_order: "5"
 ---
 
 # Visual Flair
+{: .no_toc }
 
 ## Table of contents
 {: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 Rendering hundreds of thousands of blades of grass in the world is one thing, but often the beauty of Verdant is determined more by small features combined thoughtfully than by sheer numbers, 
 

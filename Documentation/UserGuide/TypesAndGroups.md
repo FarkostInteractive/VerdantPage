@@ -6,9 +6,13 @@ nav_order: "2"
 ---
 
 # Types and Groups
+{: .no_toc }
 
 ## Table of contents
 {: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 Now that we know how to use VerdantObject and VerdantTerrain we can start to think about creating types to put on them. You might have noticed that the type list asks for VerdantInstantiables. This is a broad category that contains two different asset types:
 

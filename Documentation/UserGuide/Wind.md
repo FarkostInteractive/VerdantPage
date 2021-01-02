@@ -7,9 +7,13 @@ nav_order: "3"
 ---
 
 # Wind
+{: .no_toc }
 
 ## Table of contents
 {: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 We already touched briefly on wind in getting started, but it's such an important part of designing a scene that it's well worth taking a deeper dive. We'll look closer at VerdantWindVolume, its parameters and how it can be used in your worlds.
 

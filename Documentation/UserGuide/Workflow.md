@@ -6,9 +6,13 @@ nav_order: "1"
 ---
 
 # Workflow
+{: .no_toc }
 
 ## Table of contents
 {: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 This guide takes you through the process of building a scene with Verdant. 
 

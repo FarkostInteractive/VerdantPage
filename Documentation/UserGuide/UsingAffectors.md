@@ -8,7 +8,13 @@ nav_order: "4"
 # Using Affectors
 
 ## Table of contents
+{: .no_toc }
+
+## Table of contents
 {: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 So far we've added a bunch of vegetation and animated it with wind, but we haven't really been able to interact with it at all. Verdant allows us to do that by using affectors, which are components made specifically to influence vegetation at runtime in a few different ways. We can use them to animate grass as a character moves through it, cut it with a sword, rejuvenate it as magic passes through it or any number of other things.
 
