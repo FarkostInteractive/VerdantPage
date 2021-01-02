@@ -7,7 +7,8 @@ nav_order: "0"
 
 # Getting Started
 
-{: .no_toc }
+## Table of contents
+{: .no_toc .text-delta }
 
 This page will get you up and running with Verdant in your project.
 

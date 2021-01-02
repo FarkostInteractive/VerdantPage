@@ -5,6 +5,11 @@ parent: "User Guide"
 nav_order: "5"
 ---
 
+# Visual Flair
+
+## Table of contents
+{: .no_toc .text-delta }
+
 Rendering hundreds of thousands of blades of grass in the world is one thing, but often the beauty of Verdant is determined more by small features combined thoughtfully than by sheer numbers, 
 
 The screenshots below show two fields. On the left there are 200 instances per square meters, on the right just 25. 

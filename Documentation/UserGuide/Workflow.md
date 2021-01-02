@@ -7,6 +7,9 @@ nav_order: "1"
 
 # Workflow
 
+## Table of contents
+{: .no_toc .text-delta }
+
 This guide takes you through the process of building a scene with Verdant. 
 
 ## Surfaces and zones

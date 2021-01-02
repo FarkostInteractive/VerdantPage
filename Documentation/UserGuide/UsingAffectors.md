@@ -7,6 +7,9 @@ nav_order: "4"
 
 # Using Affectors
 
+## Table of contents
+{: .no_toc .text-delta }
+
 So far we've added a bunch of vegetation and animated it with wind, but we haven't really been able to interact with it at all. Verdant allows us to do that by using affectors, which are components made specifically to influence vegetation at runtime in a few different ways. We can use them to animate grass as a character moves through it, cut it with a sword, rejuvenate it as magic passes through it or any number of other things.
 
 ## The three types
@@ -29,7 +32,7 @@ Affectors only leave marks when they are close to the ground, so a rolling ball 
 
 Deflection is, again, a little bit special. It has two different modes, Press and Push. A push is a transient force that can be strong or gentle, but it's only active while the affector is present. Press on the other hand can leave lasting marks and has a time parameter that controls how long vegetation stays down. Unlike push it can only ever do full presses, so it's best for things like heavy boxes or wheels that will flatten vegetation completely. Push should be used for gentler forces like wind or living creatures.
 
-## Usage
+## Putting it all together
 
 Let's go over the process of adding a deflection affector to a game character. We'll start by adding a VerdantDeflectionField to the camera with VerdantCamera on it. As we're only really interested in the deflection around the main character we can keep the range as it is, so we won't touch the parameters for now.
 

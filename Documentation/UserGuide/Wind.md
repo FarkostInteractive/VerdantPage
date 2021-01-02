@@ -8,6 +8,9 @@ nav_order: "3"
 
 # Wind
 
+## Table of contents
+{: .no_toc .text-delta }
+
 We already touched briefly on wind in getting started, but it's such an important part of designing a scene that it's well worth taking a deeper dive. We'll look closer at VerdantWindVolume, its parameters and how it can be used in your worlds.
 
 ## Wind Volumes
@@ -28,4 +31,4 @@ In this example, the player will enter volume A first and then volume B. While i
 
 If the player starts inside a nested volume Verdant will do its best to figure out which volume is the lowest, but this only works if the volume is fully contained by the others. For cases like the previous overlap there is no way to know from where the player might have entered, and the active volume will be chosen at random. Try to avoid spawning the player in intersections. 
 
-While wind is always applied globally there is actually another way to influence vegetation interactively in specific regions. We'll cover how in the next guide on [using affectors](UsingAffectors.html)!
+While wind is always applied globally there is actually another way to influence vegetation interactively in specific areas. We'll cover how in the next guide on [using affectors](UsingAffectors.html)!
