@@ -11,7 +11,7 @@ So far we've added a bunch of vegetation and animated it with wind, but we haven
 
 ## The three types
 
-Affectors come in three different varieties: VerdantDeflectionAffector, VerdantColorAffector and VerdantScaleAffector. Deflection is for pushing and pressing vegetation as things pass through it, be they vehicles, characters, giant balls or magic spells. Color allows dynamically multiplying new colors into it, either in simple shapes or as full textures. Scale acts similarly to the scaling mask options on VerdantObject, but is much more performant for dynamic objects. 
+Affectors come in three different varieties: VerdantDeflectionAffector, VerdantColorAffector and VerdantScaleAffector. Deflection is for pushing and pressing vegetation as things pass through it, like vehicles, characters, giant balls or magic spells. Color allows dynamically multiplying in new colors, either in simple shapes or as full textures. Scale acts similarly to the scaling mask options on VerdantObject, but is much more performant and made to be used on dynamic objects. 
 
 Each type needs a special component attached to the camera for tracking the affectors and storing how the world has been influenced. These are called fields.
 
@@ -23,7 +23,7 @@ The deflection field also runs a physics simulation to make pressed vegetation b
 
 ## Affectors
 
-Each affector component is slightly different, but they all share some commonalities. When you add an affector it will automatically add a VerdantShapeDescriptor, just like VerdantObject does. Affectors need to have a shape as it determines how their marks will look. You can use any mesh you like, though you might find that simple shapes like spheres or boxes often leave the clearest marks. Just like with colliders it's usually best to use the simplest shape you can! 
+Each affector component is slightly different, but they share a common core. When you add an affector it will automatically add a VerdantShapeDescriptor, just like VerdantObject does. Affectors need to have a shape as it determines how their marks will look. You can use any mesh you like, though you might find that simple shapes like spheres or boxes often leave the clearest marks. Just like with colliders it's usually best to use the simplest shape you can! 
 
 Affectors only leave marks when they are close to the ground, so a rolling ball will only influence its contact area and a falling pillar will leave a mark in its shape. The allowed distance to the ground can be set with the parameter Ground Distance, and for cases where you just want the affector to mark regardless you can set Ignore Height to true.
 
@@ -46,25 +46,3 @@ If you don't, there are a few things you can try. Make sure the affector is clos
 We've only covered the basics here and barely touched on Color and Scale at all, but you'll find that the basics are very similar to Deflection. You should experiment a bit with them, affectors are very fun to use and can add a lot of flair to your game. If you do want to dive in depth the Component Reference goes into detail on all the parameters, both for [affectors]() and [fields]().
 
 Next, we'll take a look at some more advanced features of everything covered so far and use them to really make the visuals pop! There are a lot of subtle touches we can add that go a long way, often much more so than just increasing the density and adding more types. See you in [Visual Flair](VisualFlair.html).
-
-
-
-
-
-Verdant supports three different affector fields: Deflection, Color and Scale. Deflection allows you to push vegetation aside or press it down below objects, whereas the other two do exactly whay you’d expect them to. They can be used for effects like cutting grass, rejuvenating withering flowers or to char the edges of an explosion.
-
-All affector fields have two main parameters: The scale and the resolution. Together, these determine how far from the camera affectors will be able to touch the field, and at what level of detail the effect will be rendered. When the camera is moving it also determines for how long the field will remember changes made to it.
-
-The deflection field is a simulation field and thus has a number of unique parameters. Read more about them on the Deflection Page.
-
-Color and Scale are Textured Fields, which means they share a set of additional parameters.
-
-A textured field can contain a base texture, which the field is initalized with and to which it will return if changed. Even if you don’t use affectors for interactivity a base texture can be very useful for adding variety to your scene. The images below show the difference between a plain field without base textures and one with some scale and color noise applied.
-
-The scale of the base texture can be configured using the 
-
-A base texture can also be remapped to new scales or colors. This is very useful when working with noise textures. For example, black and white texture can be remapped to the scale range 0.7-1.0, which will give a much subtler effect. 
-
-When using a base texture you generally want the field texture mode to be set to one of the repeating options. Otherwise there will be a sharp divide where the field ends.
-
-Unlike the deflection field, scale and color fields won’t return to their default state automatically when touched by an affector. You can enable them to do so by enabling restoration over time. 
