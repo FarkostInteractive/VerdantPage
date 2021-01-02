@@ -15,17 +15,17 @@ Think of VerdantType as a combination of a material and a prefab. It is the blue
 
 You create VerdantTypes as assets in the Project view. Right click or use the + button in the upper left and select Verdant > VerdantType. Open the newly created type in the inspector and you'll find an abundance of parameters to play with.
 
-### Type parameters
+![Inspector image]()
 
 The parameters are split into a few different categories that determine what they control. We'll focus on their broad purpose here as to not completely overstuff the guide. Many names will be familiar from other systems in Unity, and for everything else there is always the [component reference](../ComponentReference/DataTypes/VerdantType.html) which contains a full rundown of everything. 
 
 If you've enabled rendering Verdant in the scene view you'll notice that instances of a type automatically update in real time as you change it.
 
-#### Density and falloff
+### Density and falloff
 
 The first section controls how dense the instances of this type should appear. The main parameter, Density, represents the amount of instances in a 1x1 unit square. The bar graph below it controls the falloff, which is how the density decreases further from the camera. Each bar controls one tenth of the render distance, the bar furthest left being closest to the camera. Falloff acts as a multiplier on the density, so if density is 100 and the second falloff bar is 0.5 the amount of instances will halve in the second tenth. You can usually get away with a pretty dramatic falloff without changing how your game looks. The preset modes Sharp and Exponential will work well in most cases, but there is also a custom mode that lets you adjust the bars manually if needed.
 
-#### LODs
+### LODs
 
 Below the falloff graph there should be a wide horizontal box. It represents that the type you created has one level of detail, and that it's set to be used for all of the falloff stages (skipping the last one makes the cutoff a radius rather than a sharp edge). By adding more LODs we can make it so vegetation further from the camera uses different parameters, like disabling shadows or using a simpler mesh. You'll notice that most of the parameters below have a checkbox next to them, and that for the first LOD they are all checked. You can try creating another LOD by pressing the + button on the right, then click on the new box to select it. 
 
@@ -33,7 +33,7 @@ Here, all the checkboxes are unmarked. By marking one we can override that param
 
 LOD fade is the only LOD parameter that cannot be inherited. It controls how smoothly one LOD fades into the next. For later LODs you can usually leave it at zero, but it can be very useful for the first section or two where the player is very aware of pop in. Increasing it has a small performance penalty, but can help mask more dramatic LODing like taking away shadows and become a net win by doing so. Try increasing it if your LOD transitions are very obvious.
 
-#### Per Type parameters
+### Per Type parameters
 
 Finally, the last section applies to the entire type. They allow us to set a rendering layer, adjust how randomly the instances are placed (when set to zero they are packed in a tight repeating pattern) and to configure a Twin Object. The last option makes Verdant replace instances of the type with a prefab when within a certain distance and allows you to interact with vegetation fully as you would any GameObject. Twin objects have a guide of their own in the [advanced section](../AdvancedGuide/UsingTwinObjects.html). 
 
@@ -58,4 +58,4 @@ Using VerdantGroup is very simple. You can create them from the same menu as Ver
 VerdantGroup can be used anywhere you can use VerdantType. They will count as one group in almost all ways except one: Performance. We'll get into it more in the [performance section](Performance.html) of the guide, but it's important to stress here too. Even with groups you should be mindful that each type you add has a performance overhead. Also remember that unless you set your ratios right you might end up with the sum total of the densities of your types. If you combine three grass types with density 100 and don't change the ratio you will end up with density 300, with the predictable performance cost therein.
 
 
-We've now gone over the tools for building your scene and the Verdant vegetation therein. Next we'll take a look at adding some interactivity by [using affectors](UsingAffectors.html).
+We've now gone over the tools for building your scene and the Verdant vegetation therein. There's still one obvious visual aspect left unexplored though, and we'll take a look at that next in the section on [wind](Wind.html). 
