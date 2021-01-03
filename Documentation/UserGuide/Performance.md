@@ -44,9 +44,26 @@ Like the Unity Standard Shader the Verdant shader is built to be flexible and su
 
 Even more important than the shader level is Allow ALpha, which enables and disables alpha clipping. Alpha clipping can be a very useful way to keep your vertex count down but has the unfortunate side effect of preventing the GPU from doing early Z tests, meaning it will draw many more pixels than needed. This is especially pronounced in dense fields, where the grass closest to the camera might occlude thousands of other instances. In scenes with a lot of overdraw you should always try to keep this option disabled, though you might have to weight it against the cost of having more complex meshes.
 
+If you know how to do it and have a very narrow visual style you can gain a lot of performance by writing your own shader. Have a look at the advanced guide for [writing custom shaders]() if you're interested in doing so.
+
 ## LOD usage
+Many of the previously mentioned problems are per LOD adjustable, meaning we can reduce their impact by only allowing them on the first LOD. In games with high visual fidelity you should almost always have at least two LODs, one with all your high detail effects and one that has been reduced as much as you can get away with.
+
+The most obvious case is using more than one mesh. A mesh with a slightly higher vertex count can look better when animated, but as explained we don't want it multiplied out into every instance in the scene. By having a version with high tesselation and one with low you get the benefit of both. The same thing goes for shadows, shading level and even alpha clipping. 
+
+Even if you don't need LODs there's actually an argument for adding one just for the first falloff step anyway. As mentioned, dense vegetation can lead to a lot of overdraw. When you use LODs Verdant is forced to draw each one as a separate draw call, and it will draw them front to back. By drawing the zone closest to the camera first it will almost certainly block out a lot of the screen. That information will then be present in the depth buffer when the next LOD is drawn and it can use it to avoid drawing to those pixels again. You'll see the most benefit from doing this if you have large dense fields, less so if your scene mostly consists of small patches. 
+
 
 ## Field and affector performance
+When you add a field component you are essentially including a new feature into Verdant, and that has an associated cost. All fields need some memory to keep track of their affectors, and deflection needs to run its simulation at the set interval. Instances will also need to read from each field to apply their effects, increasing the cost per instance slightly. The most dramatic cost comes from adding the field at all, though there are other factors as well.
+
+The resolution of the field, which is closely associated with its range, should be kept as low as possible.  
+
+In general, affector performance is less about total number and more about density. You can easily have hundreds of affectors in your scene if only three are in range at any given time. This is why it's important to be mindful of the range and resolution of your fields. 
+
+
+## What not to worry about
+With all that said, there are some things that Verdant essentially handles for you. Chief among them is the size of the scene and the total amount of vegetation. In Verdant, the only thing that exists at any time is what is around you, and as you move it simply rearranges itself into the environment you're traversing. That means there's almost no limit to how quickly you can move and how large your scene can be. It's also very 
 
 
 * If you can, I highly recommend using deferred lighting. In forward rendering Verdant will be rendered multiple times for each light, which can get very expensive.
