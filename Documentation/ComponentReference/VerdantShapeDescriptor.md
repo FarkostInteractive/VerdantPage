@@ -11,7 +11,7 @@ Many components in Verdant have a presence in the game world of some sort. Verda
 
 There are four shape modes to choose between: 
 * This Mesh: Looks for a MeshFilter on this GameObject and uses its mesh.
-* Other Mesh: Lets you supply a mesh of your own. Useful for objects that don't need a MeshFilter, to specify a lower LOD or when the mesh hierarchy is more complicated than a single renderer.
+* Other Mesh: Lets you supply a mesh of your own. Useful for objects that don't need a MeshFilter, to specify a lower LOD, or when the mesh hierarchy is more complicated than a single renderer.
 * Map: An XZ-aligned plane meant for projecting textures onto other surfaces. Use when the texture is more important than the shape.
 * Primitive: Opens a short list of premade meshes. Good for prototyping and for simple affectors.
 
@@ -32,7 +32,7 @@ A single shape descriptor can be shared by many different components. For exampl
 ## Public Properties
 
 |:---------------|:--------------------------|
-| `ChosenMesh` | Returns the mesh that is the shape of this descriptor and has been selected using Shape, Other Mesh and Primitive. |
+| `ChosenMesh` | Returns the mesh that is the shape of this descriptor selected using Shape, Other Mesh and Primitive. |
 
 ## Public Methods
 

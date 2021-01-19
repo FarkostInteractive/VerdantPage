@@ -6,9 +6,9 @@ nav_order: "1"
 ---
 
 # VerdantObject
-This is the main component for putting Verdant vegetation into a scene. It defines zones where vegetation should be placed, which is the main mode of interaction in Verdant. Types are not placed one by one, they are automatically added en masse at runtime to areas defined in the editor. 
+This is the main component for putting Verdant vegetation into a scene. It defines zones where vegetation should be placed, which is the main mode of interaction in Verdant. 
 
-When an object has a VerdantObject component it will be recognized as a surface on which vegetation can grow or as a shape that influences where vegetation should grow. To facilitate this it has two modes: Surface and Mask
+Types are not placed one by one, they are automatically added en masse at runtime to areas defined in the editor. When an object has a VerdantObject component it will be recognized as a surface on which vegetation can grow or as a shape that influences where vegetation should grow. To facilitate this it has two modes: Surface and Mask
 
 Surface objects place vegetation onto themselves. By default any type added to them grows to cover the top of the mesh at the density set in the type. This serves as a base for more complex patterns, which can be made using masks.
 
@@ -26,19 +26,19 @@ You can find the tools for mask texture painting either in the VerdantObject ins
 |:---------------|:--------------------------|
 | `Mode` | Determines whether vegetation should be placed onto this object (Surface) or onto the VerdantObjects below it (Mask). |
 | `Scale` | Sets the scale of vegetation for this object. Interacts with other scale parameters (eg. on the VerdantType) by multiplication. |
-| `Max Slope` | The steepest slope in degrees onto which vegetation will be placed. Measured in world space along the Y axis. |
-| `Types` | The types of vegetation for this object. Both VerdantType and VerdantGroup assets can be added here. Your scene can contain a maximum of 31 unique types or groups at any given time. |
+| `Max Slope` | The steepest slope in degrees onto which vegetation will be placed, measured in world space along the Y axis. |
+| `Types` | The types of vegetation for this object. Both VerdantType and VerdantGroup assets can be added here. The rendered scene can contain a maximum of 31 unique types or groups at any given time. |
 | `Ignore Height` | (Mask only) If set, this mask will influence all objects both above and below it regardless of its own placement.  |
-| `Type Only` | (Mask only) Makes it so this mask will not influence vegetation scale regardless of the scale value. The mask texture is only used as a mask, meaning it won't affect scale but will still determine wherere vegetation is placed. Useful when placing a type onto a surface in a particular shape without impacting the scale of existing vegetation.    |
+| `Type Only` | (Mask only) Makes it so this mask will not influence vegetation scale regardless of the scale value. The mask texture is only used as a mask, meaning it won't affect scale but will still determine wherere vegetation is placed. This allows for placing a type onto a surface in a particular shape without impacting the scale of existing vegetation. |
 
 
 ### Masking Texture
 
 |:---------------|:--------------------------|
 | `UV Mode` | Determines the space of the mask texture UV coordinates. It can be set to Mesh UV, Local XZ or World XZ. Mesh UV is the regular UVs of your mesh. Local XZ lies on the local XZ axises of the object, meaning they will rotate with the object. World XZ lies on the global XZ axises but is normalized around the center of the object, making it similar to local XZ while ignoring object rotation. |
-| `UV Translation` | Moves the mask texture in X and Y. |
-| `UV Scale` | Scales the mask texture up or down in X and Y. |
-| `Scale Mask` | A greyscale masking texture that controls the scale and placement of vegetation. White is mapped to Min Scale and black is mapped to Max Scale. |
+| `UV Translation` | Moves the mask texture in UV space X and Y. |
+| `UV Scale` | Scales the mask texture up or down in UV space X and Y. |
+| `Scale Mask` | A greyscale masking texture that controls the scale and placement of vegetation. Black is mapped to Min Scale and white is mapped to Max Scale. |
 | `Min Scale` | The lowest value of the Scale Mask. Interacts with the overall VerdantObject Scale by multiplication. For example, if Min Scale and Max Scale are 0.5 and 1.0 while Scale is 6.0, the actual scale will range between 3.0 and 6.0 |
 | `Max Scale` | The highest value of the Scale Mask. Interacts with the overall VerdantObject Scale by multiplication. For example, if Min Scale and Max Scale are 0.5 and 1.0 while Scale is 6.0, the actual scale will range between 3.0 and 6.0 |
 
@@ -50,7 +50,7 @@ You can find the tools for mask texture painting either in the VerdantObject ins
 ## Public Methods
 
 |:---------------|:--------------------------|
-| `void AddType(VerdantInstantiable type)`{: .csharp} | Adds a type into the type list and refreshes the scene. |
+| `void AddType(VerdantInstantiable type)` | Adds a type into the type list and refreshes the scene. |
 | `void RemoveType(VerdantInstantiable type)` | Removes a type from the type list and refreshes the scene. |
 | `void RemoveTypeAt(int index)` | Removes the type at the specified index in the type list and refreshes the scene. |
 | `void ClearTypes(int index)` | Removes all types from the object and refreshes the scene. |
