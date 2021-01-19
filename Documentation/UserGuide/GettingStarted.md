@@ -35,7 +35,7 @@ Once you’ve imported Verdant, go to your main camera and add the component ’
 
 ![A GameObject with both a VerdantCamera and a Unity camera component](Media/VerdantCameraAdded.PNG "VerdantCamera added")
 
-With the camera set up, choose an object in the scene or create a new box or plane to serve as your ground. Any ground-like object with a MeshRenderer will do. 
+With the camera set up, choose an object in the scene or create a new box or plane to serve as your ground. Any ground-like object with a MeshRenderer will do.
 
 ![A box that has been scaled up to (30,1,30) to act as a floor](Media/FlooringBox.PNG "Ground box")
 

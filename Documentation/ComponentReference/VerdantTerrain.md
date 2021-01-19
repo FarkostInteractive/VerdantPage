@@ -22,7 +22,7 @@ If you are switching to Vulkan in the editor Unity has a bug that makes the terr
 |:---------------|:--------------------------|
 | `Scale` | Sets the scale of vegetation for this terrain. Interacts with other scale parameters (eg. on the VerdantType) by multiplication. |
 | `Max Slope` | The steepest slope in degrees onto which vegetation will be placed. Measured in world space along the Y axis. |
-| `Edge Dithering` | Controls how much the terrain should dither the edges between different type layers. Can create the effect of different types smoothly dissolving into each other. Use the Debug Panel and check the type map to see the exact results |
+| `Edge Dithering` | Controls how much the terrain should dither the edges between different type layers. Can create the effect of different types smoothly dissolving into each other. Use the Debug Panel and check the type map to see the exact results. |
 | `Types` | The types of vegetation for this Terrain. Both VerdantType and VerdantGroup assets can be added here. Your scene can contain a maximum of 31 unique types or groups at any given time. |
 
 ## Public Methods

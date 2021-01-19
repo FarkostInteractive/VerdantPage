@@ -17,7 +17,7 @@ There are four shape modes to choose between:
 
 You can think of VerdantShapeDescriptor as the MeshFilter of Verdant. It's a simple component that supplies more complex systems with mesh data. It will be added automatically for components that require them, so there's little reason to do so on your own. The exception is when creating objects from script, in which case VerdantShapeDescriptor must be added before any components that require it. 
 
-A single shape descriptor can be shared by many different components. For example, you could have a shape that is both a [VerdantColorAffector](Affectors/VerdantColorAffector.html) and a [VerdantDeflectionAffedtor](Affectors/VerdantDeflectionAffector.html).
+A single shape descriptor can be shared by many different components. For example, you could have a shape that is both a [VerdantColorAffector](Affectors/VerdantColorAffector.html) and a [VerdantDeflectionAffector](Affectors/VerdantDeflectionAffector.html).
 
 ## Parameters
 

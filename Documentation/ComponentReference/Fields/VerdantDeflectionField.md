@@ -16,7 +16,7 @@ Verdant simulates vegetation as a spring using [Hooke's Law](https://en.wikipedi
 
 The physics simulation can be a little bit tricky to control. It is highly dependent on the update rate, so try to find a good value for Updates Per Second first. Then, carefully read through what the other parameters do. It can also be useful to read up on Hooke's Law itself. That will make it much easier to understand how your changes affect the simulation. Changing them aimlessly can quickly put you in a spot where one parameter has an outsized influence and you lose track of what does what.
 
-Also know that the field is normalized between zero and one and mainly controls *where* deflection happens. How much vegetation bends when deflected is determined by each [VerdantType](../Data Types/VerdantType.html) using the Deflection Angle parameter. This can have a huge impact on your visuals and is often the place to start rather than messing with the simulation.
+Also know that the field is normalized between zero and one and mainly controls *where* deflection happens. How much vegetation bends when deflected is determined by each [VerdantType](../DataTypes/VerdantType.html) using the Deflection Angle parameter. This can have a huge impact on your visuals and is often the place to start rather than messing with the simulation.
 
 For more information about fields in general, see the [Fields page](index.html). 
 
