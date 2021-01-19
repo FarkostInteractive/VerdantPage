@@ -41,7 +41,7 @@ When gizmos are enabled and the Precision Parameters foldout is open you will se
 | `Coarse HeightField Resolution` | The resolution of the coarse heightfield, which is used to place distant vegetation.  |
 | `Detail HeightField Resolution` | The resolution of the detail heightfield, which is used to place nearby vegetation.  |
 | `Detail Field Ratio` | The ratio of the Render Distance at which the Detail Heightfield is replaced by the Coarse heightfield. |
-| `Culling Tile Resolution` | Determines how large the culling zones for Verdant are. Higher numbers will mean more precise culling but make the culling process itself more expensive. Avoid increaing it unless you have artifacts or performance issues specifically related to how the scene is culled. |
+| `Culling Tile Resolution` | Determines how large the culling zones for Verdant are. Higher numbers will mean more precise culling but make the culling process itself more expensive. Avoid increasing it unless you have artifacts or performance issues specifically related to how the scene is culled. |
 
 ### Twin Objects
 
@@ -68,4 +68,4 @@ See [Accessing Verdant Data](../AdvancedGuide/AccessingVerdantData.html) for mor
 ## Public Methods
 
 |:---------------|:--------------------------|
-| `void SetParameters()` | Needs to be called when any parameter has been changed to apply it. Depending on the changed parameters this can be expensive operation, so be careful if you're calling it frequently. |
+| `void SetParameters()` | Needs to be called when any parameter has been changed to apply it. Depending on the changed parameters this can be an expensive operation, so be careful to not call it frequently unless strictly needed. |

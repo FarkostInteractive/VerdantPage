@@ -80,7 +80,7 @@ LOD properties that influence the placement, animation and rendering of instance
 | `Fade Mode` | Determines how new instances fade in as they are approached. Scale simply scales them up from zero. Dither is available when alpha is enabled and will use a dither mask to fade in instances pixel by pixel. |
 | `Pivot Mode` | Sets what the instance considers to be its pivot point. For most types you want this set to Origin. For meshes that resemble a flat and wide patch of vegetation Projected will try to estimate a pivot for each vertex and use that. This has the effect of bending the mesh along the ground surface and can make wind and affector influences look much more natural. How right the estimation is depends on the mesh. Complicated meshes can easily become very broken in Projected. |
 | `Receive Shadows` | Sets if this type should receive shadows. In deferred rendering all objects always receive shadows, so this parameter is only relevant in forward rendering. |
-| `Cast Shadows` | Controls if and how the type should cast shadows. Shadow casting is one of the most expensive features in Verdant because it causes all vegetation to be redrawn at least once for each shadowing light. If you can, try to only use it on your first LDO. |
+| `Cast Shadows` | Controls if and how the type should cast shadows. Shadow casting is one of the most expensive features in Verdant because it causes all vegetation to be redrawn at least once for each shadowing light. If you can, try to only use it on your first LOD. |
 
 ### Type Parameters
 

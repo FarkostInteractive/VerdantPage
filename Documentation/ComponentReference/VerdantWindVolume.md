@@ -9,7 +9,7 @@ nav_order: "6"
 
 A component used to create local wind configurations. When the camera enters the volume its settings will be applied to all the vegetation in the scene.
 
-Wind strength is set using the [Beaufort scale](https://en.wikipedia.org/wiki/Beaufort_scale), which has a long history of being used at sea and is based on observation more than exact measurement. It comes with convenient labels in english for each of its twelve steps, which are shown on both sides of the big slider. The small slider below it lets you select an intermediary value between two steps. 
+Wind strength is set using the [Beaufort scale](https://en.wikipedia.org/wiki/Beaufort_scale), which has a long history of being used at sea and is based on observation more than exact measurement. It comes with convenient labels in English for each of its twelve steps, which are shown on both sides of the big slider. The small slider below it lets you select an intermediary value between two steps. 
 
 Wind volumes can be nested. Verdant keeps track of all the volumes the camera enters and exits, making it so the last entered always takes precedence over volumes entered previously. When exiting a nested volume Verdant automatically returns the wind configuration to the larger volume (given that the camera is still inside it). It's also possible to overlap volumes such that a player enters through volume A and then exits it while inside volume B. When the camera exits volume B in this case it won't return to configuration A.
 
