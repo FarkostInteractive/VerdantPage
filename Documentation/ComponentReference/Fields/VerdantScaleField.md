@@ -8,7 +8,7 @@ nav_order: "2"
 
 # VerdantScaleField
 
-Enables interactions that scale vegetation by using [VerdantScaleAffectors](../Affectors/VerdantScaleAffector.html) on GameObjects. The scale of the field is multiplied into the scale from the [VerdantType](../DataTypes/VerdantType.html) and from the [VerdantObject](../VerdantObject.html) of each vegetation instance. 
+Enables interacting with vegetation scale by using [VerdantScaleAffectors](../Affectors/VerdantScaleAffector.html) on GameObjects. The scale of the field is multiplied into the scale from the [VerdantType](../DataTypes/VerdantType.html) and from the [VerdantObject](../VerdantObject.html) of each vegetation instance. 
 
 Scale fields are set to one by default, but this can be changed by configuring a base texture. When set, the field will read from the base texture for each pixel and set its value before any affectors get drawn. As the field moves it will continue to seamlessly fill in new areas from the base texture. This can be a very useful way to add some subtle global variance to vegetation scale.
 
@@ -30,18 +30,14 @@ Changing any of the field parameters requires Verdant to replace the underlying 
 
 ### Base Texture Parameters
 
-Fields can be initialized with a base texture. This texture will be repeated throughout the field and can be an excellent way to add some variance to vegetation. Affectors will paint over it (or, blend, depending on their settings), but when they are cleared the field will always go back to its base texture.
-
 |:---------------|:--------------------------|
 | `Base Texture` | The texture to use. |
-| `Texture Frequency` | Sets how often the texture should repeat in X and Y throughout the field. |
+| `Texture Frequency` | Sets how often the texture should repeat in world X and Z throughout the field. |
 | `Map From Grayscale` | When set the texture will be interpreted as a greyscale texture where black maps to Minimum Scale and white to Maximum Scale. |
 | `Minimum Scale` | The minimum scale used for a remapped texture. |
 | `Maximum Scale` | The maximum scale used for a remapped texture. |
 
 ### Restore Over Time
-
-By default anything painted to the field will stay there as long as it is in range. These parameters let you set it up to fade back to its initial state. 
  
 |:---------------|:--------------------------|
 | `Restore Over Time` | If enabled this field will fade back to its base state over time. If a Base Texture is set it will restore to that, otherwise it will fade to scale 1. |

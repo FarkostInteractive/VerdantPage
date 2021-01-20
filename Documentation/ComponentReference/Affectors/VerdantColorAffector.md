@@ -29,8 +29,8 @@ For more information about affectors in general, see the [Affectors page](index.
 | `Use Texture` | Should this affector use a texture to determine its color? |
 | `Texture` | The texture to use. |
 | `UV Mode` | Determines the space of the texture UV coordinates. It can be set to Mesh UV, Local XZ or World XZ. Mesh UV is the regular UVs of your mesh. Local XZ is the object space XZ axises. World XZ will make the texture repeat along the XZ axises in world space. |
-| `UV Translation` | Moves the color texture in X and Y. |
-| `UV Scale` | Scales the color texture up or down in X and Y. |
+| `UV Translation` | Moves the color texture in UV space X and Y. |
+| `UV Scale` | Scales the color texture up or down in UV space X and Y. |
 | `Remap Texture` | If set, the texture will be treated as a greyscale texture where black maps to Texture Min Color and white maps to Texture Max Color.  |
 | `Texture Min Color` | The minimum color used for a remapped texture. |
 | `Texture Max Color` | The maximum color used for a remapped texture. |

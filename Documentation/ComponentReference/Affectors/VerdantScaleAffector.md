@@ -30,11 +30,11 @@ For more information about affectors in general, see the [Affectors page](index.
 | `Use Texture` | Should this affector use a texture to determine its scale? |
 | `Texture` | A greyscale texture to use to determine scale. |
 | `UV Mode` | Determines the space of the texture UV coordinates. It can be set to Mesh UV, Local XZ or World XZ. Mesh UV is the regular UVs of your mesh. Local XZ is the object space XZ axises. World XZ will make the texture repeat along the XZ axises in world space. |
-| `UV Translation` | Moves the scale texture in X and Y. |
-| `UV Scale` | Scales the scale texture up or down in X and Y. |
+| `UV Translation` | Moves the scale texture in UV space X and Y. |
+| `UV Scale` | Scales the scale texture up or down in UV space X and Y. |
 | `Remap Texture` | If set, the texture will be remapped from scales 0 to 1 for black and white to the Texture Min Value and Texture Max Value.  |
-| `Texture Min Value` | The minimum color used for a remapped texture. |
-| `Texture Max Value` | The maximum color used for a remapped texture. |
+| `Texture Min Value` | The minimum scale used for a remapped texture. |
+| `Texture Max Value` | The maximum scale used for a remapped texture. |
 
 ### Clamping
 
