@@ -26,15 +26,15 @@ I've prepared my scene with a simple terrain. We'll also be using a basic Verdan
 
 Not very interesting as of yet, but it'll get there! 
 
-We should take a moment to think about what we even want from a lush grassy field. What is it that makes this one lackluster? One thing that immediately sticks out is that all the instances blend sort of blend together. 
+We should take a moment to think about what we even want from a lush grassy field. What is it that makes this one lackluster? One thing that immediately sticks out is that all the instances sort of blend together. Even though we're drawing all these polygons it doesn't come out as much more than spiky green soup. 
 
 In short, a good field should:
 * Look smooth and natural but have enough variation to show that it's made up of separate instances
-* Look dense enough that the ground underneath it seems to disappear
+* Appear dense enough that the ground underneath it seems to disappear
 * Interact with the light in interesting ways
 * Grow in interesting shapes
-* Each individual plant should look interesting, even up close
-* There should be more than one type growing together
+* Have individual plants that look interesting, even up close
+* Have more than one type growing together
 
 ## Variation
 

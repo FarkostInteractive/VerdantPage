@@ -8,13 +8,12 @@ nav_order: "0"
 # Getting Started
 {: .no_toc }
 
+This page will get you up and running with Verdant in your project.
+
 ## Table of contents
 {: .no_toc .text-delta }
-
 1. TOC
 {:toc}
-
-This page will get you up and running with Verdant in your project.
 
 ## What is Verdant?
 
@@ -57,4 +56,4 @@ Finally, the vegetation is looking a little bit stiff at the moment, so we shoul
 
 ## Your next steps
 
-You've now tried the basics, but there are so many other things to discover in Verdant. Next we will take a look at the Verdant workflow to help you understand how to build scenes. [Continue on the Workflow page](Workflow.html). 
+You've now tried the basics, but there are many other things to discover in Verdant. Next we will take a look at the Verdant workflow to help you understand how to build scenes. [Continue on the Workflow page](Workflow.html). 

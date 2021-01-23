@@ -8,13 +8,13 @@ nav_order: "1"
 # Workflow
 {: .no_toc }
 
+Here we'll take a deeper look at the most important components that make up scenes in Verdant. What they do, how to use them and a little bit about how they interact with the underlying machinery. You'll get a taste of the quirks and features unique to Verdant and how to use them as part of your scene building workflow. 
+
 ## Table of contents
 {: .no_toc .text-delta }
 
 1. TOC
 {:toc}
-
-This guide takes you through the process of building a scene with Verdant. 
 
 ## Surfaces and zones
 As previously mentioned, the main usage of Verdant is defining zones for vegetation to grow in. In Getting Started we did this by adding the component VerdantObject to a box, which made grass appear on top of it. In the background adding VerdantObject made Verdant register the mesh of the box as a surface tracked within its systems. By then adding a type that surface was defined as a zone where VerdantNormalUpGrass grows. 
