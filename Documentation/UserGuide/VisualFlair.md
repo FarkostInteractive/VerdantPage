@@ -14,22 +14,47 @@ nav_order: "5"
 1. TOC
 {:toc}
 
-Rendering hundreds of thousands of blades of grass in the world is one thing, but often the beauty of Verdant is determined more by small features combined thoughtfully than by sheer numbers, 
+With all of its many, many parameters it can be tempting to just turn everything in Verdant up to max and get as much visual juice out as you possibly can. More likely than not you'll just end up with some fancy mush and a very unhappy computer. By working a bit more thoughtfully we can combine different features to reinforce each other and get scenes that are both very pretty and performant. In this guide we'll cover the most important parameters and systems, looking at how they play into different scenarios and how they all fit together.
 
-The screenshots below show two fields. On the left there are 200 instances per square meters, on the right just 25. 
+Like the last part in Workflow this guide is structured as a series of steps. We'll be relying on everything covered so far, but the step by step bits in Getting Started and Workflow are especially important if you want to follow along. Make sure you have your scene set up right and are comfortable with using VerdantObjects and VerdantTerrains. 
 
-I think most people would agree that the example on the right is much more interesting to look at, despite the lower instance count. It also renders x times as fast! 
+The next guide is a companion to this one and covers the performance impacts of all these features. It is very important! Don't skip it just because you get results you like after reading this one! Knowing what not to do will help you in every decision you make and save you a lot of time as your game grows.
 
-Verdant is big and complex, so this page will point you to some of the things that can have a big visual impact on your scene. You don’t need to use all of them, but having an awareness of them will help you make better decisions and can take your game from looking good to looking gorgeous. 
+## Building the scene
 
-## Instance Count
+I've prepared my scene with a simple terrain. We'll also be using a basic VerdantType which has been set up as described in Types and Groups. By starting from something simple we can build it up as we go. Here is my scene with a VerdantTerrain using the type:
+
+Not very interesting as of yet, but it'll get there! 
+
+We should take a moment to think about what we even want from a lush grassy field. What is it that makes this one lackluster? One thing that immediately sticks out is that all the instances blend sort of blend together. 
+
+In short, a good field should:
+* Look smooth and natural but have enough variation to show that it's made up of separate instances
+* Look dense enough that the ground underneath it seems to disappear
+* Interact with the light in interesting ways
+* Grow in interesting shapes
+* Each individual plant should look interesting, even up close
+* There should be more than one type growing together
+
+## Variation
+
+## Density
+
+## Lighting
+* Skybox and baked light
+
+## Interesting Masking
+
+## Adding another type
+
+## Density
 It can be tempting to raise your instance count as high as possible, but beyond a certain point the returns tend to diminish. Where that point is depends on the type of game you’re making, the Verdant Type you’re using and where the camera is placed. Only you can decide what is right for your project, but remember that your perspective can easily become skewed from repeated exposure. Chances are your audience won’t actually notice whether you use 100 or 125 instances per square meter. 
 
 I recommend messing with the Coverage Modifier parameter on your Verdant Camera often, because you might be surprised by how low you can set it without losing your visual identity. As your scene grows more complex, maybe the audiences eyes are drawn more to other elements in the scene? Even going down to 75% of your original count can have a big performance impact!
 
 You can also set the Coverage Modifier from script at runtime based on different graphics settings or build platforms. Have a look at the scripting reference for more details.
 
-## Light Modes
+## Lighting
 
 Depending on the type of vegetation 
 
