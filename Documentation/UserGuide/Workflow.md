@@ -17,7 +17,7 @@ Here we'll take a deeper look at the most important components that make up scen
 {:toc}
 
 ## Surfaces and zones
-As previously mentioned, the main usage of Verdant is defining zones for vegetation to grow in. In Getting Started we did this by adding the component VerdantObject to a box, which made grass appear on top of it. In the background adding VerdantObject made Verdant register the mesh of the box as a surface tracked within its systems. By then adding a type that surface was defined as a zone where VerdantNormalUpGrass grows. 
+As previously mentioned, the main usage of Verdant is defining zones for vegetation to grow in. In Getting Started we did this by adding the component VerdantObject to a box, which made grass appear on top of Behind the scenes adding VerdantObject made Verdant register the mesh of the box as a surface tracked within its systems. By then adding a type that surface was defined as a zone where VerdantNormalUpGrass grows. 
 
 ![Zone surface image]()
 
@@ -27,11 +27,13 @@ If you are used to thinking of vegetation as instances you paint onto geometry i
 
 Shaping these zones and surfaces is what we'll be using everything in this guide for. It's a very different model, but one that lets us do a number of interesting things. Let's have a look at some of them!
 
-## VerdantObject Itself
+## Laying the foundation with VerdantObject
 
-We already went over it a bit earlier, but before we move on to more complex uses let's take a moment to look closer at the basics. VerdantObject is the component you add to a gameObject when you want vegetation to grow on it. It has a multitude of parameters, but the most important ones are the Type List and the Scale, which controls the types of vegetation growing on the object and their scale respectively.  
+As mentioned, the easiest way we can create a surface is to use the component VerdantObject. Most of the time when you want something to have vegetation growing on it you'll do it by adding one of these. VerdantObject has a lot of parameters, but the most important ones are the Type List and the Scale, which controls the types of vegetation growing on the object and their scale respectively.  
 
-VerdantObject requires the gameObject to have a VerdantShapeDescriptor, and it will automatically add one if it's not already present. You can think of VerdantShapeDescriptor as the MeshFilter of Verdant, a very simple component that other components rely on to provide them with mesh data. Unlike MeshFilter we have a few different options to pick from for where that data comes. We can choose between them using the Shape dropdown. By default the shape descriptor looks for a MeshFilter on the gameObject and uses its mesh, but we can also set it to another mesh, a plane locked to the XZ axises (Map) or one of a number of simple shapes (Primitive).  
+VerdantObject requires the gameObject to have a VerdantShapeDescriptor, and it will automatically add one if it's not already present. You can think of VerdantShapeDescriptor as the MeshFilter of Verdant, a very simple component that other components rely on to provide them with mesh data. Unlike MeshFilter we have a few different options to pick from for where to source the mesh from. We can choose between them using the Shape dropdown. By default the shape descriptor looks for a MeshFilter on the gameObject and uses its mesh, but we can also set it to another mesh, a plane locked to the XZ axises (Map) or one of a number of simple shapes (Primitive).  
+
+The mesh from the shape descriptor becomes the surface Verdant recognizes, and you can see it as a wireframe when the object is selected. If you add something to the type list you'll see that its placement matches the wireframe!
 
 ## Masking
 
@@ -45,7 +47,7 @@ The other parameters can be used to adjust the mask in a number of ways. You'll 
 
 ![Gentler masked box]()
 
-### Mask objects
+### Mask Objects
 
 Scale masks are well and good for simple uses, but there are more powerful tools in our belt. If the ground consists of several different objects and we want a consistent pattern or shape across all of them assigning individual scale masks become very cumbersome. 
 
@@ -61,7 +63,7 @@ All the same parameters apply as on a regular scale mask, but there is one uniqu
 
 ![Type only mask]()
 
-### Painted masks
+### Painted Masks
 
 If a normal scale mask isn't working for you Verdant includes tools for painting a mask yourself. These tools are more powerful in that they also allow you to paint different types directly into the mask. There is a full [Guide to painted masks](../AdvancedGuide/PaintingMaskTextures.html) in the advanced guide section. Just like scale masks painted masks can be used on VerdantObjects in both modes.
 
