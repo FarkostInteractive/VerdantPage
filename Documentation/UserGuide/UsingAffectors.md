@@ -7,16 +7,13 @@ nav_order: "4"
 
 # Using Affectors
 
-## Table of contents
-{: .no_toc }
+So far we've added a bunch of vegetation and animated it with wind, but we haven't really been able to interact with it at all. Verdant allows us to do that by using affectors, which are components made specifically to influence vegetation at runtime in a few different ways. We can use them to animate grass as a character moves through it, cut it with a sword, rejuvenate it as magic passes through it or any number of other things.
 
 ## Table of contents
 {: .no_toc .text-delta }
 
 1. TOC
 {:toc}
-
-So far we've added a bunch of vegetation and animated it with wind, but we haven't really been able to interact with it at all. Verdant allows us to do that by using affectors, which are components made specifically to influence vegetation at runtime in a few different ways. We can use them to animate grass as a character moves through it, cut it with a sword, rejuvenate it as magic passes through it or any number of other things.
 
 ## The three types
 
@@ -28,7 +25,7 @@ Each type needs a special component attached to the camera for tracking the affe
 
 Fields work similarly to VerdantCamera in that they keep track of an abstracted version of the scene around it. Just like VerdantCamera they have a limited range which moves with the camera as it traverses the scene. Affectors can "mark" the field if they are in range, and the field will remember the marks for as long as they stay in range. As the camera moves marks that are out of range will be discarded, leaving space for new ones. 
 
-The deflection field also runs a physics simulation to make pressed vegetation bounce back naturally. To support this it has a bunch of special parameters which you can read more about in its [component reference]().
+The deflection field also runs a physics simulation to make pressed vegetation bounce back naturally. To support this it has a bunch of special parameters which you can read more about in its [component reference](../ComponentReference/Fields/VerdantDeflectionField.html).
 
 ## Affectors
 

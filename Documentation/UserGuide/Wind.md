@@ -9,13 +9,13 @@ nav_order: "3"
 # Wind
 {: .no_toc }
 
+We already touched briefly on wind in getting started, but it's such an important part of designing a scene that it's well worth taking a deeper dive. We'll look closer at VerdantWindVolume, its parameters and how it can be used in your worlds.
+
 ## Table of contents
 {: .no_toc .text-delta }
 
 1. TOC
 {:toc}
-
-We already touched briefly on wind in getting started, but it's such an important part of designing a scene that it's well worth taking a deeper dive. We'll look closer at VerdantWindVolume, its parameters and how it can be used in your worlds.
 
 ## Wind Volumes
 
@@ -25,7 +25,7 @@ The main parameter of a wind volume is the strength of the wind, which is measur
 
 To give a bit more life to the wind we can use a wind noise texture. This is a repeating greyscale texture that will scroll through the world (in the XZ plane) and add some extra wind wherever the texture is bright. With the right texture the effect will be like little gusts passing through your vegetation. Verdant includes *****, which is ideal for choppy wind. It's a bit stringy and cellular with sharp transitions between black and white, which translates into clear and distinct gusts sweeping along the ground. The strength of the texture is controlled partially by the wind strength, but you can also increase Gustiness to give it a little boost. It can be necessary to do so when the base wind strength is low. 
 
-Finally the wind direction compass controls both the direction of the wind and the gusts. You can set it directly by moving the needle (holding ctrl will make it snap to 30 degree intervals) or by entering a 2D vector in the fields below it.
+Finally the wind direction compass controls both the direction of the wind and the gusts. You can set it directly by moving the needle (holding ctrl will make it snap to 45 degree intervals) or by entering a 2D vector in the fields below it.
 
 A useful property of VerdantWindVolumes is that they can be nested. The current configuration will always be from the last volume that was entered, so it's possible to enter while inside another volume. Exiting will take you back to the first configuration again. It will even keep track of volumes that only partially intersect!
 
