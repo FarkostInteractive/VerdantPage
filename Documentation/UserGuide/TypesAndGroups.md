@@ -8,7 +8,7 @@ nav_order: "2"
 # Types and Groups
 {: .no_toc }
 
-Now that we know how to use VerdantObject and VerdantTerrain we can start to think about creating types to put on them. You might have noticed that the type list asks for VerdantInstantiables. This is a broad category that contains two different asset types:
+Now that we know how to use VerdantObject and VerdantTerrain we can start to think about creating types to put on them. You might have noticed that the type list asks for VerdantInstantiables. This is a broad category that contains two different asset types: VerdantType and VerdantGroup.
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -18,7 +18,7 @@ Now that we know how to use VerdantObject and VerdantTerrain we can start to thi
 
 ## VerdantType
 
-Think of VerdantType as a combination of a material and a prefab. It is the blueprint from which Verdant will create countless instances populating the world. It describes which mesh to use, the scale, how stiff it should be in wind, and much more all the way up to things like how densely instances should be placed at different distances. Each type of foliage you want to add to the world, meaning each different flower, type of grass, bush, and so on will need its own VerdantType. In general you can think of one mesh as mapping to one VerdantType.
+Think of VerdantType as a combination of a material and a prefab. It is the blueprint from which Verdant will create all its many instances populating the world. It describes which mesh to use, the scale, how stiff it should be in wind, and much more all the way up to things like how densely instances should be placed at different distances. Each type of foliage you want to add to the world, meaning each different flower, type of grass, bush, and so on will need its own VerdantType. In general you can think of one mesh as mapping to one VerdantType.
 
 You create VerdantTypes as assets in the Project view. Right click or use the + button in the upper left and select Verdant > VerdantType. Open the newly created type in the inspector and you'll find an abundance of parameters to play with.
 
@@ -52,7 +52,7 @@ The one thing all types need is a mesh, so we'll start there. Go to the mesh fie
 
 ### A note about making vegetation meshes
 
-When you use models normally in Unity you place them as a gameObject hierarchy that may contain one or more meshes. Since Verdant renders meshes directly it can only do one mesh at a time and loses any transforms present in the hierarchy. It's important when you're authoring meshes to remember that you must combine all separate pieces, apply your transforms so the mesh naturally has its origin at the base of the plant, and make sure it uses the Y axis as its up axis. Otherwise it will look off or not appear at all. To make it animate as nicely as possible you should also try to not let the height exceed one meter.
+Normally when using models in Unity you place them as a gameObject hierarchy that may contain one or more meshes. Since Verdant renders meshes directly it can only do one mesh at a time and loses any transforms present in the hierarchy. It's important when you're authoring meshes to remember that you must combine all separate pieces, apply your transforms so the mesh naturally has its origin at the base of the plant, and make sure it uses the Y axis as its up axis. Otherwise it will look off or not appear at all. To make it animate as nicely as possible you should also try to not let the height exceed one meter.
 
 While we won't interact much with the scene here it's good if you have a VerdantCamera and VerdantObject out that you can test the type on. If you do, set the VerdantObject to only use your new type. It should appear with your chosen mesh!
 
@@ -60,10 +60,17 @@ Next, let's think about the density. It's set as 100 by default, but let's decre
 
 Click on LOD 0 to show its parameters. It would make sense to add a texture next, and we can easily do that by setting the Texture parameter. If the texture is in greyscale or we want to tweak it slightly we can use the color parameter. You can also take this opportunity to select LOD 1, enable its color parameter and change it to something wildly different than LOD 0. Then, zoom out from your VerdantObject. You'll clearly see where Verdant switches between the two LODs. If you go back to LOD 0 you can increase the LOD Fade and see how it smooths the boundary between the two. When you're done, just disable the color parameter on LOD 1 and set the LOD Fade back to 0 for now.
 
-If you have a second LOD for your mesh go ahead and set it in the Mesh parameter. Otherwise we'll keep both for the aforementioned performance reasons and focus on the first one. 
-*Go through some useful right-side parameters*
+If you have a second LOD for your mesh go ahead and set it in the Mesh parameter. Otherwise we'll keep both for the aforementioned performance reasons and focus on the first one. Click on LOD 0 again to refocus it. Notice how there are some parameters that are greyed out. This happens because of two parameters towards the top, Shading Level and Enable Alpha. We'll discuss them more in the [Performance Guide](Performance.html), but for now know that they are used to exclude certain features to make the type faster to render. We'll leave them as they are for now.
 
-Some of these parameters, such as Translucency and Light Mode, need a bit more context for how and why to use them. We'll return to them in the guide [Visual Flair](VisualFlair.html), where we'll use them to embellish our scene to great effect.  
+Of the two columns of LOD parameters the left one should mostly look familiar from the Unity standard shader. Some of them, such as Translucency, need a bit more context for how and why to use them. We'll return to them in the guide [Visual Flair](VisualFlair.html), where we'll use them to embellish our scene to great effect. The right hand column though contains a lot of important Verdant-specific settings. These are called the Instance Properties and control placement and animation behaviour.
+
+The first one you'll notice is Billboarding, which allows us to set how much the instances should rotate to face the camera. With some types increasing billboarding can help make the scene appear denser, though it can also backfire and make it look artificial. Try to set it to 1 to see the difference, then try a middle value. Setting it between 0 and 1 can be a good compromise that makes it so the type will never be seen directly from the side, but also not appear to follow the camera as it moves.
+
+This is also where you find the Scale property. This is the basic scale of the type that can be influenced by other parts of Verdant, like the Scale setting on VerdantObject. Other Scale values will get multiplied into this one, so make sure you set it to a good baseline value for your mesh.
+
+The following four have to do with [Affectors](UsingAffectors.html) and [Wind](Wind.html), so we'll save those for later. After them are a few that we'll return to when going in depth on the visuals. I do want to point out the shadow settings though. Set Cast Shadows to On and see how it changes your scene. You might want to tweak your light a little bit to really bring them out. While shadows look really nice we need to be careful when using them as they are very performance intensive. We'll use our second LOD here to make it so they're only visible when we're close to them. Go to LOD 1 and enable the Cast Shadows parameter, then make sure it's set to Off. As you back away now you should notice the shadows disappear. If it's very obvious when they drop out, go back to LOD 0 and increase LOD Fade until you get a smoother transition. 
+
+Finally, we'll change one of the Type Parameters at the bottom. Try increasing Placement Randomness and see how it changes the pattern your type grows in. For a dense type like this one we only need to bump it up slightly to make it a little less repetitive. Usually the sparser a type is set up the clearer the pattern becomes, and the more you have to increase Randomness. 
 
 ### The VerdantType limit
 
