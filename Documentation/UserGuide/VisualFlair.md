@@ -8,17 +8,17 @@ nav_order: "5"
 # Visual Flair
 {: .no_toc }
 
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
 With all of its many, many parameters it can be tempting to just turn everything in Verdant up to max and get as much visual juice out as you possibly can. More likely than not you'll just end up with some fancy mush and a very unhappy computer. By working a bit more thoughtfully we can combine different features to reinforce each other and get scenes that are both very pretty and performant. In this guide we'll cover the most important parameters and systems, looking at how they play into different scenarios and how they all fit together.
 
 Like the last part in Workflow this guide is structured as a series of steps. We'll be relying on everything covered so far, but the step by step bits in Getting Started and Workflow are especially important if you want to follow along. Make sure you have your scene set up right and are comfortable with using VerdantObjects and VerdantTerrains. 
 
 The next guide is a companion to this one and covers the performance impacts of all these features. It is very important! Don't skip it just because you get results you like after reading this one! Knowing what not to do will help you in every decision you make and save you a lot of time as your game grows.
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Building the scene
 

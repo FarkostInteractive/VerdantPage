@@ -6,8 +6,9 @@ nav_order: "6"
 ---
 
 # Performance
-
 {: .no_toc }
+
+This might not be the most exciting guide in the world, but it is nonetheless very important. Verdant is very different from other vegetaion systems and it has its own set of unique quirks when it comes to performance. Being aware of them will help you avoid pitfalls and make for a much smoother experience in the long run
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -15,13 +16,11 @@ nav_order: "6"
 1. TOC
 {:toc}
 
-This might not be the most exciting guide in the world, but it is nonetheless very important. Verdant is very different from other vegetaion systems and it has its own set of unique quirks when it comes to performance. Being aware of them will help you avoid pitfalls and make for a much smoother experience in the long run
-
 ## Diagnostic Tools
-There are two very useful tools you can use to help diagnose problems. You'll find both of them under Verdant in the menu bar. The first is the [Debug Panel, which has an advanced guide all of its own](). It helps you understand how Verdant is interpreting your scene at any given time and is very good for identifying sources of visual artifacting or affector problems. There is also Rendering Statistics, which shows all the types in the scene and gives you their instance counts in real time. Use it to identify which types 
+There are two useful tools you can use to help diagnose problems. You'll find both of them under Verdant in the menu bar. The first is the [Debug Panel, which has an advanced guide all of its own](). It helps you understand how Verdant is interpreting your scene at any given time and is very good for identifying sources of visual artifacting or affector problems. There is also Rendering Statistics, which shows all the types in the scene and gives you their instance counts in real time. Use it to identify which types have the highest presence at different points in your scene. 
 
 ## Limiting the number of instances
-As shown in the last guide, there comes a point where raising density doesn't actually do much for your visuals anymore. Try to find where that line is for you, a very easy way to test it is using the Coverage Modifier on your VerdantCamera. While instances are cheap in Verdant they do still have a cost. If you can go from density 100 to density 75 that can save you something like 50000 instances when looking into a large field, which is GPU time that you could spend on something more useful. You should also consider hooking up the Coverage Modifier to your graphics settings via script, it is the easiest way to make Verdant run better on low-end systems.
+As shown in the last guide, there comes a point where raising density doesn't actually do much for your visuals anymore. Try to find where that line is for you, a very easy way to test it is using the Coverage Modifier on your VerdantCamera. While instances are cheap they are not free. If you can go from density 100 to density 75 that can save you something like 50000 instances when looking into a large field, which is GPU time that you could be spent elsewhere. You should also consider hooking up the Coverage Modifier to your graphics settings via script. That is the easiest way to make Verdant run better on low-end systems.
 
 Just as important as the instance count is the number of vertices per mesh. The statistics view shows you the total number of vertices next to the number of instances, and this is really the number you should be focusing on. There's not much difference for Verdant between ten meshes with 100 vertices and 100 instances with ten vertices, their cost will be roughly the same. We'll look at how to get around this with LODs in a moment, but for now keep in mind that your meshes should have as low vertex counts as you can get away with.
 
