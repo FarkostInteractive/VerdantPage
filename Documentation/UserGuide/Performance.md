@@ -8,7 +8,7 @@ nav_order: "6"
 # Performance
 {: .no_toc }
 
-This might not be the most exciting guide in the world, but it is nonetheless very important. Verdant is very different from other vegetaion systems and it has its own set of unique quirks when it comes to performance. Being aware of them will help you avoid pitfalls and make for a much smoother experience in the long run
+This might not be the most exciting guide in the world, but it is nonetheless very important. By now you've seen the ways in which Verdant is different from other vegetation systems, and now we'll look at the set of performance quirks that come along with that. Being aware of them will help you avoid common pitfalls and make for a much smoother experience in the long run.
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -16,8 +16,40 @@ This might not be the most exciting guide in the world, but it is nonetheless ve
 1. TOC
 {:toc}
 
-## Diagnostic Tools
-There are two useful tools you can use to help diagnose problems. You'll find both of them under Verdant in the menu bar. The first is the [Debug Panel, which has an advanced guide all of its own](). It helps you understand how Verdant is interpreting your scene at any given time and is very good for identifying sources of visual artifacting or affector problems. There is also Rendering Statistics, which shows all the types in the scene and gives you their instance counts in real time. Use it to identify which types have the highest presence at different points in your scene. 
+## How to think about performance
+
+Verdant exists to solve a very specific problem, and that is to make creating large, dynamic worlds with dense vegetation as seamless and quick as possible. That is why it works the way it does, creating instances and interpreting the world as it goes along rather than baking everything into huge scene files beforehand. There are many natural strengths to this approach, chief among them completely uncoupling the size from the world from how your game performs and keeping a small and constant memory footprint. 
+
+But it does also mean that we need to focus on the parameters that create the scene rather than the scene itself when optimizing. If the framerate stoops when you look at a specific field, the culprit is going to be either the VerdantGroup it's sourced from, its constituent VerdantTypes or the VerdantObject on which they grow. Once we know where the problem is we need to identify what type of problem it is, and then know what parameters to change to reduce it. In the next sections we'll go through the broad categories of performance issues, what they arise from and ways to cover them up. 
+
+### Diagnostic Tools
+There are two tools you can use to help with diagnosing problems. You'll find both of them under Verdant in the menu bar. The first is the [Debug Panel, which has an advanced guide all of its own](). It helps you understand how Verdant is interpreting your scene at any given time and is very good for identifying sources of visual artifacting or why affectors are acting up. There is also Rendering Statistics, which shows all the types in the scene and gives you their instance counts in real time. Use it to identify which types have the highest presence at different points in your scene. 
+
+## Density and vertices
+
+While instances are cheap in Verdant each one does still come with a cost. Verdant does all it can to cull their numbers, but you could still find yourself rendering more instances than necessary. 
+
+The easiest way to test if density is causing you problems is to use Coverage Modifier on the VerdantCamera. 
+
+In the last guide we went over some of the ways to make up for a lower density.
+
+## Pixel shading and overdraw
+
+Depending on the mesh you're using 
+
+## Shadows and forward rendering
+One thing that becomes very dangerous when rendering all these instances is making the engine render it more than once. 
+
+## Using LODs effectively
+
+## Optimizing subsystems
+If the problem isn't any of the above there's a decent chance it is actually one of the systems running in the background. These can be a little opaque, but there's still a lot you can do to influence them.
+
+### Affectors
+
+### Height and Typefields
+
+### Wind
 
 ## Limiting the number of instances
 As shown in the last guide, there comes a point where raising density doesn't actually do much for your visuals anymore. Try to find where that line is for you, a very easy way to test it is using the Coverage Modifier on your VerdantCamera. While instances are cheap they are not free. If you can go from density 100 to density 75 that can save you something like 50000 instances when looking into a large field, which is GPU time that you could be spent elsewhere. You should also consider hooking up the Coverage Modifier to your graphics settings via script. That is the easiest way to make Verdant run better on low-end systems.
@@ -59,11 +91,3 @@ When you add a field component you are essentially including a new feature into 
 The resolution of the field, which is closely associated with its range, should be kept as low as possible.  
 
 In general, affector performance is less about total number and more about density. You can easily have hundreds of affectors in your scene if only three are in range at any given time. This is why it's important to be mindful of the range and resolution of your fields. 
-
-
-## What not to worry about
-With all that said, there are some things that Verdant essentially handles for you. Chief among them is the size of the scene and the total amount of vegetation. In Verdant, the only thing that exists at any time is what is around you, and as you move it simply rearranges itself into the environment you're traversing. That means there's almost no limit to how quickly you can move and how large your scene can be. It's also very 
-
-
-* If you can, I highly recommend using deferred lighting. In forward rendering Verdant will be rendered multiple times for each light, which can get very expensive.
-* Lights with shadow casting will always cause Verdant to render a shadow pass one time per light. Be extra careful with these, and if you don’t need them you can disable shadows completely on your Verdant Type or limit them to the first LOD. On low performance systems this can sometimes double your framerate!
