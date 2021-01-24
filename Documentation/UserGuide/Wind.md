@@ -27,6 +27,12 @@ To give a bit more life to the wind we can use a wind noise texture. This is a r
 
 Finally the wind direction compass controls both the direction of the wind and the gusts. You can set it directly by moving the needle (holding ctrl will make it snap to 45 degree intervals) or by entering a 2D vector in the fields below it.
 
+## Wind strength and VerdantType stiffness
+
+We might want different types of vegetation to respond to wind in different ways. The parameter Stiffness on VerdantType can be used to do that. The more stiffness is increased the harder the type becomes to bend, and the tighter it oscillates when it does. A low value will give you strong and dramatic sway where a high value will be more akin to how a twig in winter might shake slightly. Increase it enough and the type simply won't respond to wind at all. The stiffness value interacts with the wind strength to calculate movement individually for each type, so you should think of it as an intrinsic value of the type that will react naturally to different conditions. 
+
+## Using Volumes in Scenes
+
 A useful property of VerdantWindVolumes is that they can be nested. The current configuration will always be from the last volume that was entered, so it's possible to enter while inside another volume. Exiting will take you back to the first configuration again. It will even keep track of volumes that only partially intersect!
 
 ![Image of intersecting volumes]()

@@ -46,9 +46,24 @@ Finally, the last section applies to the entire type. They allow us to set a ren
 
 ### Setting up a type
 
-With the broad descripitions of the parameters out of the way, let's have a look at using it all in an example. We'll set up a simple type and in the process focus in on some of the more important parameters. 
- 
-***********
+With the broad descripitions of the parameters out of the way, let's have a look at using it all in an example. We'll set up a simple type and in the process focus in on some of the more important parameters. Start by creating a new type by right clicking in the Project view or clicking the plus button. Navigate to Verdant and select VerdantType. Then click on the type you created to open it in the inspector.
+
+The one thing all types need is a mesh, so we'll start there. Go to the mesh field and either select one from Verdant or one of your own models.
+
+### A note about making vegetation meshes
+
+When you use models normally in Unity you place them as a gameObject hierarchy that may contain one or more meshes. Since Verdant renders meshes directly it can only do one mesh at a time and loses any transforms present in the hierarchy. It's important when you're authoring meshes to remember that you must combine all separate pieces, apply your transforms so the mesh naturally has its origin at the base of the plant, and make sure it uses the Y axis as its up axis. Otherwise it will look off or not appear at all. To make it animate as nicely as possible you should also try to not let the height exceed one meter.
+
+While we won't interact much with the scene here it's good if you have a VerdantCamera and VerdantObject out that you can test the type on. If you do, set the VerdantObject to only use your new type. It should appear with your chosen mesh!
+
+Next, let's think about the density. It's set as 100 by default, but let's decrease it to 75. That will give us almost the same look but save us 25% of the instances. The falloff is set to Sharp by default and we have no reason to change that, though if you want to you could change it to . We should however add another LOD. Click the plus button, then grab the handle between the two LODs and slide it to the left so the first LOD only covers the first section. 
+
+Click on LOD 0 to show its parameters. It would make sense to add a texture next, and we can easily do that by setting the Texture parameter. If the texture is in greyscale or we want to tweak it slightly we can use the color parameter. You can also take this opportunity to select LOD 1, enable its color parameter and change it to something wildly different than LOD 0. Then, zoom out from your VerdantObject. You'll clearly see where Verdant switches between the two LODs. If you go back to LOD 0 you can increase the LOD Fade and see how it smooths the boundary between the two. When you're done, just disable the color parameter on LOD 1 and set the LOD Fade back to 0 for now.
+
+If you have a second LOD for your mesh go ahead and set it in the Mesh parameter. Otherwise we'll keep both for the aforementioned performance reasons and focus on the first one. 
+*Go through some useful right-side parameters*
+
+Some of these parameters, such as Translucency and Light Mode, need a bit more context for how and why to use them. We'll return to them in the guide [Visual Flair](VisualFlair.html), where we'll use them to embellish our scene to great effect.  
 
 ### The VerdantType limit
 
@@ -63,19 +78,5 @@ It's very common to have cases where we might want multiple types to always appe
 Using VerdantGroups is very simple. You can create them from the same menu as VerdantType. They have their own falloff and density settings, but otherwise all you need to do is add the types you want to include. You'll notice that a number appears next to the types as you do so. This is the ratio, which controls how much of the group density to use for this type. A group with density 100 could for example have flowers at 0.2 and grass at 0.8, which makes for 20 flower instances and 80 grass instances. The ratio can be set higher than 1 if needed, but you should try to keep it so all your types add up to 1 as good practice. It makes the total density of the group easier to keep track of and saves you from nasty performance surprises. 
 
 VerdantGroup can be used anywhere you can use VerdantType. They will count as one group in almost all ways except one: Performance. We'll get into it more in the [performance section](Performance.html) of the guide, but it's important to stress here too. Even with groups you should be mindful that each type you add has a performance overhead. Also remember that unless you set your ratios right you might end up with the sum total of the densities of your types. If you combine three grass types with density 100 and don't change the ratio you will end up with density 300, with the predictable performance cost therein.
-
-## Basic Setup
-
-We'll return to VerdantTypes when we get to [Visual Flair](VisualFlair.html), but as a summary of everything covered so far we'll make a simple type that you can use to experiment with the systems. Start by creating a new type by right clicking in the Project view or clicking the plus button. Navigate to Verdant and select VerdantType. Then click on the type you created to open it in the inspector.
-
-The one thing all types need is a mesh, so we'll start there. Go to the mesh field and either select one from Verdant or one of your own models.
-
-### A note about making vegetation meshes
-
-When you place a mesh normally in Unity you place it as a gameObject hierarchy that contains one or more meshes. Since Verdant renders meshes directly it cannot do that, so any transforms present in the hierarchy will be lost. It's important to remember when you're authoring meshes that you must combine all the pieces, apply your transforms so the mesh naturally has its origin at the base of the plant and make sure it uses the Y axis as up. Otherwise it won't come out as you expect in Verdant. You should also keep the scale down so all vertices fit within a 1x1x1 meter box. That will help Verdant when vertex animating it.
-
-While we won't interact much with the scene here it's good if you have a VerdantCamera and VerdantObject out that you can test the type on. If you do, set the VerdantObject to only use your new type. It should appear and have your chosen mesh!
-
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 We've now gone over the tools for building your scene and the Verdant vegetation therein. There's still one obvious visual aspect left unexplored though, and we'll take a look at that next in the section on [wind](Wind.html). 
