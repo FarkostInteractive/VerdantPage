@@ -4,9 +4,7 @@ title: "Introduction"
 nav_order: "0"
 ---
 
-# Introduction
-
-Welcome! 
+# Welcome!
 
 The Verdant Documentation is split into four parts. There’s the [User Guide](UserGuide), which offers you everything you need to get started and build beautiful, performant scenes. It starts from the very beginning and delves deeper from there, teaching you how to best use Verdant, avoid performance pitfalls and put all the pieces together. I recommend every user read through it at least once.
 
