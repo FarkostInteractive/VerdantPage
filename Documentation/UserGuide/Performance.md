@@ -71,137 +71,35 @@ For less dense VerdantTypes re-rendering is a much smaller problem. A good rule 
 
 ## Using LODs effectively
 
-We've already touched on a few things you can do with LODs, but it's worth reiterating that almost any optimization mentioned previously can be set per LOD. Adding a LOD is quite cheap (and you might already have two to prevent overflow!), so consider that there might be parameters you don't to lower on the first LOD but can spare later down the line. The shading level is a great example, as many of its effects won't be visible at a distance.
+We've already touched on a few things you can do with LODs, but I want to reiterate that almost all the optimizations mentioned previously can be set per LOD. Adding a LOD is quite cheap (and you might already have two to prevent overdraw!), so ask yourself if there are parameters you don't want to lower on the first LOD but can maybe spare later down the line. The shading level is a great example of this, as many of the advanced effects won't be visible at a distance. The same thing goes for Allow Alpha, where you can often replace an alpha cutout with a mesh in roughly the same shape.
 
-
-
-* It is always worth adding an extra LOD if it lets you simplify something
-* Remember that you can drop shading level and allow alpha
-* LOD fade is good but don't overdo it
+Also remember that LOD fade is very useful for hiding pop in. If it helps you hide disabling shadows or switching to a lower resolution mesh early then don't hesitate to use it. It is there to help! Do keep in mind though that LOD fade won't be very noticable further away from the camera, and that it's performance cost grows with distance (as the falloff steps grow in covered area). Use it as much as you need to, but do make sure to test how much it helps.
 
 ## Optimizing subsystems
 
-* If you must, decrease resolution
+Beyond what ends up on the screen Verdant always has a fair bit of work going on in the background. It is meant to be unobtrusive, but like everything else it does come at a performance cost. If you find that you have issues unrelated to any of the previous categories, or if you just want to shave off a few extra corners, then this section describes how to cut down on that work.
+
+Most of the background work involves building the field data structures that Verdant relies on to draw vegetation. For all of them there is a tradeoff we can make: Decrease their resolution to decrease the amount of work performed, but lose some of the detail in Verdants' perception of the game world in the process. Depending on the game doing this might lead to visual artifacting or it might be completely fine. It all depends on your needs.  
+
+### VerdantCamera 
+VerdantCamera is responsible for managing all the VerdantTypes in the scene and drawing them onto appropriate surfaces. xxxxxxxxxxxxxxxxx
+
+For VerdantCamera, a decrease in resolution means xxxxxxx
 
 ### Affectors
 
+Adding an affector field to your scene is essentially like adding a new feature into Verdant. A VerdantCamera without a field component won't be doing any of the work related to it, so if you just want to keep everything as lean as possible it is best to not use fields at all. When you do need them though there are steps you can take to reduce that cost.
+
+As with VerdantCamera you can change the range and the resolution. These two together determine both tthe granularity of the field and its performance cost. Low resolution is cheaper and the range controls how large the area we stretch the resolution over is. 
+
+xxxxxxxxxxxxxxxxxxxxxxx
+
+* The number of affectors matters less than having a field in the first place
+* Resolution helps, especially for deflection
+* As does the updates per second
 * Use simple meshes
 
 
+## Sending you off
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## How to think about performance
-
-Verdant exists to solve a very specific problem, which is to make creating large, dynamic worlds with dense vegetation as seamless and quick as possible. That is why it works the way it does, creating instances and interpreting the world as it goes along rather than baking everything into huge scene files beforehand. There are many natural strengths to this approach, chief among them completely uncoupling the size from the world from how your game performs and keeping a small and constant memory footprint. 
-
-But it does mean that we need to shift our focus when optimizing from the scene itself to the parameters that create it. If the framerate stoops when you look at a specific field the culprit is going to be either the VerdantGroup it's sourced from, its constituent VerdantTypes or the VerdantObject on which they grow. Once we know where the problem is we need to identify what type of problem it is, and then know what parameters to change to reduce it. In the next sections we'll go through the broad categories of performance issues, what they arise from and ways to reduce their impact. 
-
-### Diagnostic Tools
-There are two tools you can use to help with diagnosing problems. You'll find both of them under Verdant in the menu bar. The first is the [Debug Panel, which has an advanced guide all of its own](). It helps you understand how Verdant is interpreting your scene at any given time and is very good for identifying sources of visual artifacting. There is also Rendering Statistics, which shows all the types in the scene and gives you their instance counts in real time. Use it to identify which types have the highest presence at different points in your scene. 
-
-## Density and vertices
-
-* Don't have more instances than necessary
-* Use falloff
-* Consider your vertices
-* Check the stat tool
-
-While instances are cheap in Verdant each one does still come with a cost. Verdant does all it can to cull their numbers, but you could still find yourself rendering more instances than necessary. 
-
-The easiest way to test if density is causing you problems is to use Coverage Modifier on the VerdantCamera. 
-
-In the last guide we went over some of the ways to make up for a lower density.
-
-## Overdraw and pixel shading
-
-* Don't have your instances too dense
-* Don't have your instances too big
-* Disable Allow Alpha
-* Keep the pixel shader simple by using few textures, Allow Alpha and Shading Level
-
-After the instance count the next step is to check how much your instances overlap. Some amount of overlap is a good thing and fundamentally the reason to increase density in the first place. The lusher and denser fields are the nicer they look, right? The unfortunate side effect is that because Verdant renders as much as it can in a single draw call its capacity to Z-test against itself is limited. It can be very easy to end up with a lot of overdraw. 
-
-Overdraw happens when a pixel is rendered to several times. We're only interested in the final color drawn by the surface closest to the screen, so every time another surface covering the pixel is drawn beforehand there's redundant work being performed. The classic way to test for overdraw is to isolate the problem, then decrease the resolution and see how much your framerate improves. If Verdant renders significantly faster at lower resolutions chances are the amount of overdraw is limiting you more than your instance count. For this reason you need to be especially mindful of overdraw when targeting systems with high DPI screens. 
-
-As the problem is still fundamentally tied to density decreasing the number of instances will still help you here. The nuances are slightly different with overdraw though. You'll specifically want to strengthen falloff, as overdraw happens most when the camera is close to the ground and looking at vegetation head-on. By decreasing the density in the areas that are already occluded you can both save instances and prevent overdraw.
-
-You also need to consider the scale and extent of each instance. If the density is low but the meshes are wide enough to still intersect the effect is essentially the same as with higher density. For this reason it can be possible to have a surprisingly high instance count when using narrow, simple meshes.
-
-The strongest weapon you have is the VerdantType parameter Allow Alpha. By flat out disabling any sort of transparency the shader becomes able to use early Z-testing and save some work even within a single draw call. You should always disable alpha when you can, as it can often double your framerate. The tradeoff here is between using alpha or increasing the number of vertices to model the shape of your plant. Which is the better choice will depend on your circumstances.
-
-We can also use LODs to give the depth buffer a helping hand. By creating a LOD that covers just the first falloff step we force Verdant to render it first. All the closest instances will be present in the depth buffer already when the rest are rendered, meaning they can be reliably depth tested against. As the closest instances are most likely to cover up other instances this first pass will protect against the worst overdraw scenarios. To some extent this approach extends to making LODs for later steps too, though your gains might be overtaken by overhead at some point.
-
-A related problem is the complexity of the pixel shader. If the pixel shader is performing a lot of work then overdraw becomes an exponentially bigger problem, and scenes with little overdraw can become expensive anyway when Verdant covers a lot of the screen.
-
-You have three tools at your disposal to keep the pixel shader lean. The first is the aforementioned alpha switch, which will cut some work in addition to allowing early Z-testing. The second is the similar Shading Level parameter. Shading Level allows you to control which features you want the shader to include, you'll see which are contained in each by the parameters that grey in or out. The Basic level is a bare minimum, allowing you a texture and little else. Verdant Standard is intended as the main level and allows all the features you need for rich and lush vegetation. Full Surface Detail allows you access to all the same parameters as the Unity standard shader. 
-
-The third tool is to simply not use some of the texture parameters. Verdant will try to branch on these to avoid doing unnecessary work if they aren't set. How effective that is will depend on your system architecture though, so to guarantee that a parameter isn't used you'll need to use Shading Level to deactivate it.
-
-All of the mentioned techniques are LOD-adjustible, so you can potentially save a lot by dropping down a shading level or two in a later LOD. 
-
-## Using LODs effectively
-
-* It is always worth adding an extra LOD if it lets you simplify something
-* Remember that you can drop shading level and allow alpha
-* LOD fade is good but don't overdo it
-
-## Optimizing subsystems
-
-* If you must, decrease resolution
-
-If the problem isn't any of the above there's a decent chance it is actually one of the systems running in the background. These can be a little opaque, but there's still a lot you can do to influence them.
-
-### Affectors
-
-* Use simple meshes
-
-## Limiting the number of instances
-As shown in the last guide, there comes a point where raising density doesn't actually do much for your visuals anymore. Try to find where that line is for you, a very easy way to test it is using the Coverage Modifier on your VerdantCamera. While instances are cheap they are not free. If you can go from density 100 to density 75 that can save you something like 50000 instances when looking into a large field, which is GPU time that you could be spent elsewhere. You should also consider hooking up the Coverage Modifier to your graphics settings via script. That is the easiest way to make Verdant run better on low-end systems.
-
-Just as important as the instance count is the number of vertices per mesh. The statistics view shows you the total number of vertices next to the number of instances, and this is really the number you should be focusing on. There's not much difference for Verdant between ten meshes with 100 vertices and 100 instances with ten vertices, their cost will be roughly the same. We'll look at how to get around this with LODs in a moment, but for now keep in mind that your meshes should have as low vertex counts as you can get away with.
-
-You can also try lowering the render distance and experiment with falloff. You'll be surprised by how low you can set the furthest falloff steps without really noticing a difference. If the camera is looking along the ground all the instances in front of it accumulate, so you'll barely even see the ones furthest away. Because the view frustum grows outwards with distance each falloff step is significantly larger in area than the previous. That further increases the potential gains of a sharp falloff, with no falloff the amount of instances in the last steps would be enormous. 
-
-## Shading levels and alpha
-Like the Unity Standard Shader the Verdant shader is built to be flexible and support a range of visual styles. That does mean that it might be doing more work than you need it to sometimes, so you can force it to exclude certain features by setting the Shading Level on your VerdantTypes. When you change it you'll notice that some texture parameters become greyed out. Verdant always tries to branch around unused textures, but how much time that saves you depends on your systems graphics architecture. Using the shading level guarantees that the greyed out textures will be passed over completely. This is a per LOD parameter, so it's possible to have a higher level for your first LOD than the latter.
-
-Even more important than the shader level is Allow ALpha, which enables and disables alpha clipping. Alpha clipping can be a very useful way to keep your vertex count down but has the unfortunate side effect of preventing the GPU from doing early Z tests, meaning it will draw many more pixels than needed. This is especially pronounced in dense fields, where the grass closest to the camera might occlude thousands of other instances. In scenes with a lot of overdraw you should always try to keep this option disabled, though you might have to weight it against the cost of having more complex meshes.
-
-## LOD usage
-Many of the previously mentioned problems are per LOD adjustable, meaning we can reduce their impact by only allowing them on the first LOD. In games with high visual fidelity you should almost always have at least two LODs, one with all your high detail effects and one that has been reduced as much as you can get away with.
-
-The most obvious case is using more than one mesh. A mesh with a slightly higher vertex count can look better when animated, but as explained we don't want it multiplied out into every instance in the scene. By having a version with high tesselation and one with low you get the benefit of both. The same thing goes for shadows, shading level and even alpha clipping. 
-
-Even if you don't need LODs there's actually an argument for adding one just for the first falloff step anyway. As mentioned, dense vegetation can lead to a lot of overdraw. When you use LODs Verdant is forced to draw each one as a separate draw call, and it will draw them front to back. By drawing the zone closest to the camera first it will almost certainly block out a lot of the screen. That information will then be present in the depth buffer when the next LOD is drawn and it can use it to avoid drawing to those pixels again. You'll see the most benefit from doing this if you have large dense fields, less so if your scene mostly consists of small patches. 
-
-
-## Field and affector performance
-When you add a field component you are essentially including a new feature into Verdant, and that has an associated cost. All fields need some memory to keep track of their affectors, and deflection needs to run its simulation at the set interval. Instances will also need to read from each field to apply their effects, increasing the cost per instance slightly. The most dramatic cost comes from adding the field at all, though there are other factors as well.
-
-The resolution of the field, which is closely associated with its range, should be kept as low as possible.  
-
-In general, affector performance is less about total number and more about density. You can easily have hundreds of affectors in your scene if only three are in range at any given time. This is why it's important to be mindful of the range and resolution of your fields. 
+That's it! Congratulations on making it all the way through, you now know all you need to start exploring Verdant on your own. When you have questions further onward the two best places to go will be the [Advanced Guide](AdvancedGuide) which walks you through some of the more specific subsystems, and the [Component Reference](ComponentReference) which contains descriptions of basically every component and parameter in Verdant. There is also the [FAQ](FAQ), which aims to catch anything that might otherwise slip through the cracks. 
