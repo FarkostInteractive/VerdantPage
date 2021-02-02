@@ -2,7 +2,6 @@
 layout: default
 title: "Writing Custom Shaders"
 parent: "Advanced Guide"
-nav_order: "5"
 ---
 
 # Writing Custom Shaders
