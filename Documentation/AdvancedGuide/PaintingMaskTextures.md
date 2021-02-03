@@ -6,7 +6,7 @@ parent: "Advanced Guide"
 
 # Painting Mask Textures
 
-Using regular mask textures can get you pretty far, but they only allow you to change the scale of vegetation. By using the internal Verdant tools for painting masks you can also paint type information directly into the texture. The experience is not dissimilar from vegetation painting tools you might be familiar with elsewhere, but planted firmly within the Verdant paradigm. 
+Using regular mask textures can get you pretty far, but they only allow you to change the scale of vegetation. By using the internal Verdant tools for painting masks you can also paint type information directly into the texture. The experience is not dissimilar to vegetation painting tools you might be familiar with from elsewhere, but planted firmly within the Verdant paradigm. 
 
 To paint a mask you first need a VerdantObject. Select it, then go down into the Masking Texture parameters and look for the header Painted Mask. Below it you'll see a resolution parameter, a row of tools and a textbox indicating that this object does not have a painted mask yet. Click on the Initialize button to create one. You'll see the UI change slightly. The tools are now ready to use, either from the component or in the scene view tool drawer (show it by clicking the icon of a crossed pen and spanner to the left of Gizmos). When you do so you'll see a some new windows overlaid on the scene view.
 
@@ -20,7 +20,7 @@ To the right of the palette are two windows, one for Brush Settings and one for 
 
 []
 
-The Vegetation Scale Settings are used to draw into the scale portion of the mask. It's a straightforward menu where you set the scale you want your vegetation to be when it's drawn. The brush texture and falloff act as a multiplier on this value, as does the scale of the VerdantObject. You can also select a blend mode when using the Scale Adjustment Tool.
+The Vegetation Scale Settings are used to draw into the scale portion of the mask. It's a straightforward parameter where you set the scale you want your vegetation to be when it's drawn. The brush texture and falloff act as a multiplier on this value, as does the scale of the VerdantObject. When using the Scale Adjustment tool you can also select a blend mode, though that setting is disabled for other tools.
 
 The last window contains the Mask Settings and allows you to change things about the mask itself. You can adjust the resolution, which will automatically scale the contents of the mask up or down, change the UV settings as you would any other mask texture, and clear or delete the mask. There are also two debug options. Draw Mask lets you view the type and scale masks as textures on the object. Illustrate Mask UVs will automatically be enabled when using any UV Mode other than Mesh UVs and shows where the UV plane is in relation to the mesh as a wireframe rectangle. 
 
@@ -30,11 +30,11 @@ There are five tools available to you. Each of them use different parts of the i
 
 []
 
-Furthest to the left is the Add Vegetation tool, which you use to draw in new vegetation. This is the most basic tool and the one you'll always use first. It writes in both the selected types and the scale, and will overwrite any existing data. Just mouse over the object, then click anywhere you want to add your type. You'll see it instantly.
+Furthest to the left is the Add Vegetation tool, which you use to draw in new vegetation. This is the most basic tool and the one you'll always use first. It writes in both the selected types and the scale, and will overwrite any existing data. Just mouse over the object, then click anywhere you want to draw in your type. You'll see it instantly.
 
 []
 
-The next one is Erase Vegetation, which is the obvious counterpart to Add Vegetation. It disables the Palette and Scale windows entirely, because all it does is remove any vegetation it's used on. If the brush has falloff it will be used to scale vegetation in it towards zero. 
+The next one is Erase Vegetation, which is the obvious counterpart to Add Vegetation. It disables the Palette and Scale windows entirely, because all it does is remove any vegetation it's used on. If the brush is not entirely opaque because of its falloff or texture then it will scale vegetation towards zero instead.
 
 []
 
@@ -46,8 +46,8 @@ Erase Vegetation Type is the equivalent of Erase Vegetation for Add Vegetation T
 
 []
 
-The final tool is Scale Adjustment, which disables the palette completely and only modifies the scale. It opens up the blending settings in the Scale window, which allow for fine adjustments on existing vegetation. Usually it makes sense to first block in the general shape you want, then take a few passes over it with Scale Adjustment to add more variation and clean up lines. 
+The final tool is Scale Adjustment, which disables the palette completely and only modifies the scale. It enables the blending settings in the Scale window and allows for fine adjustments on existing vegetation. Most of the time it makes sense to first block in the general shape you want with Add Vegetation, then take a few passes over it with Scale Adjustment to add more variation and clean up lines. If an area is painted all the way down to zero scale it is erased as if Erase Vegetation was used.
 
 ## Resolution
 
-Masks are serialized with the VerdantObject component, so it's important to not set the resolution higher than it needs to be. Start low and work upwards, it's always possible to increase it later. At very high resolution you might find the editor stuttering when you undo or redo. This happens because of the serailization work being performed in the background, and is another good reason not to keep the resolution higher than needed.
+Masks are serialized with the VerdantObject component, so it's important to not set the resolution higher than it needs to be to keep the scene or prefab disk size under control. Start low and work upwards, it's always possible to increase it later. At very high resolution you might find the editor stuttering when you undo or redo. This happens because of the large amount of serailization work being performed in the background.
