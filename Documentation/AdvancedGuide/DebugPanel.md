@@ -10,7 +10,11 @@ Verdant by itself can be a little opaque, so it comes with tools for inspecting 
 
 ## Rendering statistics
 
+[image]
+
 The first thing you see when opening the panel is a list on the left with all the VerdantCameras in the scene, including any Verdant-rendering scene views. Select one and you'll see a table that displays each active VerdantType and VerdantGroup in its surroundings. Type groups can be opened up to show their members, and types themselves can be opened to show stats for each LOD. Each has the sum total of all its instances and vertices on the right. The table will update every second as the associated Verdantcamera moves around the scene.
+
+[Image]
 
 This table is also available as its own smaller window that can be conveniently stashed in a corner while the game runs. You'll find it under the Verdant menu as Rendering Statistics. The standalone window can be configured to update at a faster rate, which can be useful when it's used to observe a scene in real time. Be aware that the readback will cause some overhead, so don't profile frame times while it is open.
 
