@@ -1,8 +1,4 @@
----
-layout: default
-title: "Quirks And Limitations"
-parent: "FAQ"
----
+
 
 
 ## Quirks and Limitations
