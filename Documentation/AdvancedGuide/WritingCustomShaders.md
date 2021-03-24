@@ -6,37 +6,32 @@ parent: "Advanced Guide"
 
 # Writing Custom Shaders
 
-The default Verdant shader is optimized for flexibility and to blend in with the Unity Standard Shader. But there are plenty of cases where you might want to optimize for something else. The default shader is a surface shader, which makes it very comprehensive but slightly inefficient. By building your own shader you can strip out all the cruft and focus on the features you need. It also lets you change the light model if that is something your art style demands. Verdant is built to be easy to extend, and this page will take you through the process of getting everything set up. 
+It's very easy to extend Verdant with shaders of your own. You might want to do this to fit a specific art style or for performance reasons. As the Verdant Standard Shader is built for flexibility first you can potentially save a good bit of frame time by implementing one more tailored for your needs. 
 
-Verdant includes two minimal example files for a surface shader and a simple unlit forward shader. These can be useful as references or starting points, especially if you’re not super comfortable with shader programming. You can find them under ********.
+## Getting Started
 
-## Preparation
-All Verdant shaders have a certain amount of boilerplate for generating shader variants and setting up instancing that we need to include at the start. Copy the block below and insert it after CGPROGRAM.
+To create a shader, simply go into the Create Asset dropdown menu and select Verdant > Shader. You'll find it below VerdantType and VerdantGroup. This will create a simple shader based on the unlit Unity shader, but with the foundational Verdant features implemented. 
 
-You also need to include the Verdant library. This can be a bit tricky since Verdant is distributed as a package. 
+## Using the Shader
 
-Finally, add the line below to link up the Verdant Instancing Setup function:
+To use the shader on your VerdantTypes you'll need to specify it in the Override Shader parameter. The shader you just created is ready to go as is, so select it and add the type to the scene. You'll see that it appears much simpler as it only applies the texture and color, but no lighting.
 
-If you need to do some setup of your own you can also call the function directly as in the example below:
+## The Shader
 
-## Implementation
+If you are familiar with shaders in Unity you'll notice that this one looks very much like a regular unlit forward shader. The additions are clearly delineated with comments explaining what they are and why Verdant needs them. As long as you respect everything outlined there you can now work with the shader as you would any other.
 
-You should now be able to set your shader as a shader override on a Verdant Type and see it in the game world, but there’s a bit more work to do if we want to add wind, affector interactions and lighting.  
+Verdant has a number of useful functions that can help you implement features in the Standard Shader. Take a look in the [Shader Reference]() if you are interested in them. 
 
-In your vertex shader, add a call to ******* and pass it your vertex position in object space and normal in world space. This will apply all the various animation and interaction features in Verdant and some per instance randomization. 
+## Shader Parameters
 
-If you only want some of these features, I recommend diving directly into the source code. You can copy the ***** function into your shader and strip out the features you don’t want, or pick through the various functions it uses and select the ones you need. 
+Custom shader parameters can be applied on a per-type basis by creating a regular Unity material and setting your shader on it. You can then set the material as the Override Material on VerdantType. The material will apply all of its properties before Verdant renders it and applies its parameters. It's important to note that Verdant cannot automatically detect changes in this material, so to see your changes in the editor you need to use the Reload Material button on the VerdantType. Properties on the material cannot be changed at runtime.
 
-Finally, we need to add support for dithering in the pixel shader. 
+To access the per-LOD parameters on the VerdantType, please take a look at the [Shader Reference](../ComponentReference/Shaders/VerdantTypeParameters.html) which contains a list with all of their shader uniform names. As outlined there, some parameters are applied automatically and others you need to implement yourself. As a rule anything related to placement, like the Billboarding parameter, will be applied automatically, whereas surface features like the Normal Map must be added on a per-shader basis.  
 
-It can also be useful to have a look at the Verdant light model. It has its own .cginclude file at ****/VerdantLightModels.cginc and is based on the Unity Standard shader. You can use either light model in a surface shader as follows:
+## Deferred Shaders
 
-If you followed all the steps you now have a shader equivalent to the Verdant Standard Shader which you can modify as you please!
+Most of the time you will want to write your shaders as forward shaders, as those allow for much greater flexibility and are generally easier to work with. Unless you have experience both with both shaders and deferred renderering in Unity I'd advise against trying to write your own deferred one. If that doesn't discourage you, you'll have to look directly at how Verdant itself does it. 
 
-## Can I use my own custom deferred shader with Verdant?
-There’s no reason you couldn’t! If you don’t need translucency Verdant will probably look fine as is. If you do want translucency you’ll need to add a branching condition that accounts for it. You can either use the code from the Verdant deferred shader or use the data from Verdant and write your own light model. 
+Start by having a look at the file Shader_Verdant_Standard in Verdant > Runtime > Resources > Shaders. This is a Surface Shader which supports both forward and deferred rendering. It is by and large a typical Surface Shader but performs some additional work to pass along Verdant specific data like translucency.
 
-**********
-* The normal .a channel indicates if something is Verdant vegetation
-* If a pixel belongs to Verdant, the occlusion value (diffuse .a) controls translucency
-**********
+You'll also want to look at the main deferred and deferred reflections shaders. If you are familiar with their standard Unity versions you'll be right at home in the Verdant versions, which only tweak them slightly. The file names are Verdant-DeferredShading and Verdant-DeferredReflections, and you'll find them under Verdant > Runtime > Resources > Shaders > Deferred.
