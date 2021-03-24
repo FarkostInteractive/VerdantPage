@@ -10,7 +10,7 @@ It's very easy to extend Verdant with shaders of your own. You might want to do 
 
 ## Getting Started
 
-To create a shader, simply go into the Create Asset dropdown menu and select Verdant > Shader. You'll find it below VerdantType and VerdantGroup. This will create a simple shader based on the unlit Unity shader, but with the foundational Verdant features implemented. 
+To create a shader, simply go into the Create Asset dropdown menu and select Verdant > Shader. You'll find it below VerdantType and VerdantGroup. This will create a simple shader based on the unlit Unity shader adapted to include all the most important Verdant features.
 
 ## Using the Shader
 
@@ -19,8 +19,6 @@ To use the shader on your VerdantTypes you'll need to specify it in the Override
 ## The Shader
 
 If you are familiar with shaders in Unity you'll notice that this one looks very much like a regular unlit forward shader. The additions are clearly delineated with comments explaining what they are and why Verdant needs them. As long as you respect everything outlined there you can now work with the shader as you would any other.
-
-Verdant has a number of useful functions that can help you implement features in the Standard Shader. Take a look in the [Shader Reference]() if you are interested in them. 
 
 ## Shader Parameters
 
