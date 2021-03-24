@@ -43,25 +43,29 @@ Verdant relies heavily on structured buffers and compute shaders, so any shader 
 With the prerequisites out of the way we are ready to start accessing! Most of the access functions follow a similar pattern: You supply a world space position and the function returns the data at that location. 
 
 ### Color Field
-|:---------------|:--------------------------|
+
+|:-----------------------------------------|
 | `float4 VerdantSampleColorField (float4 wPos)` |
 
 Takes the world position and returns the color value of the field at that location.
 
 ### Scale Field
-|:---------------|:--------------------------|
+
+|:-----------------------------------------|
 | `float VerdantSampleScaleField (float4 wPos)` |
 
 Takes the world position and returns the scale value of the field at that location.
 
 ### Deflection Field
-|:---------------|:--------------------------|
+
+|:-----------------------------------------|
 | `float4 VerdantSampleDeflectionField (float4 wPos)` |
 
 Takes the world position and returns the deflection vector and deflection velodity vector at that location, both of which are 2D vectors. The main vector is stored in XY and the velocity in ZW. Both are to be interpreted in the range 0-1, though the main vector can be longer, in which case it represents the press time where the amount of seconds left is the magnitude-1. Normalze it if that's the case.
 
 ### Height Field
-|:---------------|:--------------------------|
+
+|:-----------------------------------------|
 | `float4 VerdantSampleCoarseHeightFieldSmooth (float4 position)` |
 | `float4 VerdantSampleDetailHeightFieldSmooth (float4 position)` |
 | `float4 VerdantSampleCoarseHeightFieldSharp (float4 position)` |
@@ -78,12 +82,14 @@ The Smooth, Sharp and Hybrid distinctions map to the Placement Modes you can set
 All functions return the data as follows: The X component contains the height in world space, the Y component contains the scale, and ZW contain the X and Z components of the heightfield world space normal which can be reconstructed using cross multiplication.
 
 ### Cloud Shadows
+
 |:-----------------------------------------|
 | `float4 VerdantSampleCloudShadows(float4 wPos)` |
 
 Takes the world position and returns the cloud shadow texture at that location.
 
 ### Wind
+
 |:-----------------------------------------|
 | `float VerdantSampleWind (float4 wPos, half3 normal, float noise, float strength, float height)` |
 | `float VerdantSampleWindNoise (float4 wPos)` |
