@@ -54,7 +54,7 @@ To access the per-LOD parameters on the VerdantType, please take a look at the t
 
 You can also use the following keywords to compile conditionally based on shading level, alpha clip, and available fields:
 
-|:--------------------------|:--------------------------|
+|:------------------|:--------------------|
 | Shader Level Basic | `VERDANT_BASIC` |
 | Shader Level Verdant Standard | `VERDANT_STANDARD` |
 | Shader Level Full surface Detail | `VERDANT_FULLSURFACEDETAIL` |
