@@ -6,7 +6,7 @@ parent: "Advanced Guide"
 
 # Writing Custom Shaders
 
-It's very easy to extend Verdant with shaders of your own. You might want to fit it to a specific art style or strip out unneeded parts for performance reasons. As the Verdant Standard Shader is built for flexibility first you can potentially save a good bit of frame time by implementing one more tailored for your needs, while getting something with a look of its own. 
+It's very easy to extend Verdant with shaders of your own. You might want to fit it to a specific art style or strip out unneeded parts for performance reasons. As the Verdant Standard Shader is built for flexibility first you can potentially save a good bit of frame time by implementing one more tailored to your needs, while getting something with a unique look of its own. 
 
 ## Getting Started
 
@@ -52,7 +52,7 @@ To access the per-LOD parameters on the VerdantType, please take a look at the t
 | Receive Shadows | `Unavailable` | - | - |
 | Cast Shadows | `Unavailable` | - | - |
 
-You can also use the following keywords to compile conditionally based on shading level, alpha clip, and available features
+You can also use the following keywords to compile conditionally based on shading level, alpha clip, and available fields:
 
 |:--------------------------|:--------------------------|
 | Shader Level Basic | `VERDANT_BASIC` |
@@ -65,7 +65,7 @@ You can also use the following keywords to compile conditionally based on shadin
 
 ## Deferred Shaders
 
-Most of the time you will want to write your shaders as forward shaders, as those allow for much greater flexibility and are generally easier to work with. Unless you have experience both with both shaders and deferred renderering in Unity I'd advise against trying to write your own deferred one. If that doesn't discourage you, you'll have to look directly at how Verdant itself does it. 
+Most of the time you will want to write your shaders as forward shaders, as those allow for much greater flexibility and are generally easier to work with. Unless you have experience both with both shaders and deferred renderering in Unity I'd advise against trying to write your own deferred shader. If that doesn't discourage you, you'll have to look directly at how Verdant itself does it. 
 
 Start by having a look at the file Shader_Verdant_Standard in Verdant > Runtime > Resources > Shaders. This is a Surface Shader which supports both forward and deferred rendering. It is by and large a typical Surface Shader but performs some additional work to pass along Verdant specific data like translucency.
 
