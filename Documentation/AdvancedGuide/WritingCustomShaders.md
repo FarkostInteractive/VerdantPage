@@ -26,7 +26,7 @@ Custom shader parameters can be applied on a per-type basis by creating a regula
 
 To access the per-LOD parameters on the VerdantType, please take a look at the table below which contains all their shader uniform names. As outlined there, some parameters are included and/or applied automatically, while others you need to implement yourself. As a rule anything related to placement, like the Billboarding parameter, will be applied automatically, whereas surface features like the Normal Map must be added on a per-shader basis.  
 
-|:---------------|:--------------------------|:------------|:------------|
+|:---------------|:--------------------------|:---------------|:---------------|
 | Parameter | Uniform | Included in VerdantShadingFunctions | Applied by VerdantSetupInstancing or VerdantVertexProcessing |
 | Color | `float4 verdantTypeParams_Color` | No | No |
 | Texture | `sampler2D verdantTypeParams_MainTexture` | Yes | No |
