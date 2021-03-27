@@ -26,29 +26,42 @@ Custom shader parameters can be applied on a per-type basis by creating a regula
 
 To access the per-LOD parameters on the VerdantType, please take a look at the table below which contains all their shader uniform names. As outlined there, some parameters are applied automatically and others you need to implement yourself. As a rule anything related to placement, like the Billboarding parameter, will be applied automatically, whereas surface features like the Normal Map must be added on a per-shader basis.  
 
-|:---------------|:--------------------------|:------------|
-| Parameter | Uniform | Applied by VerdantSetupInstancing or VerdantVertexProcessing |
-| Color | `float4 verdantTypeParams_Color` | No |
-| Texture | `float4 verdantTypeParams_Color` | No |
-| Opacity Dithering | `float4 verdantTypeParams_Color` | No |
-| Translucency Map | `float4 verdantTypeParams_Color` | No |
-| Translucency | `float4 verdantTypeParams_Color` | No |
-| Diffusion | `float4 verdantTypeParams_Color` | No |
-| Normal Map | `float4 verdantTypeParams_Color` | No |
-| Metallic | `float4 verdantTypeParams_Color` | No |
-| Opacity Map | `float4 verdantTypeParams_Color` | No |
-| Occlusion Map | `float4 verdantTypeParams_Color` | No |
-| Billboarding | `float4 verdantTypeParams_Color` | No |
-| Scale | `float4 verdantTypeParams_Color` | No |
-| Deflection Angle | `float4 verdantTypeParams_Color` | No |
-| Color Field Influence | `float4 verdantTypeParams_Color` | No |
-| Scale Field Influence | `float4 verdantTypeParams_Color` | No |
-| Stiffness | `float4 verdantTypeParams_Color` | No |
-| Light Mode | `float4 verdantTypeParams_Color` | No |
-| Ground Normals | `float4 verdantTypeParams_Color` | No |
-| Fade Mode | `float4 verdantTypeParams_Color` | No |
-| Receive Shadows | `float4 verdantTypeParams_Color` | No |
-| Cast Shadows | `float4 verdantTypeParams_Color` | No |
+|:---------------|:--------------------------|:------------|:------------|
+| Parameter | Uniform | Included in VerdantShadingFunctions | Applied by VerdantSetupInstancing or VerdantVertexProcessing |
+| Color | `float4 verdantTypeParams_Color` | No | No |
+| Texture | `sampler2D verdantTypeParams_MainTexture` | Yes | No |
+| Opacity Dithering | `float verdantTypeParams_OpacityDithering` | No | No |
+| Translucency Map | `sampler2D verdantTypeParams_TranslucencyMap` | No | No |
+| Translucency | `float verdantTypeParams_Translucency` | No | No |
+| Diffusion | `float verdantTypeParams_TranslucencyDiffusion` | No | No |
+| Normal Map | `sampler2D verdantTypeParams_NormalMap` | No | No |
+| Metallic Map | `sampler2D verdantTypeParams_MetallicMap` | No | No |
+| Smoothness | `float verdantTypeParams_Smoothness` | No | No |
+| Metallic | `float verdantTypeParams_Metallic` | No | No |
+| Opacity Map | `sampler2D verdantTypeParams_OpacityMap` | No | No |
+| Occlusion Map | `sampler2D verdantTypeParams_OcclusionMap` | No | No |
+| Billboarding | `float verdantTypeParams_Billboarding` | Yes | Yes |
+| Scale | `float verdantTypeParams_Scale` | Yes | Yes |
+| Deflection Angle | `float verdantTypeParams_DeflectionAngle` | Yes | Yes |
+| Color Field Influence | `float verdantTypeParams_ColorFieldInfluence` | Yes | Yes |
+| Scale Field Influence | `float verdantTypeParams_ScaleFieldInfluence` | Yes | Yes |
+| Stiffness | `Unavailable` | - | - |
+| Light Mode | `int verdantTypeParams_LightMode` | No | Normal changed, light not applied |
+| Ground Normals | `float verdantTypeParams_GroundNormalInfluence` | Yes | Yes |
+| Fade Mode | `int verdantTypeParams_FadeMode` | Yes | Yes |
+| Receive Shadows | `Unavailable` | - | - |
+| Cast Shadows | `Unavailable` | - | - |
+
+You can also use the following keywords to compile conditionally based on shading level, alpha clip, and available features
+
+|:--------------------------|:--------------------------|
+| Shader Level Basic | `VERDANT_BASIC` |
+| Shader Level Verdant Standard | `VERDANT_STANDARD` |
+| Shader Level Full surface Detail | `VERDANT_FULLSURFACEDETAIL` |
+| Allow Alpha Clip Enabled | `VERDANT_ALPHAENABLED` |
+| Deflection Field Available | `VERDANT_DEFLECTIONFIELD_ON` |
+| Color Field Available | `VERDANT_COLORFIELD_ON` |
+| Scale Field Available | `VERDANT_SCALEFIELD_ON` |
 
 ## Deferred Shaders
 
