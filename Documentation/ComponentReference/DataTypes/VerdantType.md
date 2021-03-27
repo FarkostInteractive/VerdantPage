@@ -58,11 +58,13 @@ LOD properties that influence how the surface of the type looks. Most of these a
 | `Translucency` | Controls the amount of translucency. If a Translucency texture is set this parameter multiplies it. |
 | `Diffusion` | Only available in the Normal Up light mode. Controls how focused the specularity-like cone of light is. |
 | `Normal Map` | The normal map of the type. Available in both Light Modes. Disabled in the Basic Shading Level.  |
+| `Normal Strength` | Controls the strength of the normal map if one is set. |
 | `Metallic Map` | Equivalent to the Metallic texture in the Unity standard shader. Disabled in all Shading Levels except Full Surface Detail. |
 | `Smoothness` | Only available in the Translucent light mode. Equivalent to the smoothness slider on the Unity standard shader. |
 | `Metallic` | Equivalent to the metallic slider on the Unity standard shader. |
 | `Opacity Map` | A separate greyscale texture used to control opacity. Disabled in all Shading Levels except Full Surface Detail. |
 | `Occlusion Map` | Equivalent to the occlusion texture on the Unity standard shader. Disabled in all Shading Levels except Full Surface Detail. For deferred rendering reasons a pixel cannot be both occluded and translucent. If both are active at once occlusion will take prescedence. |
+| `Occlusion` | Controls the strength of the occlusion map if one is set. |
 
 #### Instance Properties
 

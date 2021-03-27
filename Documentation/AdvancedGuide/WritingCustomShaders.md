@@ -35,11 +35,13 @@ To access the per-LOD parameters on the VerdantType, please take a look at the t
 | Translucency | `float verdantTypeParams_Translucency` | No | No |
 | Diffusion | `float verdantTypeParams_TranslucencyDiffusion` | No | No |
 | Normal Map | `sampler2D verdantTypeParams_NormalMap` | No | No |
+| Normal Strength | `sampler2D verdantTypeParams_NormalMapStrength` | No | No |
 | Metallic Map | `sampler2D verdantTypeParams_MetallicMap` | No | No |
 | Smoothness | `float verdantTypeParams_Smoothness` | No | No |
 | Metallic | `float verdantTypeParams_Metallic` | No | No |
 | Opacity Map | `sampler2D verdantTypeParams_OpacityMap` | No | No |
 | Occlusion Map | `sampler2D verdantTypeParams_OcclusionMap` | No | No |
+| Occlusion | `sampler2D verdantTypeParams_OcclusionMapStrength` | No | No |
 | Billboarding | `float verdantTypeParams_Billboarding` | Yes | Yes |
 | Scale | `float verdantTypeParams_Scale` | Yes | Yes |
 | Deflection Angle | `float verdantTypeParams_DeflectionAngle` | Yes | Yes |
