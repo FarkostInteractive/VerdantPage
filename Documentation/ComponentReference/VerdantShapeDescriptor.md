@@ -26,8 +26,8 @@ A single shape descriptor can be shared by many different components. For exampl
 | `Other Mesh` | (Shape set to Other Mesh) The mesh that will be used as the shape of this descriptor. |
 | `Primitive` | (Shape set to Primitive) Allows you to select between Sphere, Pyramid and Cube as the shape.  |
 | `Scale Factor` | Lets you scale the shape in each axis. Will be multiplied per component with the Transform Scale. |
-| `Specify Submesh` | When set the mesh used will be the specific submesh selected by the Submesh Index. If false, the entire mesh will be used. |
-| `Submesh Index` | The submesh to use. |
+| `Specify Sub Mesh` | When set the mesh used will be the specific sub mesh selected by the Sub Mesh Index. If false, the entire mesh will be used. |
+| `Sub Mesh Index` | The sub mesh to use. |
 
 ## Public Properties
 

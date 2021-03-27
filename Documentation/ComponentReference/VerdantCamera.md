@@ -24,6 +24,7 @@ When Verdant is enabled in the scene view the scene camera is essentially treate
 | `Smoothing Level` | Used to control how much smoothing the Hybrid Placement Mode allows. |
 | `Override Layer` | If set lets you specify a render layer to be used for all the vegetation rendered by the camera. |
 | `Layer` | The layer to use for Verdant if Override Layer is set. |
+| `Allow Shadow Casting` | Set if VerdantTypes rendered by this VerdantCamera can cast shadows. If enabled, shadow casting is controlled by the parameter on each VerdantType. If not, shadows are disabled across the board.  |
 
 ### Precision Parameters
 
