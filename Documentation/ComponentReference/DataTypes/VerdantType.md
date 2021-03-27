@@ -54,14 +54,14 @@ LOD properties that influence how the surface of the type looks. Most of these a
 | `Color` | A color that gets multiplied into the texture |
 | `Texture` | The main diffuse texture of the type. |
 | `Opacity Dithering` | If alpha clipping is enabled, this parameter controls how much the values between 0 and 1 should dither the instance. 0 disables dithering and 1 enables it fully. |
-| `Translucency (Texture)` | A greyscale texture that controls the amount of translucency for each pixel. Translucency is a special Verdant effect which is expressed differently depending on the Light Mode used. In translucent it simply controls how much light gets let through from the backside. In Normal Up it becomes an effect analogous to specularity like you might see on large bodies of water or sand. It can be used to create the effect of long streaks of light filtering through blades of grass. Disabled in the Basic Shading Level. |
+| `Translucency Map` | A greyscale texture that controls the amount of translucency for each pixel. Translucency is a special Verdant effect which is expressed differently depending on the Light Mode used. In translucent it simply controls how much light gets let through from the backside. In Normal Up it becomes an effect analogous to specularity like you might see on large bodies of water or sand. It can be used to create the effect of long streaks of light filtering through blades of grass. Disabled in the Basic Shading Level. |
 | `Translucency` | Controls the amount of translucency. If a Translucency texture is set this parameter multiplies it. |
 | `Diffusion` | Only available in the Normal Up light mode. Controls how focused the specularity-like cone of light is. |
 | `Normal Map` | The normal map of the type. Available in both Light Modes. Disabled in the Basic Shading Level.  |
-| `Metallic (Texture)` | Equivalent to the Metallic texture in the Unity standard shader. Disabled in all Shading Levels except Full Surface Detail. |
+| `Metallic Map` | Equivalent to the Metallic texture in the Unity standard shader. Disabled in all Shading Levels except Full Surface Detail. |
 | `Smoothness` | Only available in the Translucent light mode. Equivalent to the smoothness slider on the Unity standard shader. |
 | `Metallic` | Equivalent to the metallic slider on the Unity standard shader. |
-| `Opacity (Texture)` | A separate greyscale texture used to control opacity. Disabled in all Shading Levels except Full Surface Detail. |
+| `Opacity Map` | A separate greyscale texture used to control opacity. Disabled in all Shading Levels except Full Surface Detail. |
 | `Occlusion Map` | Equivalent to the occlusion texture on the Unity standard shader. Disabled in all Shading Levels except Full Surface Detail. For deferred rendering reasons a pixel cannot be both occluded and translucent. If both are active at once occlusion will take prescedence. |
 
 #### Instance Properties
