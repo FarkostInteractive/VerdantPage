@@ -23,18 +23,17 @@ Chances are you already have some idea seeing how you're here, but I want to giv
 
 If this is your first time using the system, I suggest starting from a blank scene and going through the procedure once before trying it in your existing scenes. This will preemptively help you isolate any issues or conflicts you might have.
 
-### Deferred Rendering
-If you’re using deferred rendering, Verdant includes a special light model which adds translucency and opacity for vegetation. To set it up, go to Edit > Project Settings, then select Graphics and change the ’Deferred’ dropdown to ’Custom Shader’. Then select the shader Verdant-DeferredShading. You also need to set Deferred Reflections to Custom Shader and set its Shader field to Verdant-DeferredReflections. While there are cases where the the default model will look fine, many important Verdant features will be unavailable and some vegetation will be lit strangely unless you use the Verdant Shader.
-
-![Image showing the Unity graphics settings with the Deferred popup open](Media/UnityGraphicsSettings.PNG "Setting the deferred shader")
-
-If you are not using deferred rendering, you should! Verdant performs best in deferred, though it will do fine in forward too.
-
 Once you’ve imported Verdant, go to your main camera and add the component ’VerdantCamera’. There’s a lot of settings here, but the defaults will serve you well for now.
 
 ![A GameObject with both a VerdantCamera and a Unity camera component](Media/VerdantCameraAdded.PNG "VerdantCamera added")
 
-With the camera set up, choose an object in the scene or create a new box or plane to serve as your ground. Any ground-like object with a MeshRenderer will do.
+### Deferred Rendering
+
+With the camera added you'll notice one of two things right away: 1) If you're using forward rendering, there'll be an info box recommending you use deferred. This has to do with how Verdant performance differs between the two, the details of which is discussed at length in [Performance](Performance.html). You can absolutely use forward, but do make sure you double check the performance guide so you're fully aware of the consequences and pitfalls! 2) If you were already using or just switched to deferred rendering, it'll display a warning telling you to change the default deferred shader to one customized for Verdant which includes special light modes and translucency support. Without it you'll run into strange lighting artifacts quickly, so just click "Apply Shader" and Verdant will take care of all that for you. 
+
+![Image showing the info box for changing the deferred shaders](- "Setting the deferred shader")
+
+With the camera and shading path set up, choose an object in the scene or create a new box or plane to serve as your ground. Any ground-like object with a MeshRenderer will do.
 
 ![A box that has been scaled up to (30,1,30) to act as a floor](Media/FlooringBox.PNG "Ground box")
 
@@ -53,6 +52,10 @@ You can also preview Verdant in the scene view. Go to the menu bar and select Ve
 ![The system menu bar with the menu Verdant open and the option Render In Editor Selected](Media/MenuBar.PNG "Menu Bar")
 
 Finally, the vegetation is looking a little bit stiff at the moment, so we should add some wind. Create a new GameObject and add the component VerdantWindVolume to it. If gizmos are enabled you will be able to see the volume as a blue box when it is selected. When the camera enters it a gentle breeze should rise through your field!  
+
+## Quick Setup
+
+We've done everything manually for illustration purposes here, but there are also shortcuts available for creating GameObjects configured with common Verdant components. Go to the Create menu in the Hierarchy view and you'll find a section for Verdant. "Surface Object" and "Wind Volume" here are very similar to the objects we just created. The others are things you'll soon become familiar with through the remaining guides!
 
 ## Your next steps
 
