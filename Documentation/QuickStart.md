@@ -10,7 +10,7 @@ This is a whirlwind tour through Verdant that shows how to set up the most impor
 
 ## Setup
 
-To start using Verdant you need to set up a camera and provide a surface for vegetation to grow on. *Start by selecting the camera in your scene and adding the [VerdantCamera](ComponentReference/VerdantCamera.html) component*.
+To start using Verdant you need to set up a camera and provide a surface for vegetation to grow on. **Start by selecting the camera in your scene and adding the [VerdantCamera](ComponentReference/VerdantCamera.html) component.**
 
 []
 
@@ -18,7 +18,7 @@ If you’re using the forward rendering path you’ll see an information box rec
 
 []
 
-We now need something for the camera to render. In Verdant, the basic concept is that vegetation grows on Verdant Surfaces. *A mesh or terrain can be made into a Verdant Surface by adding the corresponding component. Vegetation will then be placed onto the surface at runtime*.
+We now need something for the camera to render. In Verdant, the basic concept is that vegetation grows on Verdant Surfaces. **A mesh or terrain can be made into a Verdant Surface by adding the corresponding component. Vegetation will then be placed onto the surface at runtime.**
 
 Add a simple cube to the scene and shape it into a floor object. You can also use an existing mesh if you already have something for your ground. Either way, select the object and add the [VerdantObject](ComponentReference/VerdantObject.html) component to it. This will tell Verdant to treat the mesh as a Verdant Surface.
 
@@ -28,7 +28,7 @@ On VerdantObject there’s a list called Types. This is where we specify what ve
 
 []
 
-Make sure the camera is pointed at the VerdantObject. If you run the game now you should see that the object has been covered with grass! *You can also enable rendering vegetation in Scene View by going to Verdant in the menu bar and selecting Render in Editor*.
+Make sure the camera is pointed at the VerdantObject. If you run the game now you should see that the object has been covered with grass! **You can also enable rendering vegetation in Scene View by going to Verdant in the menu bar and selecting Render in Editor**.
 
 ## Controlling Surface Coverage
 
@@ -48,7 +48,7 @@ For more about VerdantObjects, masks and terrains, see [Workflow](UserGuide/Work
 
 ## Wind
 
-We can see the grass, but there’s not much going on with it yet. *To make it a bit more lively we should add a Wind Volume to the Scene.* Create another empty GameObject and add the [VerdantWindVolume](ComponentReference/VerdantWindVolume.html) component. You’ll see a blue box in the Scene View representing its bounds. Anytime the camera is inside it the settings on the volume will be applied to all the vegetation in the scene. 
+We can see the grass, but there’s not much going on with it yet. **To make it a bit more lively we should add a Wind Volume to the Scene.** Create another empty GameObject and add the [VerdantWindVolume](ComponentReference/VerdantWindVolume.html) component. You’ll see a blue box in the Scene View representing its bounds. Anytime the camera is inside it the settings on the volume will be applied to all the vegetation in the scene. 
 
 []
 
@@ -62,7 +62,7 @@ If you want to use your own vegetation assets you will need to create a new [Ver
 
 As you can clearly see there’s a lot going on in here. Start by setting your mesh and texture. Then put your type on a surface in the world so you can see what happens as you change it. [You can figure it out by messing with the parameters, but you should definitely, definitely still read up on what they all do!](ComponentReference/DataTypes/VerdantType.html)
 
-*If you need a starting point or just want to modify one of the built-in types you can create a duplicate in your project.* Select the VerdantType in question and scroll all the way down in its inspector to the button “Duplicate VerdantType”. Click it, then choose a name and select a path.
+**If you need a starting point or just want to modify one of the built-in types you can create a duplicate in your project.** Select the VerdantType in question and scroll all the way down in its inspector to the button “Duplicate VerdantType”. Click it, then choose a name and select a path.
 
 []
 
@@ -74,7 +74,7 @@ It’s possible to interact with Verdant vegetation using [Affector](ComponentRe
 
 []
 
-*To use an affector you must first add its matching Field component to the GameObject with the VerdantCamera.* Try adding a [VerdantDeflectionField](ComponentReference/Fields/VerdantDeflectionField.html) component.
+**To use an affector you must first add its matching Field component to the GameObject with the VerdantCamera.** Try adding a [VerdantDeflectionField](ComponentReference/Fields/VerdantDeflectionField.html) component.
 
 []
 
