@@ -17,7 +17,7 @@ Here we'll take a deeper look at the most important components that make up scen
 {:toc}
 
 ## Surfaces and zones
-As previously mentioned, the main usage of Verdant is defining zones for vegetation to grow in. In Getting Started we did this by adding the component VerdantObject to a box, which made grass appear on top of Behind the scenes adding VerdantObject made Verdant register the mesh of the box as a surface tracked within its systems. By then adding a type that surface was defined as a zone where VerdantNormalUpGrass grows. 
+As previously mentioned, the main usage of Verdant is defining zones for vegetation to grow in. In Getting Started we did this by adding the component VerdantObject to a box, which made grass appear on top of it. Behind the scenes adding VerdantObject made Verdant register the mesh of the box as a surface tracked within its systems. By then adding a type that surface was defined as a zone where Grass01 grows. 
 
 ![Zone surface image]()
 
