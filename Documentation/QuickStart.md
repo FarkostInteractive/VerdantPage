@@ -12,23 +12,25 @@ This is a whirlwind tour through Verdant that shows how to set up the most impor
 
 To start using Verdant you need to set up a camera and provide a surface for vegetation to grow on. **Start by selecting the camera in your scene and adding the [VerdantCamera](ComponentReference/VerdantCamera.html) component.**
 
-[]
+[Screenshot showing the VerdantCamera inspector](Media/VerdantCameraInspectorUseDeferred.png, "The VerdantCamera inspector")
 
 If you’re using the forward rendering path you’ll see an information box recommending that you use deferred rendering. If you’re using deferred or are switching to it, you’ll see a warning sign asking you to change the deferred shader. There’s a button right there which you can click to have Verdant take care of it all for you. With that, the camera is ready to go!
 
-[]
+[Screenshot showing the VerdantCamera inspector asking you to apply the deferred shader](Media/VerdantCameraInspectorDeferredShaderApply.png, "The VerdantCamera inspector prompting the deferred shader to be swapped")
 
 We now need something for the camera to render. In Verdant, the basic concept is that vegetation grows on Verdant Surfaces. **A mesh or terrain can be made into a Verdant Surface by adding the corresponding component. Vegetation will then be placed onto the surface at runtime.**
 
 Add a simple cube to the scene and shape it into a floor object. You can also use an existing mesh if you already have something for your ground. Either way, select the object and add the [VerdantObject](ComponentReference/VerdantObject.html) component to it. This will tell Verdant to treat the mesh as a Verdant Surface.
 
-[]
+[Screenshot showing a selected gameObject with the VerdantObject component added](Media/VerdantObjectComponentAdded.png, "A GameObject with VerdantObject")
 
 On VerdantObject there’s a list called Types. This is where we specify what vegetation should grow on the object. Add an element to the list and select the [VerdantType](ComponentReference/DataTypes/VerdantType.html) Grass01. You may need to unmark the eye corner in the top right of the asset list, which hides assets in packages.
 
-[]
+[Screenshot showing the VerdantObject inspector with the type Grass01 applied](Media/VerdantObjectInspectorWithType.png, "The VerdantObject inspector")
 
 Make sure the camera is pointed at the VerdantObject. If you run the game now you should see that the object has been covered with grass! **You can also enable rendering vegetation in Scene View by going to Verdant in the menu bar and selecting Render in Editor**.
+
+[Screenshot showing a VerdantObject Inspector with the type Grass01 applied as rendered in play mode](Media/VerdantObjectFromCameraView.png, "A VerdantObject with grass01 on it")
 
 ## Controlling Surface Coverage
 
