@@ -46,7 +46,7 @@ You can also make whole VerdantObjects into masks. They will be applied to all t
 
 Using Verdant on terrain is very similar to using it on meshes, but you need to use a different component. Add the [VerdantTerrain](ComponentReference/VerdantTerrain.html) component to your terrain. You can add types here too and Mask VerdantObjects will work the same way they do with other surfaces. You can’t add a mask texture to the terrain, but each type you add is mapped to one of its layers. Use the index number to select which. 
 
-[]
+![Screenshot showing a VerdantTerrain covered in grass with some lupins painted in near the camera](Media_GettingStarted/VerdantTerrainPainted.png "A VerdantTerrain with two types")
 
 For more about VerdantObjects, masks and terrains, see [Workflow](UserGuide/Workflow.html).
 
@@ -54,7 +54,8 @@ For more about VerdantObjects, masks and terrains, see [Workflow](UserGuide/Work
 
 We can see the grass, but there’s not much going on with it yet. **To make it a bit more lively we should add a Wind Volume to the Scene.** Create another empty GameObject and add the [VerdantWindVolume](ComponentReference/VerdantWindVolume.html) component. You’ll see a blue box in the Scene View representing its bounds. Anytime the camera is inside it the settings on the volume will be applied to all the vegetation in the scene. 
 
-[]
+![Screenshot showing a VerdantObject with grass blowing in the wind. The wind volume is visible around it.](Media_GettingStarted/VerdantObjectWithWindVolumeAndEditor.png "A VerdantObject with grass affected by wind")
+
 
 For more about Wind, see… [Wind](UserGuide/Wind.html).
 
@@ -62,13 +63,14 @@ For more about Wind, see… [Wind](UserGuide/Wind.html).
 
 If you want to use your own vegetation assets you will need to create a new [VerdantType](ComponentReference/DataTypes/VerdantType.html). Start by right clicking in the Project View and selecting Verdant > VerdantType.
 
-[] []
+![Screenshot showing the dropdown menu for creating assets. Verdant > VerdantType is selected](Media_GettingStarted/VerdantTypeCreateDropdown.png "VerdantType creation")
+![Screenshot showing the VerdantType inspector](Media_GettingStarted/VerdantTypeInspector.png "VerdantType inspector")
 
 As you can clearly see there’s a lot going on in here. Start by setting your mesh and texture. Then put your type on a surface in the world so you can see what happens as you change it. [You can figure it out by messing with the parameters, but you should definitely, definitely still read up on what they all do!](ComponentReference/DataTypes/VerdantType.html)
 
 **If you need a starting point or just want to modify one of the built-in types you can create a duplicate in your project.** Select the VerdantType in question and scroll all the way down in its inspector to the button “Duplicate VerdantType”. Click it, then choose a name and select a path.
 
-[]
+![Screenshot showing the bottom of the VerdantType inspector. There is an arrow pointing to a button that says "duplication"](Media_GettingStarted/VerdantTypeInspector.png "VerdantType duplication button")
 
 For more about VerdantTypes, see [Types and Groups](UserGuide/TypesAndGroups.html).
 
@@ -76,17 +78,17 @@ For more about VerdantTypes, see [Types and Groups](UserGuide/TypesAndGroups.htm
 
 It’s possible to interact with Verdant vegetation using [Affector](ComponentReference/Affectors.html) components. They allow you to push, color or scale vegetation in the shape of a mesh. 
 
-[]
+![Screenshot showing a VerdantObject with grass. There are three spheres floating above it in a line. One is making the grass below it shrink, one is pushing it aside, and the last one is coloring it red](Media_GettingStarted/VerdantObjectWithAffectors.png "VerdantObject with affectors")
 
 **To use an affector you must first add its matching Field component to the GameObject with the VerdantCamera.** Try adding a [VerdantDeflectionField](ComponentReference/Fields/VerdantDeflectionField.html) component.
 
-[]
+![Screenshot showing the inspector of VerdantDeflectionField. It has been added to a GameObject with a VerdantCamera](Media_GettingStarted/VerdantDeflectionFieldInspector.png "VerdantDeflectionField inspector")
 
-[]
+![Screenshot showing the hierarchy view "Create" dropdown. Verdant > Deflection Affector is selected](Media_GettingStarted/VerdantDeflectionAffectorCreateDropdown.png "VerdantDeflectionAffector creation")
 
 Then, you can create a [Deflection Affector](ComponentReference/Affectors/VerdantDeflectionAffector.html), which will push away the vegetation around it. We’ll use a shortcut by right clicking in the hierarchy, then going to the Verdant subsection. Many common objects can be created quickly here, including Deflection Affectors. As always you can customize the shape by selecting a different mesh.Drag the new object onto the ground and notice how the grass bends around it.
 
-[]
+![Screenshot showing a VerdantObject with grass on it. There is a deflection affector in the shape of a sphere on it pushing the grass away.](Media_GettingStarted/VerdantDeflectionAffectorOnVerdantObject.png "VerdantDeflectionAffector in action")
 
 For more about affectors, see [Using Affectors](UserGuide/UsingAffectors.html).
 
