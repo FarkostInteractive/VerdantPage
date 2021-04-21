@@ -61,9 +61,9 @@ For more about Wind, see… [Wind](UserGuide/Wind.html).
 
 ## Creating VerdantTypes
 
-If you want to use your own vegetation assets you will need to create a new [VerdantType](ComponentReference/DataTypes/VerdantTypeCreation.html). Start by right clicking in the Project View and selecting Verdant > VerdantType.
+If you want to use your own vegetation assets you will need to create a new [VerdantType](ComponentReference/DataTypes/VerdantType.html). Start by right clicking in the Project View and selecting Verdant > VerdantType.
 
-![On the left, a screenshot showing the dropdown menu for creating assets. Verdant > VerdantType is selected. On the right, a screenshot of the VerdantType inspector](Media_GettingStarted/VerdantTypeCreateDropdown.png "VerdantType creation")
+![On the left, a screenshot showing the dropdown menu for creating assets. Verdant > VerdantType is selected. On the right, a screenshot of the VerdantType inspector](Media_GettingStarted/VerdantTypeCreation.png "VerdantType creation")
 
 **If you need a starting point or just want to modify one of the built-in types you can create a duplicate in your project.** Select the VerdantType in question and scroll all the way down in its inspector to the button “Duplicate VerdantType”. Click it, then choose a name and select a path.
 
