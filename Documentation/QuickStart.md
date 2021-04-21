@@ -63,9 +63,7 @@ For more about Wind, see… [Wind](UserGuide/Wind.html).
 
 If you want to use your own vegetation assets you will need to create a new [VerdantType](ComponentReference/DataTypes/VerdantType.html). Start by right clicking in the Project View and selecting Verdant > VerdantType.
 
-![Screenshot showing the dropdown menu for creating assets. Verdant > VerdantType is selected](Media_GettingStarted/VerdantTypeCreateDropdown.png "VerdantType creation") ![Screenshot showing the VerdantType inspector](Media_GettingStarted/VerdantTypeInspector.png "VerdantType inspector")
-
-As you can clearly see there’s a lot going on in here. Start by setting your mesh and texture. Then put your type on a surface in the world so you can see what happens as you change it. [You can figure it out by messing with the parameters, but you should definitely, definitely still read up on what they all do!](ComponentReference/DataTypes/VerdantType.html)
+![On the left, a screenshot showing the dropdown menu for creating assets. Verdant > VerdantType is selected. On the right, a screenshot of the VerdantType inspector](Media_GettingStarted/VerdantTypeCreateDropdown.png "VerdantType creation")
 
 **If you need a starting point or just want to modify one of the built-in types you can create a duplicate in your project.** Select the VerdantType in question and scroll all the way down in its inspector to the button “Duplicate VerdantType”. Click it, then choose a name and select a path.
 
