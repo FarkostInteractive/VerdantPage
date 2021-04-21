@@ -69,7 +69,7 @@ As you can clearly see there’s a lot going on in here. Start by setting your m
 
 **If you need a starting point or just want to modify one of the built-in types you can create a duplicate in your project.** Select the VerdantType in question and scroll all the way down in its inspector to the button “Duplicate VerdantType”. Click it, then choose a name and select a path.
 
-![Screenshot showing the bottom of the VerdantType inspector. There is an arrow pointing to a button that says "duplication"](Media_GettingStarted/VerdantTypeInspector.png "VerdantType duplication button")
+![Screenshot showing the bottom of the VerdantType inspector. There is an arrow pointing to a button that says "duplication"](Media_GettingStarted/VerdantTypeDuplicateButton.png "VerdantType duplication button")
 
 For more about VerdantTypes, see [Types and Groups](UserGuide/TypesAndGroups.html).
 
