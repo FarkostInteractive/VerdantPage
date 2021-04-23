@@ -24,7 +24,11 @@ The section below the table shows you the contents of all the fields used by the
 
 [Image]
 
-Deflection here is shown as if it were a normal map, color is shown as it is and scale is in greyscale where black is 0 and white is 1. As you will also see on the rest of the fields, they have a checkbox beneath them that allows you to visualize the field in the scene. If the field is high resolution it can be a little bit demanding on the GPU to do so, but it's a very intuitive way to show directly what affectors are doing and how the field resolution compares to the objects in your scene. 
+Deflection here is shown as if it were a normal map, color is shown as it is and scale is in greyscale where black is 0 and white is 1. 
+
+[Image]
+
+As you will also see on the rest of the fields, they have a checkbox beneath them that allows you to visualize the field in the scene. If the field is high resolution it can be a little bit demanding on the GPU to do so, but it's a very intuitive way to show directly what affectors are doing and how the field resolution compares to the objects in your scene. 
 
 [Image]
 

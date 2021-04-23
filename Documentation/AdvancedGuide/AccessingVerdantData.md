@@ -6,15 +6,15 @@ parent: "Advanced Guide"
 
 # Accessing Verdant Data
 
-It can sometimes be useful to access the data Verdant produces in another shader. You might want to use the wind to animate something or to apply cloud shadows on your terrain. Most of these values can be exposed globally, where they can then be picked up by any material using parts of the Verdant shader library.
+It can sometimes be useful to access the data Verdant produces in another shader. You might want to use the wind to animate something or to apply cloud shadows on your terrain. Most of these values can be exposed globally, where they can then be picked up by any material by including parts of the Verdant shader library.
 
 ## Global Shader Data
 
-The first step to accessing a system is to make sure its data is available to your shaders. For all the sampling functions we'll cover here there's a checkbox either on the field component or on VerdantCamera called something to the effect of "Set Shader Values Globally". You'll need to tick it for each system you want to access. Note that the data being global implies that these features only work on one VerdantCamera at a time. If you have the checkboxes set on more than one you'll see some flickering as the two fight for the global shader parameters. A common case where this might happen is when rendering in scene view while having the game view open. In that case it will only happen in the editor and will look fine once the game is built and run on its own. If you actually had two VerdantCameras in the scene though the problem would persist.
+The first step to accessing a system is to make sure its data is available to your shaders. For all the sampling functions we'll cover here there's a checkbox either on the corresponding field component or on VerdantCamera called something to the effect of "Set Shader Values Globally". You'll need to tick it for each system you want to access. Note that the data being global implies that these features only work on one VerdantCamera at a time. If you have the checkboxes set on more than one you'll see some flickering as the two fight for the global shader parameters. A common case where this might happen is when rendering in scene view while having the game view open. In that case it will only happen in the editor and will look fine once the game is built and run on its own. If you actually have two VerdantCameras in the scene the problem will persist.
 
 ## Wind
 
-If you've tried to use global wind you'll have already seen that it's a bit different from other global data. Wind is calculated per VerdantType, so when using it globally we need to select a template type to base our data on. That VerdantType *must* be active in the scene, or it won't be usable as a template. To allow for different wind configurations for different materials you can also specify a material-VerdantType pairing. The material will have the wind of that VerdantType applied to it directly. Aside from needing to specify every material you want to use, for the purposes of this guide it works the same way as the global parameters do. 
+Global wind is a bit different from other global data. Wind is calculated per VerdantType, so when using it globally we need to select a template type to base our data on. That VerdantType *must* be active in the scene, or it won't be usable as a template. To allow for different wind configurations for different materials you can also specify a material-VerdantType pairing. The material will have the wind of that VerdantType applied to it directly. Aside from needing to specify every material you want to use, accessing it works the same way as global data does. 
 
 ## Including the Access Functions
 
@@ -22,12 +22,12 @@ Verdant offers convenient functions for sampling data from its various systems. 
 
 |:---------------|:--------------------------|
 | All Fields | `#include "Packages/com.farkostinteractive.verdant/Runtime/Resources/Shaders/Includes/VerdantFieldSampling.cginc"` |
-| Color Field | `#include "Packages/com.farkostinteractive.verdant/Runtime/Resources/Shaders/Includes/FieldSampling.VerdantColorFieldSampling.cginc"` |
-| Scale Field | `#include "Packages/com.farkostinteractive.verdant/Runtime/Resources/Shaders/Includes/FieldSampling.VerdantScaleFieldSampling.cginc"` |
-| Deflection Field | `#include "Packages/com.farkostinteractive.verdant/Runtime/Resources/Shaders/Includes/FieldSampling.VerdantDeflectionFieldSampling.cginc"` |
-| Height Field | `#include "Packages/com.farkostinteractive.verdant/Runtime/Resources/Shaders/Includes/FieldSampling.VerdantHeightFieldSampling.cginc"` |
-| Cloud Shadows | `#include "Packages/com.farkostinteractive.verdant/Runtime/Resources/Shaders/Includes/FieldSampling.VerdantCloudShadowSampling.cginc"` |
-| Wind | `#include "Packages/com.farkostinteractive.verdant/Runtime/Resources/Shaders/Includes/FieldSampling.VerdantWindSampling.cginc"` |
+| Color Field | `#include "Packages/com.farkostinteractive.verdant/Runtime/Resources/Shaders/Includes/FieldSampling/VerdantColorFieldSampling.cginc"` |
+| Scale Field | `#include "Packages/com.farkostinteractive.verdant/Runtime/Resources/Shaders/Includes/FieldSampling/VerdantScaleFieldSampling.cginc"` |
+| Deflection Field | `#include "Packages/com.farkostinteractive.verdant/Runtime/Resources/Shaders/Includes/FieldSampling/VerdantDeflectionFieldSampling.cginc"` |
+| Height Field | `#include "Packages/com.farkostinteractive.verdant/Runtime/Resources/Shaders/Includes/FieldSampling/VerdantHeightFieldSampling.cginc"` |
+| Cloud Shadows | `#include "Packages/com.farkostinteractive.verdant/Runtime/Resources/Shaders/Includes/FieldSampling/VerdantCloudShadowSampling.cginc"` |
+| Wind | `#include "Packages/com.farkostinteractive.verdant/Runtime/Resources/Shaders/Includes/FieldSampling/VerdantWindSampling.cginc"` |
 
 ## Function Prerequisites
 
@@ -97,8 +97,8 @@ Takes the world position and returns the cloud shadow texture at that location.
 
 It should be immediately obvious that wind is a little more complicated than the other functions. That's because wind is much more closely tied to Verdant instances, being influenced both by a noise based on the unique ID of each instance and their procedurally calculated rotation. As non-Verdant shaders have access to neither we have to supply other substitute data.
 
-For the noise you can input any value that is in the range 0-1 and is consistent over every vertex. Normal needs to be similarly consistent and is used to approximate how much wind from a given direction the mesh is catching. For meshes with many different parts responding individually to wind, like the leaves on a tree, it's important that each piece has consistent noise and normal values across all of it. If the piece is flat you can simply use the surface normal, and the noise can be sampled from a special texture with a random 0-1 value painted onto each piece (or any variety of shader-based methods that produce similar results). Height is only necessary for things that bend, like blades of grass, where you can enter the object space Y value. For other things, just set it to zero. Strength is simply a 0-1 ranged float that acts as a throttle on the total amount of wind. You'll usually want to leave it to 1. The return value is given in degrees from 0 to 90.
+For the noise you can input any value that is in the range 0-1 and is consistent over every vertex. Normal needs to be similarly consistent and is used to approximate how much wind from a given direction the mesh is catching. For meshes with many different parts responding individually to wind, like the leaves on a tree, it's important that each piece has individual but consistent noise and normal values across all of it. If the piece is flat you can simply use the surface normal, and the noise can be sampled from a special texture with a random 0-1 value painted onto each piece (or any variety of shader-based methods that produce similar results). Height is only necessary for things that bend, like blades of grass, where you can enter the object space Y value. For other things, just set it to zero. Strength is simply a 0-1 ranged float that acts as a throttle on the total amount of wind. You'll usually want to leave it to 1. The return value is given in degrees from 0 to 90.
 
 If you are only interested in the broad strokes, call VerdantSampleWindNoise. That function will behave similarly to the other sampling functions and simply return the wind noise at the given position. Its return value is a float between 0 and 1 representing the strength of the wind.
 
-Finally, VerdantWindDirection gives the direction of the wind in world space. You'll need it to apply the result of VerdantSampleWind correctly. The movement of the wind noise already takes it into account.
+Finally, VerdantWindDirection gives the direction of the wind in world space.
