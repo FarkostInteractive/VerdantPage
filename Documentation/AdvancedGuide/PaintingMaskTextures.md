@@ -34,19 +34,19 @@ There are five tools available to you. Each of them use different parts of the i
 
 Furthest to the left is the Add Vegetation tool, which you use to draw in new vegetation. This is the most basic tool and the one you'll always use first. It writes in both the selected types and the scale, and will overwrite any existing data. Just mouse over the object, then click anywhere you want to draw in your type. You'll see it instantly.
 
-![The icon for the tool for erasing vegetation](Media/VerdantMaskPaintTool.png "Erase Vegetation")
+![The icon for the tool for erasing vegetation](Media/VerdantMaskEraseTool.png "Erase Vegetation")
 
 The next one is Erase Vegetation, which is the obvious counterpart to Add Vegetation. It disables the Palette and Scale windows entirely, because all it does is remove any vegetation it's used on. If the brush is not entirely opaque because of its falloff or texture then it will scale vegetation towards zero instead.
 
-![The icon for the tool for adding vegetation types](Media/VerdantMaskPaintTool.png "Add Vegetation Type")
+![The icon for the tool for adding vegetation types](Media/VerdantMaskPaintTypeTool.png "Add Vegetation Type")
 
 After that is Add Vegetation Type. This tool allows you to add other types to areas that have been painted in with Add Vegetation. If you already have a good shape and you just want to add say, some flowers, to it, this is the tool to use. It disables the Scale window, though it does still use the brush texture as a mask. That way you can add new types onto existing ones in interesting shapes.
 
-![The icon for the tool for erasing vegetation types](Media/VerdantMaskPaintTool.png "Erase Vegetation Type")
+![The icon for the tool for erasing vegetation types](Media/VerdantMaskEraseTypeTool.png "Erase Vegetation Type")
 
 Erase Vegetation Type is the equivalent of Erase Vegetation for Add Vegetation Type. To use it you must first select a type in the palette. It will then erase that type only and leave everything else intact.
 
-![The icon for the tool for scaling vegetation](Media/VerdantMaskPaintTool.png "Add Vegetation")
+![The icon for the tool for scaling vegetation](Media/VerdantMaskScaleTool.png "Scale Vegetation")
 
 The final tool is Scale Adjustment, which disables the palette completely and only modifies the scale. It enables the blending settings in the Scale window and allows for fine adjustments on existing vegetation. Most of the time it makes sense to first block in the general shape you want with Add Vegetation, then take a few passes over it with Scale Adjustment to add more variation and clean up lines. If an area is painted all the way down to zero scale it is erased as if Erase Vegetation was used.
 
