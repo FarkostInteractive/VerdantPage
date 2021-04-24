@@ -5,14 +5,11 @@ parent: "Advanced Guide"
 ---
 
 # Using Twin Objects
-Twin objects are a useful way to take Verdant instances and dynamically transform them into full gameObjects. By using them you can create the illusion of a much higher level of interaction than Verdant can normally support.
+Twin objects are a useful way to take Verdant instances and dynamically transform them into full gameObjects when needed. By using them you can create the illusion of a much higher level of interaction than Verdant can normally support.
 
 ![A gif showing a VerdantObject with Hosta plants on it. The plants have been replaced by twin objects and are being pushed by a ball moving through them.](Media/VerdantTwinObjectHeader.gif "Twin Objects being pushed")
 
-The basic principle is to replace Verdant instances with gameObjects as the player approaches them. Verdant will spawn an instance of the prefab and in the same moment hide its own instance. When the player moves out of range the twin is disabled and added back into a pool of twins to be reused when needed, and the GPU instance is shown again. If configured correctly the effect is seamless, so the two appear to the player to be one and the same.
-
-## Testing
-An important thing to know is that twin objects are intentionally disabled in edit mode. Unless you've customized the editor there's nothing there to interact with them, and most importantly it prevents Verdant from spawning unwanted objects that might accidentally be saved or fill up the hierarchy. When everything else renders and animates in the scene view it can be easy to forget that, so take care to always run the game in play mode when testing your changes.
+The basic principle is to replace Verdant instances with gameObjects as the player approaches them. When close, an instance of a specified prefab is placed exactly where the GPU instance is. At the same moment the GPU instance is hidden. Once the player moves out of range the prefab instance is disabled and placed back into a pool while the GPU instance is activated again. When properly set up the effect is seamless. 
 
 ## Setting up a type
 
@@ -21,11 +18,11 @@ An important thing to know is that twin objects are intentionally disabled in ed
 VerdantType has a parameter towards the very bottom called Twin Object. It takes a prefab, and when set Verdant will automatically start to replace instances of the type with it at runtime. The field accepts any prefab, but will throw an error at runtime unless it has a component inheriting from [VerdantGameObjectTwin](../ComponentReference/VerdantGameObjectTwin.html). 
 
 ## The twin object prefab
-[VerdantGameObjectTwin](../ComponentReference/VerdantGameObjectTwin.html) is an abstract component that has four methods you need to implement to help manage the object over its lifecycle. As the camera moves around twins are added into and taken out of the pool constantly. It's important that the object knows how to respond to these events in a performant way, and that it knows to reset itself so it can be reused correctly. Please follow the link above to the component reference for more details about the methods.
+[VerdantGameObjectTwin](../ComponentReference/VerdantGameObjectTwin.html) is an abstract component that has four methods you need to implement to help manage the object over its lifecycle. As the camera moves around twins are added into and taken out of a pool of objects constantly. It's important that the object knows how to respond to these events in a performant way, and that it knows to reset itself so it can be reused correctly. Follow the link above to the component reference for more details about the methods.
 
 ![A screenshot of the VerdantPhysicalTwin component](Media/VerdantPhysicalTwinComponent.png "VerdantPhysicalTwin component")
 
-If you're using twin objects as a way to animate complex vegetation physically, eg. rigging it up with joints, rigidbodies and colliders, then there's an included implementation of VerdantGameObjectTwin called VerdantPhysicalTwin that you can use. Add it to the root object and it should take care of the rest. Note that objects like this are quite expensive to reset, so if you have a more narrow use case that you could optimize for it's very worth doing so.
+If you're using twin objects as a way to animate complex vegetation physically, eg. rigging it up with joints, rigidbodies and colliders, then there's an included implementation of VerdantGameObjectTwin called VerdantPhysicalTwin that you can use. Add it to the root object and it will take care of all the physical components automatically. Note that objects like this are quite expensive to reset, so if you have a more narrow use case that you could optimize for it's very worth doing so.
 
 ## Visuals
 Unless the twin prefab looks exactly the same as the VerdantType, replacing one with the other is not going to look right. If you haven't overridden it you should use the Verdant Standard Shader on all the prefab materials and set the parameters as they are on the VerdantType. You should also [enable global parameters](AccessingVerdantData.html) on any relevant [VerdantCamera](../ComponentReference/VerdantCamera.html) parameters and on your [affector fields](../ComponentReference/Fields). That way the material will pick up on their contents and match how the GPU instances look.
@@ -44,7 +41,9 @@ Normally you can just set Retrieval Range to about double Replacement Threshold.
 
 Also note that twin objects always assume full density, so the replacement threshold should be within the falloff steps where density is at maximum. If there is falloff applied Verdant will try to replace instances that are no longer there. If you need a threshold bigger than the first falloff step then increase it so you have more than one step at maximum.
 
-## Performance
+## Testing
+An important thing to know is that twin object replacement is intentionally disabled in edit mode. This prevents twins from being accidentally created and saved with the scene. In play mode it will run on both the scene view camera (if enabled) and the regular VerdantCamera, although it is usually best to test them using the VerdantCamera. There can be inconsistencies with global shader values when both are active.
 
-In terms of just management twin objects are fast enough to support big areas with rather dense types. They are meant to be used with bigger plants like ferns and bushes, but you don't necessarily need to have them all spread out. Most of the performance cost actually comes from the gameObjects themselves. Unity doesn't handle large numbers of gameObjects all that well and some components can become very expensive at scale. Enabling and disabling a lot of objects can also be heavy. which is why it's important to implement [VerdantGameObjectTwin](../ComponentReference/VerdantGameObjectTwin.html) correctly. If the type is dense and the player moves fast then it's likely that dozens of objects are brought in and out of the pool per frame. In general you should only reset what you strictly have to. The less state each instance has the better.
+## Performance
+In terms of just management twin objects are fast enough to support big areas with rather dense types. They are meant to be used with bigger plants like ferns and bushes, but you don't necessarily need to have them all spread out. Most of the performance cost actually comes from the gameObjects themselves. Unity doesn't handle large numbers of gameObjects all that well and some components can become very expensive at scale. Enabling and disabling a lot of objects can also be heavy, which is why it's important to implement [VerdantGameObjectTwin](../ComponentReference/VerdantGameObjectTwin.html) correctly. If the type is dense and the player moves fast then it's likely that dozens of objects are brought in and out of the pool per frame. In general you should only reset what you strictly have to. The less state each instance has the better.
 
