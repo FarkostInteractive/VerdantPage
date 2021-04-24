@@ -7,7 +7,7 @@ parent: "Advanced Guide"
 # Using Twin Objects
 Twin objects are a useful way to take Verdant instances and dynamically transform them into full gameObjects. By using them you can create the illusion of a much higher level of interaction than Verdant can normally support.
 
-[Gif of Hostas being pushed]
+![A gif showing a VerdantObject with Hosta plants on it. The plants have been replaced by twin objects and are being pushed by a ball moving through them.](Media/VerdantTwinObjectHeader.gif "Twin Objects being pushed")
 
 The basic principle is to replace Verdant instances with gameObjects as the player approaches them. Verdant will spawn an instance of the prefab and in the same moment hide its own instance. When the player moves out of range the twin is disabled and added back into a pool of twins to be reused when needed, and the GPU instance is shown again. If configured correctly the effect is seamless, so the two appear to the player to be one and the same.
 
