@@ -9,7 +9,7 @@ Twin objects are a useful way to take Verdant instances and dynamically transfor
 
 ![A gif showing a VerdantObject with Hosta plants on it. The plants have been replaced by twin objects and are being pushed by a ball moving through them.](Media/VerdantTwinObjectHeader.gif "Twin Objects being pushed")
 
-The basic principle is to replace Verdant instances with gameObjects as the player approaches them. When close, an instance of a specified prefab is placed exactly where the GPU instance is. At the same moment the GPU instance is hidden. Once the player moves out of range the prefab instance is disabled and placed back into a pool while the GPU instance is activated again. When properly set up the effect is seamless. 
+The basic principle is to replace Verdant instances with gameObjects as the player approaches them. When close, an instance of a specified prefab is placed exactly where the GPU instance is. At the same moment the GPU instance is hidden. Once the player moves out of range the prefab instance is disabled and placed back into a pool while the GPU instance is activated again. When properly set up the effect is seamless and the two instances will look as if they are one and the same. 
 
 ## Setting up a type
 
