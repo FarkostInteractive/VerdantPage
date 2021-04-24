@@ -26,7 +26,7 @@ The section below the table shows you the contents of all the fields used by the
 
 Deflection here is shown as if it were a normal map, color is shown as it is and scale is in greyscale where black is 0 and white is 1. 
 
-![A screenshot of a landscape overlaid with a representation of the deflection field. There are deflection affectors scattered around it.](Media/VerdantDebugPanelDeflectionFieldInScene.png "Deflection Field drawn in Scene")
+![A screenshot of a landscape overlaid with a representation of the deflection field. There are deflection affectors scattered around it.](Media/VerdantDeflectionFieldInScene.png "Deflection Field drawn in Scene")
 
 As you will also see on the rest of the fields, they have a checkbox beneath them that allows you to visualize the field in the scene. If the field is high resolution it can be a little bit demanding on the GPU to do so, but it's a very intuitive way to show directly what affectors are doing and how the field resolution compares to the objects in your scene. 
 
@@ -34,7 +34,7 @@ As you will also see on the rest of the fields, they have a checkbox beneath the
 
 Next are the detail and coarse heightfields used by VerdantCamera itself. As these fields contain full float values you can use the range sliders below them to adjust what values to use as maximum and minimum when mapping to greyscale. There's also a toggle to draw the scale in the field rather than the height. 
 
-![A screenshot of the Verdant Debug Panel showing the type fields on Main Camera](Media/VerdantDebugPanelHeightFields.png "Verdant Debug Panel Type Fields")
+![A screenshot of the Verdant Debug Panel showing the type fields on Main Camera](Media/VerdantDebugPanelTypeFields.png "Verdant Debug Panel Type Fields")
 
 Finally, there is the culling tile map and the typemap. Culling tiles are what Verdant uses to determine what to draw, and when shown in the scene they are drawn as a bounding box. The colors represent the different types present in them, and you can use the layer mask above them to hide or show certain types. To the right is the detail typemap, which works similarly but has the same resolution and scale as the detail height field.
 
