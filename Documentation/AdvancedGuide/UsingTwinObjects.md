@@ -7,7 +7,7 @@ parent: "Advanced Guide"
 # Using Twin Objects
 Twin objects are a useful way to take Verdant instances and dynamically transform them into full gameObjects. By using them you can create the illusion of a much higher level of interaction than Verdant can normally support.
 
-[]
+[Gif of Hostas being pushed]
 
 The basic principle is to replace Verdant instances with gameObjects as the player approaches them. Verdant will spawn an instance of the prefab and in the same moment hide its own instance. When the player moves out of range the twin is disabled and added back into a pool of twins to be reused when needed, and the GPU instance is shown again. If configured correctly the effect is seamless, so the two appear to the player to be one and the same.
 
@@ -15,10 +15,15 @@ The basic principle is to replace Verdant instances with gameObjects as the play
 An important thing to know is that twin objects are intentionally disabled in edit mode. Unless you've customized the editor there's nothing there to interact with them, and most importantly it prevents Verdant from spawning unwanted objects that might accidentally be saved or fill up the hierarchy. When everything else renders and animates in the scene view it can be easy to forget that, so take care to always run the game in play mode when testing your changes.
 
 ## Setting up a type
+
+![A screenshot of the bottom of the VerdantType inspector. The Twin Object field is highlighted](Media/VerdantTypeTwinObjectField.png "Twin Object Field")
+
 VerdantType has a parameter towards the very bottom called Twin Object. It takes a prefab, and when set Verdant will automatically start to replace instances of the type with it at runtime. The field accepts any prefab, but will throw an error at runtime unless it has a component inheriting from [VerdantGameObjectTwin](../ComponentReference/VerdantGameObjectTwin.html). 
 
 ## The twin object prefab
 [VerdantGameObjectTwin](../ComponentReference/VerdantGameObjectTwin.html) is an abstract component that has four methods you need to implement to help manage the object over its lifecycle. As the camera moves around twins are added into and taken out of the pool constantly. It's important that the object knows how to respond to these events in a performant way, and that it knows to reset itself so it can be reused correctly. Please follow the link above to the component reference for more details about the methods.
+
+![A screenshot of the VerdantPhysicalTwin component](Media/VerdantPhysicalTwinComponent.png "VerdantPhysicalTwin component")
 
 If you're using twin objects as a way to animate complex vegetation physically, eg. rigging it up with joints, rigidbodies and colliders, then there's an included implementation of VerdantGameObjectTwin called VerdantPhysicalTwin that you can use. Add it to the root object and it should take care of the rest. Note that objects like this are quite expensive to reset, so if you have a more narrow use case that you could optimize for it's very worth doing so.
 
@@ -30,6 +35,8 @@ For the same reasons, make sure all the scales and rotations are the same. There
 ## Replacement Threshold and Retrieval Range
 
 With the prefab set and the component implemented you should be able to run the game and see your instances be replaced. To make this clearer it can be useful to temporarily set a different color or some other conspicuous difference on the twin materials.  
+
+![A screenshot of the VerdantCamera component highlighting the Replacement Threshold and Retrieval Range parameters under the Twin Object menu](Media/VerdantCameraTwinObjectSettings.png "VerdantCamera Twin Object Parameters")
 
 There are two more parameters we need to look at: Replacement Threshold and Retrieval Range. These rather confusingly named parameters control how and when instances are replaced. To understand them it helps to know a bit about how the system works in the background. Verdant will read back the positions closest to the camera from the GPU and store them CPU-side. It then keeps track of these positions and places twins on them when the camera is close enough. "Close enough" here is the replacement threshold. So basically, retrieval range controls the area that Verdant is aware of, and replacement threshold is the distance at which a GPU instance becomes a prefab instance.
 
