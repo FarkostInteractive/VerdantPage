@@ -8,7 +8,7 @@ nav_order: "2"
 
 # VerdantScaleField
 
-Enables interacting with vegetation scale by using [VerdantScaleAffectors](../Affectors/VerdantScaleAffector.html) on GameObjects. The scale of the field is multiplied into the scale from the [VerdantType](../DataTypes/VerdantType.html) and from the [VerdantObject](../VerdantObject.html) of each vegetation instance. 
+Enables interacting with vegetation scale by using [VerdantScaleAffectors](../Affectors/VerdantScaleAffector) on GameObjects. The scale of the field is multiplied into the scale from the [VerdantType](../DataTypes/VerdantType) and the [VerdantObject](../VerdantObject) of each vegetation instance. 
 
 Scale fields are set to one by default, but this can be changed by configuring a base texture. When set, the field will read from the base texture for each pixel and set its value before any affectors get drawn. As the field moves it will continue to seamlessly fill in new areas from the base texture. This can be a very useful way to add some subtle global variance to vegetation scale.
 
@@ -23,10 +23,10 @@ For more information about fields in general, see the [Fields page](index.html).
 Changing any of the field parameters requires Verdant to replace the underlying render textures of the field. This can be very expensive and will almost certainly cause a frame hitch, so it should be avoided at runtime.
 
 |:---------------|:--------------------------|
-| `Resolution` | The resolution of the underlying field render textures, which along with Range determines the level of detail per square meter the field can handle. The [Debug Panel](../../AdvancedGuide/DebugPanel.html) can be used to help visualize this. |
+| `Resolution` | The resolution of the underlying field render textures, which along with Range determines the level of detail per square meter the field can handle. The [Debug Panel](../../AdvancedGuide/DebugPanel) can be used to help visualize this. |
 | `Wrap Mode` | The wrap mode of the underlying render texture, which determines if and how the field should be used for vegetation outside its range. Choose clamp if you primarily use the field for interactions and choose repeat if you primarily use it to add a base texture. Clamp will limit the field to its range whereas repeat will repeat the contents of the field throughout the world.  |
 | `Range` | The render distance of the field. It determines how far the field should stretch around the camera. Outside of this range affectors will have no effect. |
-| `Set Shader Values Globally` | When this is set, all the shader values used by Verdant will be made available as global shader variables. You need to enable it if you are using a Verdant shader on a regular material or if you want to read from this field in a custom shader. For details, check the page [Accessing Verdant Data]("../../AdvancedGuide/AccessingVerdantData.html") |
+| `Set Shader Values Globally` | When this is set, all the shader values used by Verdant will be made available as global shader variables. You need to enable it if you are using a Verdant shader on a regular material or if you want to read from this field in a custom shader. For details, check the page [Accessing Verdant Data]("../../AdvancedGuide/AccessingVerdantData") |
 
 ### Base Texture Parameters
 

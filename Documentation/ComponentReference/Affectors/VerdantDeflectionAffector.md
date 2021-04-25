@@ -16,15 +16,15 @@ Deflection affectors differ from other affectors in that they are always drawn a
 For more information about affectors in general, see the [Affectors page](index.html). 
 
 ## Straight Write
-When using a texture for deflection there is one available option that needs a bit of additional explaining. Straight Write will write the texture exactly as it is into the field, skipping the interpretation steps performed by the other modes. This is a bit of an experimental feature and is intended as a way for the user to add more complex wind systems. One such usage would be writing a full GPU fluid simulator and rendering it out into a texture as deflection data understandable to Verdant. By adding the resulting render texture onto a deflection affector with its shape set to Map its data gets passed into Verdant and overrides the regular simulation. It can also be used for simpler cases, like displaying baked wind animations or procedurally generating patterns with a shader.
+When using a texture for deflection there is one available option that needs a bit of additional explaining. Straight Write will write the texture exactly as it is into the field, skipping the interpretation steps performed by the other modes. This is a bit of an experimental feature and is intended as a way for the user to add more complex wind systems. One such use case would be writing a full GPU fluid simulator and rendering it out into a texture as deflection data understandable to Verdant. By adding the resulting render texture onto a deflection affector with its shape set to Map its data gets passed into Verdant and overrides the regular simulation. It can also be used for simpler cases, like displaying baked wind animations or procedurally generating patterns with a shader.
 
 Deflection is modeled as a spring and represented as two 2D vectors in the XZ plane: The position and the velocity. Both use half precision floats, meaning that unlike a regular texture they can be negative numbers and/or higher than 1. Keep this in mind when creating your own render texture.
 
 Position here is how extended the spring is in each direction and gets unpacked into a direction and a rotation value when read by vegetation. It is normalized from 0 to 1, but the length is also used as the press timer. If the press time is 1 the length gets set to 2 and then counted down and released when smaller than 1. Position is stored in the XY components. 
 
-Velocity is a more straightforward value and represents the velocity of the spring as it was in the previous simulation step. The velocity can be however high it needs to be, but will never push the position beyond length 1. When a push force affects the field this is the vector it writes into. It is stored in the ZW components.
+Velocity is a more straightforward value and represents the velocity of the spring as it was in the previous simulation step. The velocity can be however high it needs to be, but when applied will never push the position beyond length 1. When a push force affects the field this is the vector it writes into. It is stored in the ZW components.
 
-To take complete control of the simulation, set XY to the direction you want and ZW to zero. If possible setting the length of XY to higher than 1 will ensure Verdant does nothing for the pixels drawn to, though setting the velocity should suffice in most cases.
+To take complete control of the simulation, set XY to the direction you want and ZW to zero. If applicable setting the length of XY to higher than 1 will ensure Verdant does nothing for the pixels drawn to, though setting the velocity should suffice in most cases.
 
 ## Parameters
 
@@ -46,7 +46,7 @@ To take complete control of the simulation, set XY to the direction you want and
 | `Direction` | Sets whether vegetation should deflect along the objects normals or its direction of motion. Will be overridden by the texture if one is used. |
 | `Force Mode` | Sets if vegetation should be pushed or pressed down. A push is a force that can be gentle or strong, but always stops the moment the affector is disabled or moves away. A press is the equivalent of a heavy object resting on the field and will completely flatten vegetation below it. The amount of time it takes to raise pressed vegetation can be specified with the Press Duration parameter. |
 | `Force` | (Force mode push only) The amount of force to use. Its effectiveness will depend on the DeflectionField simulation settings. |
-| `Speed Influence` | (Force mode push only) The degree to which the speed of this object will influence the force. At 1 an immobile object will assert no force. |
+| `Speed Influence` | (Force mode push only) The degree to which the speed of this object will influence the force. At 1 an immobile object will assert no force. At 0 the object will assert the specified force regardless of its speed. |
 | `Press Duration` | (Force mode press only) The time in seconds for which the vegetation should stay pressed down. |
 
 ## Public Methods

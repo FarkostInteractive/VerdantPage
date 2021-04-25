@@ -16,7 +16,7 @@ Verdant simulates vegetation as a spring using [Hooke's Law](https://en.wikipedi
 
 The physics simulation can be a little bit tricky to control. It is highly dependent on the update rate, so try to find a good value for Updates Per Second first. Then, carefully read through what the other parameters do. It can also be useful to read up on Hooke's Law itself. That will make it much easier to understand how your changes affect the simulation. Changing them aimlessly can quickly give one parameter an outsized influence and make you lose track of what does what.
 
-Also know that the field is normalized between zero and one and mainly controls *where* deflection happens. How much vegetation bends when deflected is determined by each [VerdantType](../DataTypes/VerdantType.html) using the Deflection Angle parameter. This can have a huge impact on your visuals and is often the place to start before messing with the simulation.
+Also know that the field is normalized between zero and one and mainly controls *where* deflection happens. How much vegetation bends when deflected is determined by each [VerdantType](../DataTypes/VerdantType) using the Deflection Angle parameter. This can have a huge impact on your visuals and is often the place to start before messing with the simulation.
 
 For more information about fields in general, see the [Fields page](index.html). 
 
@@ -27,9 +27,9 @@ For more information about fields in general, see the [Fields page](index.html).
 Changing any of the field parameters requires Verdant to replace the underlying render textures of the field. This can be very expensive and will almost certainly cause a frame hitch, so it should be avoided at runtime.
 
 |:---------------|:--------------------------|
-| `Resolution` | The resolution of the underlying field render textures, which along with range determines the level of detail per square meter the field can handle. The [Debug Panel](../../AdvancedGuide/DebugPanel.html) can be used to help visualize this. |
+| `Resolution` | The resolution of the underlying field render textures, which along with range determines the level of detail per square meter the field can handle. The [Debug Panel](../../AdvancedGuide/DebugPanel) can be used to help visualize this. |
 | `Range` | The render distance of the field. It determines how far the field should stretch around the camera. Outside of this range affectors will have no effect. |
-| `Set Shader Values Globally` | When this is set, all the shader values used by Verdant will be made available as global shader variables. You need to enable it if you are using a Verdant shader on a regular material or if you want to read from this field in a custom shader. For details, check the page [Accessing Verdant Data]("../../AdvancedGuide/AccessingVerdantData.html") |
+| `Set Shader Values Globally` | When this is set, all the shader values used by Verdant will be made available as global shader variables. You need to enable it if you are using a Verdant shader on a regular material or if you want to read from this field in a custom shader. For details, check the page [Accessing Verdant Data]("../../AdvancedGuide/AccessingVerdantData") |
 
 ### Simulation Parameters
 

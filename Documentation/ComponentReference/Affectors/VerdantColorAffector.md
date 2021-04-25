@@ -9,7 +9,7 @@ grand_parent: "Component Reference"
 # VerdantColorAffector
 An affector that interactively colors vegetation. Use it to add burn marks after an explosion, magically rejuvenate plants around the player or make comically large splashes of blood. To use it you will need a [VerdantColorField](../Fields/VerdantColorField.html) component on your VerdantCameras.  
 
-By default color fields do not restore themselves, so affectors are only drawn when moved or when SetDirty() is called. They leave permanent marks as long as they stay within range. If restoration is enabled on the field they are instead drawn every timestep. 
+By default color fields do not restore themselves, so affectors are only drawn when moved or when SetDirty() is called. They leave permanent marks as long as they stay within range. If restoration is enabled on the field they are instead drawn every timestep and the marks will fade away over time. 
 
 As a result of only being drawn once the Add and Multiply blend modes do not automatically draw over themselves every frame. If that is an effect you want consider manually calling SetDirty() or enabling restoration.
 
@@ -38,7 +38,7 @@ For more information about affectors in general, see the [Affectors page](index.
 ### Clamping
 
 |:---------------|:--------------------------|
-| `Clamp` | Should the color under this affector be clamped? |
+| `Clamp` | Should the color made by this affector be clamped? |
 | `Min Color` | The minimum clamp color |
 | `Max Color` | The maximum clamp color |
 
