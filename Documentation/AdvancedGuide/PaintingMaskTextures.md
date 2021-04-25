@@ -8,9 +8,9 @@ parent: "Advanced Guide"
 
 ![A screenshot of a VerdantObject with grass, lupins and daisies. The types grow in patterns that have been painted by hand.](Media/VerdantMaskPaintToolHeader.png "Painted Vegetation")
 
-Using regular mask textures can get you pretty far, but they only allow you to change the scale of vegetation. By using the internal Verdant tools for painting masks you can also paint type information directly into the texture. The experience is not dissimilar to vegetation painting tools you might be familiar with from elsewhere, but made to work with Verdant's particular paradigm. 
+Using regular mask textures on [VerdantObject](../ComponentReference/VerdantObject.html) can get you pretty far, but they only allow you to change the scale of vegetation. By using the internal Verdant tools for painting masks you can also paint [VerdantType](../ComponentReference/DataTypes/VerdantType)/[VerdantGroup](../ComponentReference/DataTypes/VerdantGroup) information directly into the mask. The experience is not dissimilar to vegetation painting tools you might be familiar with from elsewhere, but made to work with Verdant's particular paradigm. 
 
-To paint a mask you first need a VerdantObject. Select it, then go down into the Masking Texture parameters and look for the header Painted Mask. Below it you'll see a resolution parameter, a row of tools and a textbox indicating that this object does not have a painted mask yet. Click on the Initialize button to create one. You'll see the UI change slightly. The tools are now ready to use, either from the component or in the scene view tool drawer (show it by clicking the icon of a crossed pen and spanner to the left of Gizmos). When you do so you'll see a some new windows overlaid on the scene view.
+To paint a mask you first need a VerdantObject. Select it, then go down into the Masking Texture parameters and look for the header Painted Mask. Below it you'll see a resolution parameter, a row of tools and a textbox indicating that this object does not have a painted mask yet. Click on the Initialize button to create one. You'll see the UI change slightly. The tools are now ready to use, either from the component or in the scene view tool drawer (show it by clicking the icon of a crossed pen and spanner to the left of the Gizmos dropdown). When you do so you'll see a some new windows overlaid on the scene view.
 
 ![A screenshot of a VerdantObject with the mask painting editor open. The palette is highlighted](Media/VerdantMaskPaintToolPalette.png "Palette")
 
@@ -40,7 +40,7 @@ The next one is Erase Vegetation, which is the obvious counterpart to Add Vegeta
 
 ![The icon for the tool for adding vegetation types](Media/VerdantMaskPaintTypeTool.png "Add Vegetation Type")
 
-After that is Add Vegetation Type. This tool allows you to add other types to areas that have been painted in with Add Vegetation. If you already have a good shape and you just want to add say, some flowers, to it, this is the tool to use. It disables the Scale window, though it does still use the brush texture as a mask. That way you can add new types onto existing ones in interesting shapes.
+After that is Add Vegetation Type. This tool allows you to add other types to areas that have been painted in with Add Vegetation. If you already have a good shape and you just want to say, add some flowers to it, this is the tool to use. It disables the Scale window, though it does still use the brush texture as a mask. That way you can add new types onto existing ones in interesting shapes.
 
 ![The icon for the tool for erasing vegetation types](Media/VerdantMaskEraseTypeTool.png "Erase Vegetation Type")
 
@@ -52,4 +52,4 @@ The final tool is Scale Adjustment, which disables the palette completely and on
 
 ## Resolution
 
-Masks are serialized with the VerdantObject component, so it's important to not set the resolution higher than it needs to be to keep the scene or prefab disk size under control. Start low and work upwards, it's always possible to increase it later. At very high resolution you might find the editor stuttering when you undo or redo. This happens because of the large amount of serailization work being performed in the background.
+Masks are serialized with the VerdantObject component, so it's important to not set the resolution higher than needed to keep the scene/prefab disk size under control. Start low and work upwards, it's always possible to increase it later. At very high resolution you might find the editor stuttering when you undo or redo. This happens because of the large amount of serailization work being performed in the background. It's not a problem for Verdant, but can be slightly cumbersome to work with.

@@ -6,11 +6,11 @@ parent: "Advanced Guide"
 
 # Writing Custom Shaders
 
-It's very easy to extend Verdant with shaders of your own. As the Verdant Standard Shader is built for flexibility first you can potentially save a good bit of frame time by implementing one more tailored to your needs, and it can help you get something with a unique look of its own. 
+It's very easy to extend Verdant with shaders of your own. As the Verdant Standard Shader is built for flexibility first you can save a good bit of frame time by implementing one more tailored to your needs, and it allows you to do things with your visuals that Verdant normally wouldn't be able to support.
 
 ## Getting Started
 
-To create a shader, simply go into the Create Asset dropdown menu and select Verdant > Shader. You'll find it below VerdantType and VerdantGroup. This will create a simple shader based on the unlit Unity shader adapted to include all the most important Verdant features.
+To create a shader, go into the Create Asset dropdown menu and select Verdant > Shader. You'll find it below [VerdantType](../ComponentReference/DataTypes/VerdantType) and [VerdantGroup](../ComponentReference/DataTypes/VerdantGroup). This will create a simple shader based on the unlit Unity shader adapted to include all the most important Verdant features.
 
 ## Using the Shader
 
@@ -22,7 +22,7 @@ If you have experience with shaders in Unity you'll probably find this one quite
 
 ## Shader Parameters
 
-Custom shader parameters can be applied on a per-type basis by creating a regular Unity material and setting your shader on it. You can then set the material as the Override Material on VerdantType. The material will apply all of its properties before Verdant renders it and applies its parameters. It's important to note that Verdant cannot automatically detect changes in this material, so to see your changes in the editor you need to use the Reload Material button on the VerdantType. Properties on the material cannot be changed at runtime.
+Custom shader parameters can be applied on a per-type basis by creating a regular Unity material using your shader and setting the material as the Override Material on VerdantType. All of the material properties will be carried over when the VerdantType is rendered. It's important to note that Verdant cannot automatically detect changes in the material, so to see your changes in the editor you need to use the Reload Material button on the VerdantType. Properties on the material cannot be changed at runtime.
 
 To access the per-LOD parameters on the VerdantType, please take a look at the table below which contains all their shader uniform names. As outlined there, some parameters are included with the main include and/or applied automatically, while others you need to implement yourself. As a rule anything related to placement, like the Billboarding parameter, will be applied automatically, whereas surface features like the Normal Map must be added on a per-shader basis.  
 
@@ -67,8 +67,8 @@ You can also use the following keywords to compile conditionally based on shadin
 
 ## Deferred Shaders
 
-Most of the time you will want to write your shaders as forward shaders, as those allow for much greater flexibility and are generally easier to work with. Unless you have experience both with both shaders and deferred renderering in Unity I'd advise against trying to write your own deferred shader. If that doesn't discourage you, you'll have to look directly at how Verdant itself does it. 
+Most of the time you will want to write your shaders as forward shaders, as those allow for much greater flexibility and are generally easier to work with. Unless you have significant experience with both shaders and deferred renderering in Unity I'd advise against trying to write your own deferred shader. If that doesn't discourage you, you'll have to look directly at how Verdant itself does it. 
 
-Start by having a look at the file Shader_Verdant_Standard in Verdant > Runtime > Resources > Shaders. This is a Surface Shader which supports both forward and deferred rendering. It is by and large a typical Surface Shader but performs some additional work to pass along Verdant specific data like translucency.
+Start by going through the file Shader_Verdant_Standard in Verdant > Runtime > Resources > Shaders. This is a Surface Shader which supports both forward and deferred rendering. It is by and large a typical Surface Shader but performs some additional work to pass along Verdant specific data like translucency.
 
 You'll also want to look at the main deferred and deferred reflections shaders. If you are familiar with their standard Unity versions you'll be right at home in the Verdant versions, which only tweak them slightly. The file names are Verdant-DeferredShading and Verdant-DeferredReflections, and you'll find them under Verdant > Runtime > Resources > Shaders > Deferred.
