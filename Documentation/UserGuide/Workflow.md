@@ -8,7 +8,7 @@ nav_order: "1"
 # Workflow
 {: .no_toc }
 
-Here we'll take a deeper look at the most important components that make up scenes in Verdant. What they do, how to use them and a little bit about how they interact with the underlying machinery. You'll get a taste of the quirks and features unique to Verdant and how to use them as part of your scene building workflow. 
+Here we'll take a deeper look at the components used to build scenes with Verdant. What they do, how to use them and a little bit about how they interact with the underlying machinery. You'll get a taste of the quirks and features unique to Verdant and learn how to incorporate them into your workflow.
 
 ## Table of contents
 {: .no_toc .text-delta }
