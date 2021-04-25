@@ -6,7 +6,7 @@ nav_order: "1"
 
 # Quick Start
 
-This is a whirlwind tour through Verdant that shows how to set up the most important systems without going into detail about them. Its contents are the same as the getting started-PDF included with the package. If you just want to start working this is the quickest way to do it, though I highly recommend that you also read the main [User Guide](UserGuide.html). It goes into much more detail, showcases features not covered here and gives valuable context to help you understand how the system works.
+This is a whirlwind tour through Verdant that shows you how to set up its most important systems without delving into the details. You'll also find this guide included in the package as a Getting Started-PDF. If you just want to start working this is the quickest way to do it, though I highly recommend that you also read the main [User Guide](UserGuide.html) afterwards. It goes into much more detail, showcases features not covered here and gives valuable context to help make the system easier to work with long-term.
 
 ## Setup
 
@@ -65,7 +65,7 @@ If you want to use your own vegetation assets you will need to create a new [Ver
 
 ![On the left, a screenshot showing the dropdown menu for creating assets. Verdant > VerdantType is selected. On the right, a screenshot of the VerdantType inspector](Media_GettingStarted/VerdantTypeCreation.png "VerdantType creation")
 
-**If you need a starting point or just want to modify one of the built-in types you can create a duplicate in your project.** Select the VerdantType in question and scroll all the way down in its inspector to the button “Duplicate VerdantType”. Click it, then choose a name and select a path.
+**If you need a starting point or just want to modify one of the built-in types you can create a duplicate type from it in your project.** Select the VerdantType in question and scroll all the way down in its inspector to the button “Duplicate VerdantType”. Click it, then choose a name and select a path.
 
 ![Screenshot showing the bottom of the VerdantType inspector. There is an arrow pointing to a button that says "duplication"](Media_GettingStarted/VerdantTypeDuplicateButton.png "VerdantType duplication button")
 
@@ -83,7 +83,7 @@ It’s possible to interact with Verdant vegetation using [Affector](ComponentRe
 
 ![Screenshot showing the hierarchy view "Create" dropdown. Verdant > Deflection Affector is selected](Media_GettingStarted/VerdantDeflectionAffectorCreateDropdown.png "VerdantDeflectionAffector creation")
 
-Then, you can create a [Deflection Affector](ComponentReference/Affectors/VerdantDeflectionAffector.html), which will push away the vegetation around it. We’ll use a shortcut by right clicking in the hierarchy, then going to the Verdant subsection. Many common objects can be created quickly here, including Deflection Affectors. As always you can customize the shape by selecting a different mesh.Drag the new object onto the ground and notice how the grass bends around it.
+Then, you can create a [Deflection Affector](ComponentReference/Affectors/VerdantDeflectionAffector.html), which will push away the vegetation around it. We’ll use a shortcut by right clicking in the hierarchy, then going to the Verdant subsection. Many common objects can be created quickly here, including Deflection Affectors. As always you can customize the shape by selecting a different mesh. Drag the new object onto the ground and notice how the grass bends around it.
 
 ![Screenshot showing a VerdantObject with grass on it. There is a deflection affector in the shape of a sphere on it pushing the grass away.](Media_GettingStarted/VerdantDeflectionAffectorOnVerdantObject.png "VerdantDeflectionAffector in action")
 
@@ -93,6 +93,6 @@ For more about affectors, see [Using Affectors](UserGuide/UsingAffectors.html).
 
 As mentioned many times now, you should absolutely dig into the main documentation. It will both make you a better user and lead you to discover many features that we haven’t covered here.
 
-If any particular section has caught your eye then feel free to explore their respective pages in the [Component Reference](ComponentReference.html) and [User Guide](UserGuide.html). You can also start at the beginning for a more thorough version of this guide. Either way, make sure you stop at the [Performance section](UserGuide/Performance.html), which hasn’t been covered here at all. Finally, experiment! Verdant is made to be responsive and easy to work with. I’m sure many of us learned to use Unity by just messing around with stuff we found neat, and that approach will serve you well here too. 
+If any particular section has caught your eye then feel free to explore their respective pages in the [Component Reference](ComponentReference.html) and [User Guide](UserGuide.html). You can also start at the beginning for a more thorough version of this guide. Either way, make sure you stop by at the [Performance section](UserGuide/Performance.html), which hasn’t been covered here at all. Finally, experiment! Verdant is made to be responsive and easy to work with. I’m sure many of us learned to use Unity by just messing around with stuff we found neat, and that approach will serve you well here too. 
 
 I hope you enjoy using Verdant!
