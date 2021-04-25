@@ -8,6 +8,11 @@ nav_order: "1"
 
 This is a whirlwind tour through Verdant that shows you how to set up its most important systems without delving into the details. You'll also find this guide included in the package as a Getting Started-PDF. If you just want to start working this is the quickest way to do it, though I highly recommend that you also read the main [User Guide](UserGuide.html) afterwards. It goes into much more detail, showcases features not covered here and gives valuable context to help make the system easier to work with long-term.
 
+## Table of contents
+{: .no_toc .text-delta }
+1. TOC
+{:toc}
+
 ## Setup
 
 To start using Verdant you need to set up a camera and provide a surface for vegetation to grow on. **Start by selecting the camera in your scene and adding the [VerdantCamera](ComponentReference/VerdantCamera.html) component.**
