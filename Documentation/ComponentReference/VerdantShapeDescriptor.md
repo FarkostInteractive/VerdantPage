@@ -9,9 +9,9 @@ nav_order: "3"
 
 Many components in Verdant have a presence in the game world of some sort. VerdantShapeDescriptor is the common component they use to define what shape they should have.
 
-There are four shape modes to choose between: 
+There are four different shape modes to choose between: 
 * This Mesh: Looks for a MeshFilter on this GameObject and uses its mesh.
-* Other Mesh: Lets you supply a mesh of your own. Useful for objects that don't need a MeshFilter, to specify a lower LOD, or when the mesh hierarchy is more complicated than a single renderer.
+* Other Mesh: Lets you supply a mesh of your own. Useful for objects that don't need a MeshFilter, to use a lower resolution version of the main mesh, or when the object is part of a mesh hierarchy that is more complicated than a single renderer.
 * Map: An XZ-aligned plane meant for projecting textures onto other surfaces. Use when the texture is more important than the shape.
 * Primitive: Opens a short list of premade meshes. Good for prototyping and for simple affectors.
 

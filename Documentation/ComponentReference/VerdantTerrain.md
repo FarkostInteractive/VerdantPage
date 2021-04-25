@@ -7,15 +7,15 @@ nav_order: "2"
 
 # VerdantTerrain
 
-VerdantTerrain is the equivalent of [VerdantObject](VerdantObject.html) for Unity Terrains. By adding it you make Verdant aware of the terrain as a surface for vegetation. Just like Surface [VerdantObjects](VerdantObject.html) it can be masked by [VerdantObjects](VerdantObject.html) in mask mode.
+VerdantTerrain is the equivalent of [VerdantObject](VerdantObject.html) for Unity Terrains. By adding it you make Verdant aware of the terrain as a surface for vegetation. Just like Surface VerdantObjects it can be masked by VerdantObjects in mask mode.
 
-Unlike [VerdantObject](VerdantObject.html) there are no mask textures. Rather, each type added to a VerdantTerrain is associated with one of the painted layers of the Unity Terrain. This means that if you have a grass layer and a rock layer Verdant can automatically fill in the grass layer with one of your types. If you just want to cover the entire terrain or place vegetation independently of its layers you can use a [VerdantObject](VerdantObject.html) in mask mode instead.
+Unlike VerdantObject there are no mask textures. Rather, each [VerdantType](DataTypes/VerdantType) added to a VerdantTerrain is associated with one of the painted layers of the Unity Terrain. This means that if you have a grass layer and a rock layer Verdant can automatically fill in the grass layer with one of your types. If you just want to cover the entire terrain or place vegetation independently of its layers you can use a VerdantObject in mask mode instead.
 
-As you're working on yout terrain Verdant won't be able to know when it has beenchanged. You can refresh it manually by pressing the Update Terrain button or automatically by checking Update Automatically. Update Automatically will make Verdant refresh every single frame and can have a significant performance impact on complex scenes, though only when the terrain is open in the inspector.
+As you're working on your terrain Verdant won't be able to know when it has been changed. You can refresh it manually by pressing the Update Terrain button or automatically by checking Update Automatically. Update Automatically will make Verdant refresh every single frame while the terrain inspector is open, which can have a significant performance impact on complex scenes.
 
-When Verdant places instances onto the terrain it does so using its underlying heightmap. This can differ slightly from the mesh used to actually draw the terrain. If your vegetation is growing underground this is usually the reason, and you can solve it by increasing the resolution of your terrain so it matches the heightmap more closely.
+When Verdant places instances onto the terrain it does so using its underlying heightfield. The heightfield can differ slightly from the actual terrain mesh. If your vegetation appears underground this is usually the reason, and you can solve it by increasing the resolution of your terrain so it matches the heightfield more closely.
 
-If you are switching to Vulkan in the editor Unity has a bug that makes the terrain heightmap briefly unreadable. The result is that Verdant won't be able to place anything onto it. To fix it, simply make a small edit to the terrain and undo it. Your vegetation should return instantly and the bug won't bother you until you switch again.
+If you are switching to Vulkan in the editor Unity has a bug that makes the terrain heightfield briefly unreadable. The result is that Verdant won't be able to place anything onto it. To fix it, simply make a small edit to the terrain and undo it. Your vegetation should return instantly and the bug won't bother you until you switch rendering API again.
 
 ## Parameters
 

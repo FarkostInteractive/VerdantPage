@@ -7,7 +7,7 @@ nav_order: "6"
 
 # VerdantWindVolume
 
-A component used to create local wind configurations. When the camera enters the volume its settings will be applied to all the vegetation in the scene.
+A component used to create local wind configurations. When the [VerdantCamera](VerdantCamera) enters the volume its settings will be applied to all the vegetation in the scene.
 
 Wind strength is set using the [Beaufort scale](https://en.wikipedia.org/wiki/Beaufort_scale), which has a long history of being used at sea and is based on observation more than exact measurement. It comes with convenient labels in plain english for each of its twelve steps, which are shown on both sides of the big slider. The small slider below it lets you select an intermediary value between two steps. 
 

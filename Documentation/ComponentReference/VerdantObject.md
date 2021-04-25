@@ -6,9 +6,7 @@ nav_order: "1"
 ---
 
 # VerdantObject
-This is the main component for putting Verdant vegetation into a scene. It defines zones where vegetation should be placed, which is the main mode of interaction in Verdant. 
-
-Types are not placed one by one, they are automatically added en masse at runtime to areas defined in the editor. When an object has a VerdantObject component it will be recognized as a surface on which vegetation can grow or as a shape that influences where vegetation should grow. To facilitate this it has two modes: Surface and Mask.
+This is the main component for putting vegetation into a scene. It defines surfaces and zones in which [VerdantTypes](DataTypes/VerdantType) should be placed. To facilitate this it has two modes: Surface and Mask.
 
 Surface objects place vegetation onto themselves. By default any type added to them grows to cover the top of the mesh at the density set in the type. This serves as a base for more complex patterns, which can be made using masks.
 
@@ -19,7 +17,7 @@ Both modes can also have a mask texture applied to them to further control place
 This component is meant to be used with Mesh Renderer and/or Verdant Shape Descriptor. If you want to use Verdant with terrains you have to use the similar VerdantTerrain component instead. There is currently no support for skinned mesh renderers.
 
 ## Painting a Mask Texture
-You can find the tools for mask texture painting either in the VerdantObject inspector under Paint Mask or in the Scene View Tools shelf (can be enabled or disabled with the tools icon in the upper right corner). When you first use them you will be asked to initialize the mask texture. Doing so will create a new data structure that is serialized along with the component. See the page [Painting Mask Textures](../AdvancedGuide/PaintingMaskTextures.html) for details on how to use the paint tools.
+You can find the tools for mask texture painting either in the VerdantObject inspector under Paint Mask or in the Scene View Tools shelf (which can be enabled or disabled with the tools icon in the upper right corner). When you first use them you will be asked to initialize the mask texture. Doing so will create a new data structure that is serialized along with the component. See the page [Painting Mask Textures](../AdvancedGuide/PaintingMaskTextures.html) for details on how to use the paint tools.
 
 ## Parameters
 
@@ -29,7 +27,7 @@ You can find the tools for mask texture painting either in the VerdantObject ins
 | `Max Slope` | The steepest slope in degrees onto which vegetation will be placed, measured in world space along the Y axis. |
 | `Ignore Height` | (Mask only) If set, this mask will influence all objects both above and below it regardless of its own placement.  |
 | `Type Only` | (Mask only) Makes it so this mask will not influence vegetation scale regardless of the scale value. The mask texture is only used as a mask, meaning it won't affect scale but will still determine where vegetation is placed. This allows for placing a type onto a surface in a particular shape without impacting the scale of existing vegetation. |
-| `Types` | The types of vegetation for this object. Both VerdantType and VerdantGroup assets can be added here. The rendered scene can contain a maximum of 31 unique types or groups at any given time. |
+| `Types` | The types of vegetation for this object. Both VerdantType and [VerdantGroup](DataTypes/VerdantGroup) assets can be added here. The rendered scene can contain a maximum of 31 unique types or groups at any given time. |
 
 
 ### Masking Texture
