@@ -18,7 +18,7 @@ The basic principle is to replace [VerdantType](../ComponentReference/DataTypes/
 VerdantType has a parameter towards the very bottom called Twin Object. It takes a prefab, and when set Verdant will automatically start to replace instances of the type with it at runtime. The field accepts any prefab, but it must have a component inheriting from [VerdantGameObjectTwin](../ComponentReference/VerdantGameObjectTwin.html) on the root GameObject. It will throw an error at runtime otherwise.
 
 ## The Twin Object Prefab
-VerdantGameObjectTwin is an abstract component that has four methods you need to implement to help manage the object over its lifecycle. As the camera moves around twins are added into and taken out of a pool of objects constantly. It's important that the object knows how to respond to these events in a performant way, and that it knows to reset itself so it can be reused correctly. Follow the link above to the component reference for more details about the methods.
+VerdantGameObjectTwin is an abstract component that has five methods you need to implement to help manage the object over its lifecycle. As the camera moves around twins are added into and taken out of a pool of objects constantly. It's important that the object knows how to respond to these events in a performant way, and that it knows to reset itself correctly so it can be reused seamlessly. Follow the link above to the component reference for more details about the methods.
 
 ![A screenshot of the VerdantPhysicalTwin component](Media/VerdantPhysicalTwinComponent.png "VerdantPhysicalTwin component")
 

@@ -49,6 +49,7 @@ When gizmos are enabled and the Precision Parameters foldout is open you will se
 |:---------------|:--------------------------|
 | `Twin Replacement Threshold` | The distance at which Verdant will replace instances with [Twin Objects](../AdvancedGuide/UsingTwinObjects) if specified on the VerdantType. |
 | `Twin Position Retrieval Range` | The range within which Verdant retrieves positions for twin replacement from the GPU. Must be larger than the Twin Replacement Threshold. Large ranges mean fewer transfers from GPU Memory, but makes each transfer more expensive. |
+| `Twin Layer` | Set a layer to use for created twin gameObjects. Useful to prevent unwanted self-collisions and for optimization. |
 
 ### Cloud Shadows
 

@@ -17,15 +17,14 @@ Here we'll take a deeper look at the components used to build scenes with Verdan
 {:toc}
 
 ## Surfaces and zones
-As previously mentioned, the main usage of Verdant is defining zones for vegetation to grow in. In Getting Started we did this by adding the component VerdantObject to a box, which made grass appear on top of it. Behind the scenes adding VerdantObject made Verdant register the mesh of the box as a surface tracked within its systems. By then adding a type that surface was defined as a zone where Grass01 grows. 
+The main workflow of Verdant is defining surfaces for vegetation to grow on and then shaping them with masks. In the Quick Start guide we added a box with some grass on it, then we shaped the grass by applying masks using two different techniques: As a texture on the VerdantObject and as a separate VerdantObject.
 
 ![Zone surface image]()
 
-In short, a mesh recognized by Verdant is a surface, and on top of a surface we can have a zone of one or more types of vegetation. 
+(Something easing the user into the idea)
 
-If you are used to thinking of vegetation as instances you paint onto geometry it's worth really internalizing this model. Think of VerdantObject as draping a piece of cloth over the mesh. The 'cloth', or the Verdant surface, is the only thing intrinsic to that object. It is not until the surface is observed by a camera that anything actually gets placed on it. 
+Take a moment to think about what working in this way means. It is quite different from the usual model of painting vegetation onto geometry by hand, but it has lots of benefits. Masks can be authored alongside other maps in the texturing workflow. They are agnostic to the size of the mesh, and the object can be moved and rotated instantly in the editor or at a small cost at runtime. The same is true of swapping out types or changing vegetation scale. 
 
-Shaping these zones and surfaces is what we'll be using everything in this guide for. It's a very different model, but one that lets us do a number of interesting things. Let's have a look at some of them!
 
 ## Laying the foundation with VerdantObject
 
