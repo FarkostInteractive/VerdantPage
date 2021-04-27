@@ -64,7 +64,8 @@ When gizmos are enabled and the Precision Parameters foldout is open you will se
 See [Accessing Verdant Data](../AdvancedGuide/AccessingVerdantData) for more information about using Verdant data in your own shaders.
 
 |:---------------|:--------------------------|
-| `Apply Cloud Shadows Globally` | Sets the cloud shader parameters to global shader variables. Should be set if you're using a Verdant shader on a regular material or if you want to use Verdant data in a shader of your own. |
+| `Apply Heightfields Globally` | Sets the heightfield data to global shader variables. Should be set if you need to access it from a custom shader. |
+| `Apply Cloud Shadows Globally` | Sets the cloud shader data to global shader variables. Should be set if you're using a Verdant shader on a regular material or if you need to access it from a custom shader. |
 | `Global Wind Mode` | Sets wind data to global shader variables. As wind is calculated per type this works a little bit differently than other global shader variables. It can either be set to Global or Per Material. For Global you will need to specify which VerdantType to use to calculate the global value. Per material will set the Verdant value on the material you specify, and each material can have a VedantType of its own.  |
 
 ## Public Methods
