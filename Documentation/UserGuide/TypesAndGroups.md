@@ -42,7 +42,7 @@ LOD fade is the only LOD parameter that cannot be inherited. It controls how smo
 
 ### Per Type parameters
 
-Finally, the last section applies to the entire type. They allow us to set a rendering layer, adjust how randomly the instances are placed (when set to zero they are packed in a tight repeating pattern) and to configure a Twin Object. The last option makes Verdant replace instances of the type with a prefab when within a certain distance and allows you to interact with vegetation fully as you would any GameObject. Twin objects have a guide of their own in the [advanced section](../AdvancedGuide/UsingTwinObjects.html). 
+Finally, the last section applies to the entire type. They allow us to set a rendering layer and adjust how randomly the instances are placed (when set to zero they are packed in a tight repeating pattern).
 
 ### Setting up a type
 

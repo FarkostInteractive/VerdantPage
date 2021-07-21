@@ -44,28 +44,12 @@ When gizmos are enabled and the Precision Parameters foldout is open you will se
 | `Detail Field Ratio` | The ratio of the Render Distance at which the Detail Heightfield is replaced by the Coarse heightfield. |
 | `Culling Tile Resolution` | Determines how large the culling zones for Verdant are. Higher numbers will mean more precise culling but make the culling process itself more expensive. Avoid increasing it unless you have artifacts or performance issues specifically related to how the scene is culled. |
 
-### Twin Objects
-
-|:---------------|:--------------------------|
-| `Twin Replacement Threshold` | The distance at which Verdant will replace instances with [Twin Objects](../AdvancedGuide/UsingTwinObjects) if specified on the VerdantType. |
-| `Twin Position Retrieval Range` | The range within which Verdant retrieves positions for twin replacement from the GPU. Must be larger than the Twin Replacement Threshold. Large ranges mean fewer transfers from GPU Memory, but makes each transfer more expensive. |
-| `Twin Layer` | Set a layer to use for created twin gameObjects. Useful to prevent unwanted self-collisions and for optimization. |
-
-### Cloud Shadows
-
-|:---------------|:--------------------------|
-| `Cloud Shadows` | A repeating greyscale texture that is projected onto vegetation as if it was shadows cast by clouds. If there is wind in the scene the texture will scroll in the wind direction at a speed relative to the wind speed. |
-| `Cloud Shadow Size` | Scales the shadow texture up or down. |
-| `Cloud Shadow Speed` | A multiplier on the current wind speed set by a [VerdantWindVolume](VerdantWindVolume). Together they control how quickly the cloud texture scrolls. |
-| `Cloud Shadow Strength` | Controls how strongly the cloud shadows will be applied. |
-
 ### Global Shader Data
  
 See [Accessing Verdant Data](../AdvancedGuide/AccessingVerdantData) for more information about using Verdant data in your own shaders.
 
 |:---------------|:--------------------------|
 | `Apply Heightfields Globally` | Sets the heightfield data to global shader variables. Should be set if you need to access it from a custom shader. |
-| `Apply Cloud Shadows Globally` | Sets the cloud shader data to global shader variables. Should be set if you're using a Verdant shader on a regular material or if you need to access it from a custom shader. |
 | `Global Wind Mode` | Sets wind data to global shader variables. As wind is calculated per type this works a little bit differently than other global shader variables. It can either be set to Global or Per Material. For Global you will need to specify which VerdantType to use to calculate the global value. Per material will set the Verdant value on the material you specify, and each material can have a VedantType of its own.  |
 
 ## Public Methods

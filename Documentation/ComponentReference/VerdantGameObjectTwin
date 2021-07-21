@@ -1,10 +1,3 @@
----
-layout: default
-title: "VerdantGameObjectTwin"
-parent: "Component Reference"
-nav_order: "7"
----
-
 # VerdantGameObjectTwin
 
 To use a prefab as the [twin object](../AdvancedGuide/UsingTwinObjects) of a [VerdantType](DataTypes/VerdantType) it must have a component inheriting from this class. It specifies how the object should react to various events throughout its lifecycle. Because the class is abstract all of its methods must be overridden and fully implemented.

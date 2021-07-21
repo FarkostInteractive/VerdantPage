@@ -1,9 +1,3 @@
----
-layout: default
-title: "Using Twin Objects"
-parent: "Advanced Guide"
----
-
 # Using Twin Objects
 Twin objects are a useful way to take Verdant instances and dynamically transform them into full gameObjects when needed. By using them you can create the illusion of a much higher level of interaction than Verdant can normally support.
 
