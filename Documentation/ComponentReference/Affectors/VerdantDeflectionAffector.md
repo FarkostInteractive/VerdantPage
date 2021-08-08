@@ -31,6 +31,12 @@ To take complete control of the simulation, set XY to the direction you want and
 |:---------------|:--------------------------|
 | `Ignore Height` | If set, the affector will always influence the vegetation regardless of how close it is to the ground.  |
 | `Ground Distance` | Determines how close to the ground the affector needs to be to influence vegetation. This applies both when the affector is above and below ground. |
+| `Force Mode` | Sets if vegetation should be pushed or pressed down. A push is a force that can be gentle or strong, but always stops the moment the affector is disabled or moves away. A press is the equivalent of a heavy object resting on the field and will completely flatten vegetation below it. The amount of time it takes to raise pressed vegetation can be specified with the Press Duration parameter. |
+| `Force` | (Force mode Push only) The amount of force to use. Its effectiveness will depend on the DeflectionField simulation settings. |
+| `Press Duration` | (Force mode Press only) The time in seconds for which the vegetation should stay pressed down. |
+| `Direction` | Sets whether vegetation should deflect along the objects normals or its direction of motion. Will be overridden by the texture if one is used. |
+| `Speed Influence` | (Force mode push only) The degree to which the speed of this object will influence the force. At 1 an immobile object will assert no force. At 0 the object will assert the specified force regardless of its speed. |
+
 
 ### Texturing
 
@@ -41,13 +47,6 @@ To take complete control of the simulation, set XY to the direction you want and
 | `UV Mode` | Determines the space of the texture UV coordinates. It can be set to Mesh UV, Local XZ or World XZ. Mesh UV is the regular UVs of your mesh. Local XZ is the object space XZ axises. World XZ will make the texture repeat along the XZ axises in world space. |
 | `UV Translation` | Moves the deflection texture in UV space X and Y. |
 | `UV Scale` | Scales the deflection texture up or down in UV space X and Y. |
-
-|:---------------|:--------------------------|
-| `Direction` | Sets whether vegetation should deflect along the objects normals or its direction of motion. Will be overridden by the texture if one is used. |
-| `Force Mode` | Sets if vegetation should be pushed or pressed down. A push is a force that can be gentle or strong, but always stops the moment the affector is disabled or moves away. A press is the equivalent of a heavy object resting on the field and will completely flatten vegetation below it. The amount of time it takes to raise pressed vegetation can be specified with the Press Duration parameter. |
-| `Force` | (Force mode push only) The amount of force to use. Its effectiveness will depend on the DeflectionField simulation settings. |
-| `Speed Influence` | (Force mode push only) The degree to which the speed of this object will influence the force. At 1 an immobile object will assert no force. At 0 the object will assert the specified force regardless of its speed. |
-| `Press Duration` | (Force mode press only) The time in seconds for which the vegetation should stay pressed down. |
 
 ## Public Methods
 

@@ -26,6 +26,7 @@ Wind volumes are used to change global wind as the camera moves through the scen
 | `Transition Time` | The amount of time it takes to fade into this volume from the prior wind state. |
 | `Beaufort Stage` | The discrete step along the Beaufort scale. In the inspector this is represented by the big slider with numbers 0-12 along it. |
 | `Beaufort Interpolation` | A value between 0 and 1 that is added to the Beaufort stage to get an intermediary value. |
+| `Turbulence` | Controls how much the wind strength varies over time. Higher turbulence causes vegetation to flap more. |
 | `Gustiness` | Controls how strong the gusts created using the Wind Noise Texture are. It scales with the general wind strength. |
 | `Wind Direction` | A 2D vector that controls the direction of the wind in the XZ plane.  |
 | `Wind Noise Texture` | A greyscale texture used to create gust patterns traveling along the ground.  |

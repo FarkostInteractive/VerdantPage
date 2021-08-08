@@ -25,6 +25,7 @@ You can find the tools for mask texture painting either in the VerdantObject ins
 | `Mode` | Determines whether vegetation should be placed onto this object (Surface) or onto the VerdantObjects below it (Mask). |
 | `Scale` | Sets the scale of vegetation for this object. Interacts with other scale parameters (eg. on the VerdantType) by multiplication. |
 | `Max Slope` | The steepest slope in degrees onto which vegetation will be placed, measured in world space along the Y axis. |
+| `Mask Blend Mode` | (Mask only) Controls how the Scale of a mask blends with other VerdantObjects. Set will overwrite anything below the mask. Add masks are applied after Set masks, and Multiply masks are applied last. |
 | `Ignore Height` | (Mask only) If set, this mask will influence all objects both above and below it regardless of its own placement.  |
 | `Type Only` | (Mask only) Makes it so this mask will not influence vegetation scale regardless of the scale value. The mask texture is only used as a mask, meaning it won't affect scale but will still determine where vegetation is placed. This allows for placing a type onto a surface in a particular shape without impacting the scale of existing vegetation. |
 | `Types` | The types of vegetation for this object. Both VerdantType and [VerdantGroup](DataTypes/VerdantGroup) assets can be added here. The rendered scene can contain a maximum of 31 unique types or groups at any given time. |

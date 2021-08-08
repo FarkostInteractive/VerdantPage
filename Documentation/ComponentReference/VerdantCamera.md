@@ -7,7 +7,7 @@ nav_order: "1"
 
 # VerdantCamera
 
-VerdantCamera is the most important component in Verdant and responsible for keeping track of everything else. It attaches to a Unity camera and renders vegetation to it by interpreting the surrounding scene and procedurally placing instances within the camera view frustum. As instances drawn by a camera are specific to it each camera in the scene needs to have its own VerdantCamera. Without it, vegetation cannot be seen. 
+VerdantCamera is the most important component in Verdant and responsible for keeping track of everything else. It attaches to a Unity camera and renders vegetation to it by interpreting the surrounding scene and procedurally placing instances within the camera view frustum. As instances drawn by a camera are specific to it each camera in the scene needs to have its own VerdantCamera.
 
 Each VerdantCamera is only aware of the world within its Render Distance. You can think of the VerdantCamera as being a sort of treadmill. Surrounding it is a zone of vegetation that seems to be attached to the scene but actually only exists around the camera. As the camera moves in one direction it pulls out more of the treadmill and the area behind it passes back in underneath. This means that no matter how large your world is, the only vegetation that exists is what is around the camera. It's not even that it's culling everything else, it literally does not exist until the camera comes into contact with it. Consequentially the performance of Verdant is almost entirely dependant on the render distance and density of the vegetation therein. How much vegetation there is in the world in total is completely irrelevant.  
 
@@ -20,11 +20,24 @@ When Verdant is enabled in the scene view the scene camera is essentially treate
 |:---------------|:--------------------------|
 | `Render Distance` | Determines the radius around the camera in which Verdant will render vegetation. Higher numbers will mean more instances being rendered, though the cost of that can be mitigated by using the falloff settings on your [VerdantTypes](../DataTypes/VerdantType).  |
 | `Coverage Modifier` | A multiplier for vegetation density. Use it to change the amount of vegetation drawn at runtime for different graphics settings or to quickly test what your scene would look like with a lower density. |
+| `Minimum LOD` | A global minimum for VerdantType LODs. If set to 1, all VerdantTypes will replace LOD0 with LOD1 (when available). Leave at zero to use all LODs. This is a very useful parameter for improving performance on lower end graphics settings.  |
+| `Allow Shadow Casting` | Set if VerdantTypes rendered by this VerdantCamera can cast shadows. If enabled, shadow casting is controlled by the parameter on each VerdantType. If not, shadows are disabled across the board.  |
 | `Placement Mode` | Determines how Verdant instances read the underlying heightfield. Sharp places each instance without any interpolation and gives you perfect edges but choppy placement on steep hills. Smooth interpolates placement and is perfect for large rolling hills, but can cause vegetation to "flow" over edges onto objects intersecting in X and Z. Hybrid combines the two and will give you good results in almost all scenarios but is slightly more expensive. If your world is very geometric, use Sharp. If it is primarily natural landscapes, use Smooth. If neither description really fits or you are seeing artifacts with the other two, use Hybrid. |
 | `Smoothing Level` | Used to control how much smoothing the Hybrid Placement Mode allows. |
 | `Override Layer` | If set lets you specify a render layer to be used for all the vegetation rendered by the camera. |
 | `Layer` | The layer to use for Verdant if Override Layer is set. |
-| `Allow Shadow Casting` | Set if VerdantTypes rendered by this VerdantCamera can cast shadows. If enabled, shadow casting is controlled by the parameter on each VerdantType. If not, shadows are disabled across the board.  |
+
+### Lighting Parameters
+ 
+These parameters influence the lighting on VerdantTypes set to the Field Volumetric light mode (along with their own light parameters). Field volumetric VerdantTypes will use information about the field as a whole in their lighting calculations. That field data is kept by the VerdantCamera, and how it is built can be controlled by these parameters. You'll notice that the last four mirror parameters on VerdantType. You can think of the light field as precalculating the lighting of a hypothetical VerdantType that uses these parameters. All VerdantTypes use the same lightfield, so you should set these to an average that works across the board.
+
+|:---------------|:--------------------------|
+| `Lightfield Smoothing` | Blends the coarse lightfield into the detail lightfield, which smooths out finer detail. This can make the field lighting appear more cohesive and even but means losing some detail. |
+| `Deflectionfield Influence` | Controls how much the deflection field will influence light field shadowing. Higher values will make instances that have been pressed down appear more shadowed. |
+| `Scalefield Influence` | Controls how much the scale field will influence light field shadowing. Higher values will make instances that have been scaled down appear more shadowed, and instances that have been scaled up will shadow those behind them. |
+| `Wind Influence` | Controls how much wind influences the lightfield. Instances that are blown down will apear shadowed. |
+| `Wind Stiffness` | Controls how much the lightfield "bends" in the wind. Wind Influence acts as a flat multiplier, while Wind Stiffness reacts to the strength of the wind in the scene just like the Stiffness parametere on VerdantType. You should set this to roughly the average of the stiffness of the VerdantTypes you're using. |
+
 
 ### Precision Parameters
 
@@ -50,6 +63,7 @@ See [Accessing Verdant Data](../AdvancedGuide/AccessingVerdantData) for more inf
 
 |:---------------|:--------------------------|
 | `Apply Heightfields Globally` | Sets the heightfield data to global shader variables. Should be set if you need to access it from a custom shader. |
+| `Apply Lightfields Globally` | Sets the lightfield data to global shader variables. Should be set if you need to access it from a custom shader. |
 | `Global Wind Mode` | Sets wind data to global shader variables. As wind is calculated per type this works a little bit differently than other global shader variables. It can either be set to Global or Per Material. For Global you will need to specify which VerdantType to use to calculate the global value. Per material will set the Verdant value on the material you specify, and each material can have a VedantType of its own.  |
 
 ## Public Methods
