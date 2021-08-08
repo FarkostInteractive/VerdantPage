@@ -41,6 +41,7 @@ The Mesh, Override Shader and Override Material parameters do not have a paramet
 |:---------------|:--------------------------|
 | `LOD Fade` | Controls how much this LOD zone should fade into the next one. They will overlap slightly and render more instances than strictly necessary, but this enables them to swap instances out individually and make the transition between LODs much smoother. If it lets you use stricter LODs it can be very worth it to take the slight performance cost of the fade. |
 | `Mesh` | The mesh to use. This is the only parameter on a type that *must* be set or the type won't be able to render. |
+| `Shadow Mesh` | Allows you to specify a mesh to use for the shadow pass. Rendering shadows is expensive, so providing a simpler mesh here can improve performance significantly. If left unset, the main mesh will be used. Shadows will only render when enabled by the Cast Shadows parameter. |
 | `Override Shader` | Lets you set a different shader than the Verdant Standard Shader to use. Regular shaders won't work here, they need to include some Verdant code for placement and applying parameters. [Writing Custom Shaders](../../AdvancedGuide/WritingCustomShaders) will take you through this process.  |
 | `Override Material` | Uses the materials' shader as an override and applies all the parameters set on the material. Verdant will create new instances of the material, so changes made after the type is added to the scene won't be applied. Using an override material is the easiest way to add custom parameters to your own shaders. |
 | `Shading Level` | Allows you to enable and disable certain features in the shader. Verdant always tries to avoid unnecessary work, but this setting guarantees that features you don't need won't be used. Setting it as low as possible can give you significantly better performance. Disabled parameters will be greyed out. |
@@ -63,7 +64,8 @@ Surface Properties are LOD properties that influence how the surface of the type
 | `Smoothness` | Only available in the Translucent light mode. Equivalent to the smoothness slider on the Unity standard shader. |
 | `Metallic` | Equivalent to the metallic slider on the Unity standard shader. |
 | `Opacity Map` | A separate greyscale texture used to control opacity. Disabled in all Shading Levels except Full Surface Detail. |
-| `Occlusion Map` | Equivalent to the occlusion texture on the Unity standard shader. Disabled in all Shading Levels except Full Surface Detail. For deferred rendering reasons a pixel cannot be both occluded and translucent. If both are active at once occlusion will take prescedence. |
+| `Shadow Opacity Map` | Can be used to override the Opacity Map in the shadow pass. Useful for rendering shadows as billboards. |
+| `Occlusion Map` | Equivalent to the occlusion texture on the Unity standard shader. Disabled in all Shading Levels except Full Surface Detail. |
 | `Occlusion` | Controls the strength of the occlusion map if one is set. |
 
 #### Instance Properties
@@ -77,11 +79,25 @@ LOD properties that influence the placement, animation and rendering of instance
 | `Color Field Influence` | Controls how strongly the color field influences the color of this type. |
 | `Scale Field Influence` | Controls how strongly the scale field influences the scale of this type. |
 | `Stiffness` | Used to calculate how this type is influenced by wind volumes. A higher number makes the type harder to bend and less susceptible to wind. |
-| `Light Mode` | Determines how this type will be lit. Normal Up sets all of the normals in the mesh to point upwards, which has the effect of lighting the type as if it were part of the surface it's placed on. This mode is almost always best for dense vegetation like grass as you usually want its lighting to match the ground. Translucent is a more complex model that keeps the mesh normals but lights it both from the front and the back. The translucency parameter and texture control how much light passes through. This mode is ideal for large leafy plants. |
-| `Ground Normals` | Only available when the light mode is set to normal up. When set to zero the normal of the instance will point along the Y axis. When set to 1 it will point along the normal of the surface it is placed on. |
+| `Light Mode` | Determines how this type will be lit. Translucent is a double sided version of the Unity Standard Shader with added support for light passing through translucent parts of the mesh. Field Volumetric does everything that Translucent does, but also takes the surrounding vegetation into account to approximate shadows and bounce lighting. You will generally want to use Field Volumetric for types that grow in dense fields and Translucent for types that are more sparse.
 | `Fade Mode` | Determines how new instances fade in as they are approached. Scale simply scales them up from zero. Dither is available when alpha is enabled and will use a dither mask to fade in instances pixel by pixel. |
 | `Receive Shadows` | Sets if this type should receive shadows. In deferred rendering all objects always receive shadows, so this parameter is only relevant in forward rendering. |
 | `Cast Shadows` | Controls if and how the type should cast shadows. Shadow casting is one of the most expensive features in Verdant because it causes all vegetation to be redrawn at least once for each shadowing light. If you can, try to only use it on your first LOD. |
+
+#### Field Lighting Properties
+
+These settings are used in the Field Volumetric light mode and control how instances of this type are influenced by their surrounding instances. There are two main factors: Light being blocked by neighbours (shadowing) and light being reflected by neighbours (radiance). 
+
+You can imagine that each field volumetric instance is surrounded by a cylinder that represents its neighbours. The cylinder can both block rays of lights to cast shadows on the instance and reflect bounced light back onto it. The upper edge of the cylinder varies in height depending on the size and height of the neighbours.
+
+The parameters below control the properties of the cylinder wall and the light reflected off it.
+
+|:---------------|:--------------------------|
+| `Field Radiance` | The proportion of the light hitting this instance that is bounced from its neighbours. Higher radiance makes light softer and more consistent across a body of vegetation, but blows out some of the per pixel detail from the surface property maps. |
+| `Field Shadow Height` | A multiplier on the height of the shadowing wall. At 1 it will be as high as the type mesh. |
+| `Field Shadow Softness` | Controls how hard the edge of the field shadow is. Generally, the less regular the shape of the vegetation type is the softer its shadows should be. Hard shadows have an almost cartoony look. |
+| `Field Shadow Strength` | Controls how dark the field shadow is. Roughly equivalent to the shadow strength parameter on regular Unity lights. |
+| `Field Shadow Distance` | Controls how far away the shadowing wall is. If the wall is very close to the instance the instance will almost always be in shadow and light will only be let in from the very top. If the wall is further away, the angle at which light is let in increases. The higher this parameter is the less prominent the field shadows are, and lighting will vary more as the source moves/rotates. |
 
 ### Type Parameters
 
