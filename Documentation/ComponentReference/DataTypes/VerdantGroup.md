@@ -7,7 +7,7 @@ grand_parent: "Component Reference"
 
 # VerdantGroup
 
-VerdantGroups are a convenient way to bundle up several different [VerdantTypes](VerdantType). They can be used almost anywhere VerdantTypes would be used and have the useful ability to get around the limit of 31 active types per VerdantCamera. While a group can contain any number of types they are counted as if they were a single VerdantType in the scene. Whenever you find yourself using multiple types together consistently, like several variants of one plant or different types of grass that often grow in the same field, you should bundle them into a group.
+VerdantGroups are a convenient way to bundle up several different [VerdantTypes](VerdantType). They can be used almost anywhere VerdantTypes would be and have the useful ability to get around the limit of 31 active types per VerdantCamera. While a group can contain any number of types they are counted as if they were a single VerdantType in the scene. Whenever you find yourself using multiple types together consistently, like several variants of one plant or different types of grass that often grow in the same field, you should bundle them into a group.
 
 Groups have their own parameters for density and falloff. Each type in the group also has a ratio parameter that determines how much of the density is allocated to this type. When a type is first added it will calculate a ratio based on its own density and the density of the group, eg. a 100 density type in a 100 density group will have ratio 1, a 50 density type will have 0.5, etc. While you can set the ratios as high as you like it's usually good practice to ensure they add up to 1. That way you know that the total density won't exceed that of the group.  
 
@@ -23,7 +23,7 @@ As groups still allow you to fully configure each type separately they do incur 
 As with Density, groups have a single falloff that overrides all the falloffs of their types.
 
 |:---------------|:--------------------------|
-| `Mode` | Lets you select one of three preset falloff modes or Custom, which can be adjusted manually. Which mode to use depends on how close the camera is to the ground. In most cases Sharp or Exponential will be best. Linear makes the amount of vegetation much higher but can work well for aerial views with a smaller render distance. In general, always try to get the density down as low as possible as close to the camera as possible.  |
+| `Mode` | Lets you select one of three preset falloff modes or Custom, which can be adjusted manually. Which mode to use depends on how close the camera is to the ground. In most cases Sharp or Exponential will be best. Linear makes the amount of vegetation much higher but can work well for aerial views with a smaller render distance. In general, always try to get away with lowering the density as close to the camera as possible.
 
 ### Types
 

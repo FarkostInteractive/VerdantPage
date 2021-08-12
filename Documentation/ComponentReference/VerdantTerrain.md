@@ -9,9 +9,9 @@ nav_order: "2"
 
 VerdantTerrain is the equivalent of [VerdantObject](VerdantObject.html) for Unity Terrains. By adding it you make Verdant aware of the terrain as a surface for vegetation. Just like Surface VerdantObjects it can be masked by VerdantObjects in mask mode.
 
-Unlike VerdantObject there are no mask textures. Rather, each [VerdantType](DataTypes/VerdantType) added to a VerdantTerrain is associated with one of the painted layers of the Unity Terrain. This means that if you have a grass layer and a rock layer Verdant can automatically fill in the grass layer with one of your types. If you just want to cover the entire terrain or place vegetation independently of its layers you can use a VerdantObject in mask mode instead.
+Unlike VerdantObject terrains cannot have mask textures themselves. Rather, each [VerdantType](DataTypes/VerdantType) added to a VerdantTerrain is associated with one of the painted layers of the Unity Terrain. This means that if you have a grass layer and a rock layer Verdant can automatically fill in the grass layer with one of your types. If you just want to cover the entire terrain or place vegetation independently of its layers you can use a VerdantObject in mask mode instead.
 
-As you're working on your terrain Verdant won't be able to know when it has been changed. You can refresh it manually by pressing the Update Terrain button or automatically by checking Update Automatically. Update Automatically will make Verdant refresh every single frame while the terrain inspector is open, which can have a significant performance impact on complex scenes.
+As you're working on your terrain Verdant won't be able to tell when it has been changed. You can refresh Verdant manually by pressing the Update Terrain button or automatically by checking Update Automatically. Update Automatically will make Verdant refresh every single frame while the terrain inspector is open, which can have a significant performance impact on low end systems.
 
 When Verdant places instances onto the terrain it does so using its underlying heightfield. The heightfield can differ slightly from the actual terrain mesh. If your vegetation appears underground this is usually the reason, and you can solve it by increasing the resolution of your terrain so it matches the heightfield more closely.
 
@@ -34,7 +34,7 @@ If you are switching to Vulkan in the editor Unity has a bug that makes the terr
 | `void ClearTypes(int index)` | Removes all types from the terrain and refreshes the scene. |
 | `int FindType(VerdantInstantiable type)` | Find the index of the given type in the type list. Returns -1 if it isn't found. |
 | `VerdantInstantiable GetType(int index)` | Returns the type at the given index in the type list or throws if the index is out of range. |
-| `VerdantInstantiable GetLayer(int index)` | Returns the the layer associated with the type at the given index or throws if the index is out of range. |
+| `VerdantInstantiable GetLayer(int index)` | Returns the terrain layer associated with the type at the given index or throws if the index is out of range. |
 | `void SetDirty()` | Marks this terrain as dirty and makes Verdant refresh the scene at the end of the frame. Needs to be called each time a parameter is changed to apply it. |
 
 

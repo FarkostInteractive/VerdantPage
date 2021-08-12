@@ -10,14 +10,14 @@ This is the main component for putting vegetation into a scene. It defines surfa
 
 Surface objects place vegetation onto themselves. By default any type added to them grows to cover the top of the mesh at the density set in the type. This serves as a base for more complex patterns, which can be made using masks.
 
-Mask objects influence the vegetation of the Surface objects below them. Any types added to the mask will be placed onto the surfaces below and its Scale parameter will be multiplied onto the surface. It is the shape of the mesh itself that becomes the mask, meaning Verdant can be used along with any system you might be using to make prototype meshes.
+Mask objects influence the vegetation of the Surface objects below them. Any types added to the mask will be placed onto the surfaces below and its Scale parameter will be blended onto the surface using its Blend Mode. It is the shape of the mesh itself that becomes the mask, meaning Verdant can be used along with any system you might be using to make prototype meshes.
 
 Both modes can also have a mask texture applied to them to further control placement. The mask can either be set by the parameter Scale Mask or painted directly using the controls under Paint Mask.
 
-This component is meant to be used with Mesh Renderer and/or Verdant Shape Descriptor. If you want to use Verdant with terrains you have to use the similar VerdantTerrain component instead. There is currently no support for skinned mesh renderers.
+This component is meant to be used with Mesh Renderer and/or Verdant Shape Descriptor. If you want to use Verdant with terrains you have to use the similar VerdantTerrain component instead. There is currently no support for using Verdant with skinned mesh renderers.
 
 ## Painting a Mask Texture
-You can find the tools for mask texture painting either in the VerdantObject inspector under Paint Mask or in the Scene View Tools shelf (which can be enabled or disabled with the tools icon in the upper right corner). When you first use them you will be asked to initialize the mask texture. Doing so will create a new data structure that is serialized along with the component. See the page [Painting Mask Textures](../AdvancedGuide/PaintingMaskTextures.html) for details on how to use the paint tools.
+To paint a custom mask texture, use the tools found in either the VerdantObject inspector under Paint Mask or in the Scene View Tools shelf (which can be enabled or disabled with the tools icon in the upper right corner). When you first use them you will be asked to initialize the mask texture. Doing so will create a new data structure that is serialized along with the component. See the page [Painting Mask Textures](../AdvancedGuide/PaintingMaskTextures.html) for details on how to use the paint tools.
 
 ## Parameters
 
