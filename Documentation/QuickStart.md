@@ -33,7 +33,7 @@ On VerdantObject there’s a list called Types. This is where we specify what ve
 
 ![Screenshot showing the VerdantObject inspector with the type Grass01 applied](Media_GettingStarted/VerdantObjectInspectorWithType.png "The VerdantObject inspector")
 
-Make sure the camera is pointed at the VerdantObject. If you run the game now you should see that the object has been covered with grass! **You can also enable rendering vegetation in Scene View by going to Verdant in the menu bar and selecting Render in Editor**.
+Make sure the camera is pointed at the VerdantObject. If you run the game now you should see that the object has been covered with grass! **You can also enable rendering vegetation in Scene View by going to Tools > Verdant in the menu bar and selecting Render in Editor**.
 
 ![Screenshot showing a VerdantObject Inspector with the type Grass01 applied as rendered in play mode](Media_GettingStarted/VerdantObjectFromCameraView.png "A VerdantObject with grass01 on it")
 

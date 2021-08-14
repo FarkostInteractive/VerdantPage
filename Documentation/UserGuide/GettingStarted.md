@@ -47,7 +47,7 @@ Make sure the object is in view of the camera. You should now be able to hit pla
 
 ![The previously added box covered in short green grass](Media/GroundWithGrass.PNG "Ground with vegetation")
 
-You can also preview Verdant in the scene view. Go to the menu bar and select Verdant > Render in Editor. Try moving your VerdantObject around a bit and see how it updates in real time as you work. Be aware that the scene view preview will perform worse than a build, so it can be a little heavy on lower end systems.
+You can also preview Verdant in the scene view. Go to the menu bar and select Tools > Verdant > Render in Editor. Try moving your VerdantObject around a bit and see how it updates in real time as you work. Be aware that the scene view preview will perform worse than a build, so it can be a little heavy on lower end systems.
 
 ![The system menu bar with the menu Verdant open and the option Render In Editor Selected](Media/MenuBar.PNG "Menu Bar")
 

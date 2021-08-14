@@ -23,7 +23,7 @@ Most of the techniques you would use to profile Unity normally still apply here.
 The next step is finding your bottleneck. Doing so can be difficult without a full understanding of the systems involved, so in the next sections we'll go through some common types of problems and figure out what to do about them.
 
 ### Diagnostic Tools
-There are two tools available to help with diagnosing problems. You'll find both of them under Verdant in the menu bar. The first is the [Debug Panel, which has an advanced guide all of its own](). It helps you understand how Verdant is interpreting your scene at any given time and is very good for identifying sources of visual artifacting. There is also Rendering Statistics, which shows all the types in the scene and gives you their instance counts in real time.
+There are two tools available to help with diagnosing problems. You'll find both of them under Tools > Verdant in the menu bar. The first is the [Debug Panel, which has an advanced guide all of its own](). It helps you understand how Verdant is interpreting your scene at any given time and is very good for identifying sources of visual artifacting. There is also Rendering Statistics, which shows all the types in the scene and gives you their instance counts in real time.
 
 
 ## Density and vertices

@@ -6,7 +6,7 @@ parent: "Advanced Guide"
 
 # Debug Panel
 
-Verdant by itself can be a little opaque, so it comes with tools for inspecting its behaviour. The debug panel is the most important one and can be found in the menu bar by going to Verdant > Debug Panel. 
+Verdant by itself can be a little opaque, so it comes with tools for inspecting its behaviour. The debug panel is the most important one and can be found in the menu bar by going to Tools > Verdant > Debug Panel. 
 
 ## Rendering statistics
 
